@@ -1,0 +1,7 @@
+# Dependensi runtime backend untuk Vercel (sinkron dengan backend/pyproject.toml).
+fastapi>=0.115
+pydantic>=2.7
+numpy>=1.26
+scipy>=1.13
+pandas>=2.2
+python-multipart>=0.0.9

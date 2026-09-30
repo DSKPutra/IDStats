@@ -1,0 +1,73 @@
+{
+  "categories": [
+    {
+      "id": "stats",
+      "title": "Statistika & Pengolahan Data",
+      "description": "Deskriptif, distribusi, inferensial, ANOVA, regresi, non-parametrik.",
+      "methods": [
+        { "id": "data-management", "title": "Manajemen Data (Data Management)", "phase": 1 },
+        { "id": "descriptive", "title": "Statistik Deskriptif (Descriptive Statistics)", "phase": 0, "available": true },
+        { "id": "distributions", "title": "Distribusi Probabilitas (Probability Distributions)", "phase": 1 },
+        { "id": "inferential", "title": "Statistik Inferensial (Inferential Statistics)", "phase": 1 },
+        { "id": "anova", "title": "ANOVA & Tukey HSD", "phase": 1 },
+        { "id": "regression", "title": "Korelasi & Regresi (Correlation & Regression)", "phase": 1 },
+        { "id": "nonparametric", "title": "Uji Non-parametrik (Nonparametric Tests)", "phase": 1 },
+        { "id": "normality", "title": "Uji Normalitas (Normality Tests)", "phase": 1 }
+      ]
+    },
+    {
+      "id": "or",
+      "title": "Riset Operasi (Hillier & Lieberman)",
+      "description": "Bab 1–22 + Appendix: LP, jaringan, PERT/CPM, IP, NLP, stokastik.",
+      "methods": [
+        { "id": "or-intro", "title": "Pengantar & Pemodelan OR (Bab 1–2)", "phase": 2 },
+        { "id": "lp-graphical", "title": "Metode Grafik LP (Graphical Method, Bab 3)", "phase": 2 },
+        { "id": "simplex", "title": "Metode Simpleks (Simplex Method, Bab 4)", "phase": 2 },
+        { "id": "revised-simplex", "title": "Simpleks Direvisi (Revised Simplex, Bab 5)", "phase": 2 },
+        { "id": "duality", "title": "Dualitas & Analisis Sensitivitas (Bab 6)", "phase": 2 },
+        { "id": "lp-other", "title": "Algoritma LP Lain (Dual Simplex, Goal Programming, Bab 7)", "phase": 2 },
+        { "id": "transportation", "title": "Transportasi & Penugasan (Bab 8)", "phase": 3 },
+        { "id": "network", "title": "Optimasi Jaringan (Network Optimization, Bab 9)", "phase": 3 },
+        { "id": "pert-cpm", "title": "Manajemen Proyek PERT/CPM (Bab 10)", "phase": 3 },
+        { "id": "dynamic-programming", "title": "Pemrograman Dinamis (Dynamic Programming, Bab 11)", "phase": 4 },
+        { "id": "integer-programming", "title": "Pemrograman Bilangan Bulat (Integer Programming, Bab 12)", "phase": 4 },
+        { "id": "nonlinear-programming", "title": "Pemrograman Nonlinear (Nonlinear Programming, Bab 13)", "phase": 4 },
+        { "id": "game-theory", "title": "Teori Permainan (Game Theory, Bab 14)", "phase": 4 },
+        { "id": "decision-analysis", "title": "Analisis Keputusan (Decision Analysis, Bab 15)", "phase": 5 },
+        { "id": "markov-chains", "title": "Rantai Markov (Markov Chains, Bab 16)", "phase": 5 },
+        { "id": "queueing", "title": "Teori Antrian (Queueing Theory, Bab 17–18)", "phase": 5 },
+        { "id": "inventory", "title": "Teori Persediaan (Inventory Theory, Bab 19)", "phase": 5 },
+        { "id": "forecasting", "title": "Peramalan (Forecasting, Bab 20)", "phase": 5 },
+        { "id": "mdp", "title": "Proses Keputusan Markov (MDP, Bab 21)", "phase": 5 },
+        { "id": "simulation", "title": "Simulasi (Simulation, Bab 22)", "phase": 5 },
+        { "id": "appendix", "title": "Konveksitas, Optimasi Klasik & Matriks (Appendix)", "phase": 5 }
+      ]
+    },
+    {
+      "id": "ml",
+      "title": "Optimasi untuk Machine Learning",
+      "description": "Liu et al. (2025): optimizer gradien, metaheuristik, dan aplikasinya.",
+      "methods": [
+        { "id": "gradient-playground", "title": "Playground Optimizer Gradien (Loss Surface)", "phase": 6 },
+        { "id": "gradient-training", "title": "Perbandingan Optimizer pada Model Nyata", "phase": 6 },
+        { "id": "metaheuristics", "title": "Metaheuristik Berbasis Populasi (Population-Based)", "phase": 7 },
+        { "id": "metaheuristic-benchmark", "title": "Benchmark & Uji Statistik Metaheuristik", "phase": 7 },
+        { "id": "hyperparameter-optimization", "title": "Optimasi Hyperparameter (HPO)", "phase": 7 },
+        { "id": "feature-selection", "title": "Seleksi Fitur (Feature Selection)", "phase": 7 },
+        { "id": "metaheuristic-or", "title": "Metaheuristik untuk Masalah OR (TSP, Knapsack)", "phase": 7 },
+        { "id": "reinforcement-learning", "title": "Reinforcement Learning Ringan (Q-learning)", "phase": 7 },
+        { "id": "ml-review", "title": "Tinjauan Taksonomi & Arah Riset", "phase": 7 }
+      ]
+    },
+    {
+      "id": "general",
+      "title": "Fitur Umum",
+      "description": "Riwayat perhitungan, ekspor laporan PDF, dan mode latihan.",
+      "methods": [
+        { "id": "history", "title": "Riwayat Perhitungan (History)", "phase": 8 },
+        { "id": "pdf-report", "title": "Ekspor Laporan PDF", "phase": 8 },
+        { "id": "practice", "title": "Mode Latihan (Practice Mode)", "phase": 8 }
+      ]
+    }
+  ]
+}

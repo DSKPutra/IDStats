@@ -1,0 +1,7 @@
+{
+  "title": "Nilai ujian akhir 20 mahasiswa Modelling & Optimization",
+  "description": "Hitung ukuran pemusatan, penyebaran, dan bentuk distribusi dari nilai ujian berikut.",
+  "input": {
+    "data": [72, 85, 64, 90, 78, 85, 69, 74, 88, 95, 58, 81, 77, 85, 70, 66, 92, 79, 83, 75]
+  }
+}
