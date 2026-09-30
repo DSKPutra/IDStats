@@ -16,3 +16,13 @@ describe('toCsv', () => {
     expect(toCsv(['a', 'b'], [['x,y', 2]])).toBe('a,b\n"x,y",2')
   })
 })
+
+describe('formatNumber', () => {
+  it('memakai format Indonesia dan notasi ilmiah untuk nilai sangat kecil', async () => {
+    const { formatNumber } = await import('@/lib/utils')
+    expect(formatNumber(1566)).toBe('1.566')
+    expect(formatNumber(78.3)).toBe('78,3')
+    expect(formatNumber(3.2e-7)).toBe('3,200e-7')
+    expect(formatNumber(null)).toBe('—')
+  })
+})

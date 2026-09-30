@@ -5,3 +5,4 @@ numpy>=1.26
 scipy>=1.13
 pandas>=2.2
 python-multipart>=0.0.9
+openpyxl>=3.1

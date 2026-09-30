@@ -1,0 +1,36 @@
+{
+  "title": "Jam belajar vs nilai ujian",
+  "description": "Gambarkan hubungan jam belajar per minggu dan nilai ujian 12 mahasiswa.",
+  "input": {
+    "x_name": "jam_belajar",
+    "y_name": "nilai",
+    "x": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      3,
+      6
+    ],
+    "y": [
+      55,
+      58,
+      63,
+      66,
+      71,
+      74,
+      80,
+      83,
+      88,
+      90,
+      60,
+      73
+    ]
+  }
+}

@@ -3,10 +3,24 @@ import { useParams } from 'react-router-dom'
 import { findMethod } from '@/registry/modules'
 import { ComingSoon } from './ComingSoon'
 import { NotFound } from './NotFound'
+import type { VariantPageConfig } from './VariantPage'
+
+const variantPage = (load: () => Promise<VariantPageConfig>): ComponentType =>
+  lazy(async () => {
+    const [{ VariantPage }, config] = await Promise.all([import('./VariantPage'), load()])
+    return { default: () => <VariantPage config={config} /> }
+  })
 
 /** Halaman yang sudah diimplementasikan, dengan kunci `${kategori}/${metode}`. */
 const pages: Record<string, ComponentType> = {
-  'stats/descriptive': lazy(() => import('./stats/Descriptive').then((m) => ({ default: m.DescriptivePage }))),
+  'stats/data-management': lazy(() => import('./stats/DataManagement').then((m) => ({ default: m.DataManagementPage }))),
+  'stats/descriptive': variantPage(() => import('./stats/configs/descriptive').then((m) => m.descriptiveConfig)),
+  'stats/distributions': variantPage(() => import('./stats/configs/distributions').then((m) => m.distributionsConfig)),
+  'stats/inferential': variantPage(() => import('./stats/configs/inferential').then((m) => m.inferentialConfig)),
+  'stats/anova': variantPage(() => import('./stats/configs/anova').then((m) => m.anovaConfig)),
+  'stats/regression': variantPage(() => import('./stats/configs/regression').then((m) => m.regressionConfig)),
+  'stats/nonparametric': variantPage(() => import('./stats/configs/nonparametric').then((m) => m.nonparametricConfig)),
+  'stats/normality': variantPage(() => import('./stats/configs/normality').then((m) => m.normalityConfig)),
 }
 
 export function MethodRoute() {
@@ -17,7 +31,7 @@ export function MethodRoute() {
   if (!Page) return <ComingSoon {...found} />
   return (
     <Suspense fallback={<p className="py-10 text-center text-muted-foreground">Memuat…</p>}>
-      <Page />
+      <Page key={`${categoryId}/${methodId}`} />
     </Suspense>
   )
 }

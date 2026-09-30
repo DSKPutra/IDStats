@@ -1,0 +1,12 @@
+{
+  "title": "Umur lampu",
+  "description": "Produsen mengklaim umur lampu rata-rata 1000 jam dengan σ = 80 jam. Sampel 36 lampu memberi rata-rata 972 jam. Uji apakah umur lampu lebih pendek dari klaim (α = 0,05).",
+  "input": {
+    "n": 36,
+    "mean": 972,
+    "mu0": 1000,
+    "sigma": 80,
+    "alternative": "less",
+    "alpha": 0.05
+  }
+}

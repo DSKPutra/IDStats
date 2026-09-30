@@ -1,0 +1,21 @@
+{
+  "title": "Berat kemasan",
+  "description": "Berat bersih kemasan seharusnya 12 ons. Uji apakah rata-rata berat berbeda dari 12 ons (α = 0,05).",
+  "input": {
+    "data": [
+      12.1,
+      11.8,
+      12.5,
+      12.0,
+      11.6,
+      12.3,
+      12.7,
+      11.9,
+      12.2,
+      12.4
+    ],
+    "mu0": 12,
+    "alternative": "two-sided",
+    "alpha": 0.05
+  }
+}

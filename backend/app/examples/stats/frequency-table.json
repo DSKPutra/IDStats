@@ -1,0 +1,38 @@
+{
+  "title": "Waktu layanan 30 pelanggan (menit)",
+  "description": "Susun tabel distribusi frekuensi waktu layanan kasir.",
+  "input": {
+    "data": [
+      3.2,
+      4.1,
+      2.8,
+      5.6,
+      3.9,
+      4.4,
+      6.1,
+      2.5,
+      3.7,
+      4.9,
+      5.2,
+      3.3,
+      4.0,
+      6.8,
+      2.9,
+      3.8,
+      4.6,
+      5.0,
+      3.1,
+      4.2,
+      7.3,
+      3.6,
+      4.8,
+      5.5,
+      2.7,
+      3.4,
+      4.3,
+      5.9,
+      3.0,
+      4.5
+    ]
+  }
+}

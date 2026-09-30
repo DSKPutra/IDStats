@@ -1,0 +1,39 @@
+{
+  "title": "Tiga jenis pupuk (lanjutan)",
+  "description": "ANOVA menolak H₀; pasangan pupuk mana yang berbeda nyata?",
+  "input": {
+    "groups": [
+      {
+        "name": "Pupuk A",
+        "data": [
+          23,
+          25,
+          21,
+          22,
+          24
+        ]
+      },
+      {
+        "name": "Pupuk B",
+        "data": [
+          30,
+          28,
+          29,
+          31,
+          27
+        ]
+      },
+      {
+        "name": "Pupuk C",
+        "data": [
+          22,
+          24,
+          23,
+          21,
+          25
+        ]
+      }
+    ],
+    "alpha": 0.05
+  }
+}

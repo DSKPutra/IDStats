@@ -6,8 +6,8 @@ import numpy as np
 from scipy import stats
 
 from app.core.errors import SolverError
-from app.schemas.common import Chart, SolverResponse, Step, Table
-from app.solvers._base import as_finite_array, fmt, plotly_figure
+from app.schemas.common import Chart, NamedTable, SolverResponse, Step, Table
+from app.solvers._base import as_finite_array, fmt, plotly_figure, summary_items
 
 _MAX_TABLE_ROWS = 50
 
@@ -32,7 +32,7 @@ def summary(data: list[float]) -> SolverResponse:
 
     steps.append(
         Step(
-            title="1. Urutkan data",
+            title="Urutkan data",
             explanation=f"Data diurutkan dari terkecil ke terbesar (n = {n}).",
             latex=r"x_{(1)} \le x_{(2)} \le \dots \le x_{(n)}",
             table=Table(columns=["i", "x_(i)"], rows=[[i + 1, float(v)] for i, v in enumerate(xs)])
@@ -45,7 +45,7 @@ def summary(data: list[float]) -> SolverResponse:
     mean = total / n
     steps.append(
         Step(
-            title="2. Rata-rata (Mean)",
+            title="Rata-rata (Mean)",
             explanation="Jumlahkan seluruh data lalu bagi dengan banyaknya data.",
             latex=rf"\bar{{x}} = \frac{{\sum x_i}}{{n}} = \frac{{{fmt(total)}}}{{{n}}} = {fmt(mean)}",
         )
@@ -63,7 +63,7 @@ def summary(data: list[float]) -> SolverResponse:
         )
     steps.append(
         Step(
-            title="3. Median",
+            title="Median",
             explanation="Nilai tengah data terurut (rata-rata dua nilai tengah bila n genap).",
             latex=median_latex,
         )
@@ -76,7 +76,7 @@ def summary(data: list[float]) -> SolverResponse:
         warnings.append("Tidak ada modus: setiap nilai muncul tepat satu kali.")
     steps.append(
         Step(
-            title="4. Modus (Mode)",
+            title="Modus (Mode)",
             explanation=(
                 f"Nilai dengan frekuensi terbesar ({max_freq} kali): {', '.join(fmt(m) for m in modes)}."
                 if modes
@@ -91,7 +91,7 @@ def summary(data: list[float]) -> SolverResponse:
     std = float(np.sqrt(variance))
     steps.append(
         Step(
-            title="5. Varians & simpangan baku sampel",
+            title="Varians & simpangan baku sampel",
             explanation="Hitung kuadrat simpangan setiap data terhadap rata-rata, jumlahkan, lalu bagi dengan n − 1.",
             latex=(
                 rf"s^2 = \frac{{\sum (x_i - \bar{{x}})^2}}{{n-1}} = \frac{{{fmt(ss)}}}{{{n - 1}}} = {fmt(variance)}"
@@ -110,7 +110,7 @@ def summary(data: list[float]) -> SolverResponse:
     iqr = q3 - q1
     steps.append(
         Step(
-            title="6. Kuartil & jangkauan antarkuartil (IQR)",
+            title="Kuartil & jangkauan antarkuartil (IQR)",
             explanation=(
                 "Posisi kuartil ke-p: h = (n − 1)·p, lalu interpolasi linier antara x_(⌊h⌋+1) dan x_(⌊h⌋+2) "
                 "(metode tipe 7, sama dengan Excel QUARTILE.INC)."
@@ -136,7 +136,7 @@ def summary(data: list[float]) -> SolverResponse:
         warnings.append("Kurtosis membutuhkan minimal 4 data dengan variasi tidak nol.")
     steps.append(
         Step(
-            title="7. Kemencengan (Skewness) & keruncingan (Kurtosis)",
+            title="Kemencengan (Skewness) & keruncingan (Kurtosis)",
             explanation=(
                 "Menggunakan estimator sampel terkoreksi bias (sama dengan Excel SKEW/KURT dan SPSS). "
                 "Kurtosis yang ditampilkan adalah excess kurtosis (distribusi normal = 0)."
@@ -213,4 +213,148 @@ def summary(data: list[float]) -> SolverResponse:
         ),
     ]
 
-    return SolverResponse(result=result, steps=steps, charts=charts, warnings=warnings)
+    labels = [
+        ("Banyak data (n)", "n"),
+        ("Jumlah (Σx)", "sum"),
+        ("Rata-rata (Mean)", "mean"),
+        ("Median", "median"),
+        ("Modus (Mode)", "modes"),
+        ("Varians sampel (s²)", "variance"),
+        ("Simpangan baku (s)", "std"),
+        ("Galat baku rata-rata (SE)", "standard_error"),
+        ("Koefisien variasi (CV)", "coefficient_of_variation"),
+        ("Minimum", "min"),
+        ("Maksimum", "max"),
+        ("Jangkauan (Range)", "range"),
+        ("Kuartil 1 (Q1)", "q1"),
+        ("Kuartil 2 (Q2)", "q2"),
+        ("Kuartil 3 (Q3)", "q3"),
+        ("Jangkauan antarkuartil (IQR)", "iqr"),
+        ("Kemencengan (Skewness)", "skewness"),
+        ("Keruncingan (Excess Kurtosis)", "kurtosis"),
+    ]
+    summary = summary_items(
+        [
+            (label, ", ".join(fmt(m) for m in result[key]) or "Tidak ada") if key == "modes" else (label, result[key])
+            for label, key in labels
+        ]
+    )
+    return SolverResponse(result=result, steps=steps, charts=charts, warnings=warnings, summary=summary)
+
+
+def frequency_table(data: list[float], classes: int | None = None) -> SolverResponse:
+    x = as_finite_array(data)
+    n = x.size
+    if n < 2:
+        raise SolverError("Tabel frekuensi membutuhkan minimal 2 data.")
+    lo, hi = float(x.min()), float(x.max())
+    if lo == hi:
+        raise SolverError("Semua data bernilai sama sehingga tidak dapat dibagi menjadi kelas.")
+    steps: list[Step] = [
+        Step(title="Jangkauan data", latex=rf"R = x_{{max}} - x_{{min}} = {fmt(hi)} - {fmt(lo)} = {fmt(hi - lo)}")
+    ]
+    if classes is None:
+        k_raw = 1 + 3.322 * np.log10(n)
+        k = int(np.ceil(k_raw))
+        steps.append(
+            Step(
+                title="Jumlah kelas (aturan Sturges)",
+                latex=rf"k = 1 + 3{{,}}322\log_{{10}} n = 1 + 3{{,}}322\log_{{10}} {n} = {fmt(k_raw)} pprox {k}",
+            )
+        )
+    else:
+        k = classes
+        steps.append(Step(title="Jumlah kelas", explanation=f"Ditentukan pengguna: k = {k}."))
+    width = (hi - lo) / k
+    steps.append(
+        Step(
+            title="Panjang kelas",
+            explanation="Kelas terakhir ditutup di kanan agar nilai maksimum ikut terhitung.",
+            latex=rf"c = rac{{R}}{{k}} = rac{{{fmt(hi - lo)}}}{{{k}}} = {fmt(width)}",
+        )
+    )
+    edges = lo + width * np.arange(k + 1)
+    edges[-1] = hi
+    counts, _ = np.histogram(x, bins=edges)
+    cum = np.cumsum(counts)
+    rows = [
+        [
+            f"{fmt(edges[i])} – {fmt(edges[i + 1])}",
+            float((edges[i] + edges[i + 1]) / 2),
+            int(counts[i]),
+            float(counts[i] / n),
+            int(cum[i]),
+            float(cum[i] / n),
+        ]
+        for i in range(k)
+    ]
+    table = NamedTable(
+        title="Tabel distribusi frekuensi",
+        columns=["Kelas", "Titik tengah", "Frekuensi", "Frek. relatif", "Frek. kumulatif", "Kumulatif relatif"],
+        rows=rows,
+    )
+    steps.append(Step(title="Hitung frekuensi tiap kelas", table=table))
+    mids = ((edges[:-1] + edges[1:]) / 2).tolist()
+    return SolverResponse(
+        result={"classes": k, "width": width, "edges": edges.tolist(), "counts": counts.tolist()},
+        steps=steps,
+        tables=[table],
+        summary=summary_items([("Jumlah kelas", k), ("Panjang kelas", width), ("n", n)]),
+        charts=[
+            Chart(
+                id="histogram",
+                title="Histogram",
+                spec=plotly_figure(
+                    [{"type": "bar", "x": mids, "y": counts.tolist(), "width": [width] * k, "name": "Frekuensi"}],
+                    "Histogram",
+                    xaxis={"title": {"text": "Nilai"}},
+                    yaxis={"title": {"text": "Frekuensi"}},
+                ),
+            ),
+            Chart(
+                id="ogive",
+                title="Ogive",
+                spec=plotly_figure(
+                    [
+                        {
+                            "type": "scatter",
+                            "mode": "lines+markers",
+                            "x": edges.tolist(),
+                            "y": [0, *cum.tolist()],
+                            "name": "Kumulatif",
+                        }
+                    ],
+                    "Ogive (frekuensi kumulatif kurang dari)",
+                ),
+            ),
+        ],
+    )
+
+
+def scatter(x: list[float], y: list[float], x_name: str = "x", y_name: str = "y") -> SolverResponse:
+    a, b = as_finite_array(x, x_name), as_finite_array(y, y_name)
+    if a.size != b.size:
+        raise SolverError(f"Jumlah data {x_name} ({a.size}) dan {y_name} ({b.size}) harus sama.")
+    r = float(np.corrcoef(a, b)[0, 1]) if a.std() > 0 and b.std() > 0 else None
+    return SolverResponse(
+        result={"n": int(a.size), "pearson_r": r},
+        summary=summary_items([("n", int(a.size)), ("Korelasi Pearson r", r)]),
+        steps=[
+            Step(
+                title="Diagram pencar",
+                explanation="Setiap titik mewakili satu pasangan (x, y). Pola menaik = hubungan positif.",
+            )
+        ],
+        charts=[
+            Chart(
+                id="scatter",
+                title="Diagram pencar",
+                spec=plotly_figure(
+                    [{"type": "scatter", "mode": "markers", "x": a.tolist(), "y": b.tolist(), "name": "Data"}],
+                    f"{y_name} vs {x_name}",
+                    xaxis={"title": {"text": x_name}},
+                    yaxis={"title": {"text": y_name}},
+                ),
+            )
+        ],
+    )

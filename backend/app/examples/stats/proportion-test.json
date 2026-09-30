@@ -1,0 +1,11 @@
+{
+  "title": "Tingkat cacat produksi",
+  "description": "Dari 400 unit yang diperiksa, 28 cacat. Uji apakah proporsi cacat melebihi 5% (α = 0,05).",
+  "input": {
+    "x1": 28,
+    "n1": 400,
+    "p0": 0.05,
+    "alternative": "greater",
+    "alpha": 0.05
+  }
+}

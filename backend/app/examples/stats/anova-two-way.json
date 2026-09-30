@@ -1,0 +1,65 @@
+{
+  "title": "Mesin × operator",
+  "description": "Output per jam untuk 3 mesin dan 2 operator, masing-masing 3 ulangan.",
+  "input": {
+    "factor_a": "Mesin",
+    "factor_b": "Operator",
+    "cells": [
+      {
+        "a": "M1",
+        "b": "Op1",
+        "data": [
+          12,
+          14,
+          13
+        ]
+      },
+      {
+        "a": "M1",
+        "b": "Op2",
+        "data": [
+          18,
+          17,
+          19
+        ]
+      },
+      {
+        "a": "M2",
+        "b": "Op1",
+        "data": [
+          15,
+          16,
+          14
+        ]
+      },
+      {
+        "a": "M2",
+        "b": "Op2",
+        "data": [
+          25,
+          24,
+          26
+        ]
+      },
+      {
+        "a": "M3",
+        "b": "Op1",
+        "data": [
+          11,
+          12,
+          10
+        ]
+      },
+      {
+        "a": "M3",
+        "b": "Op2",
+        "data": [
+          16,
+          15,
+          17
+        ]
+      }
+    ],
+    "alpha": 0.05
+  }
+}

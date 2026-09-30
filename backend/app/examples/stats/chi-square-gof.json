@@ -1,0 +1,21 @@
+{
+  "title": "Kedatangan pelanggan per hari",
+  "description": "Apakah jumlah pelanggan tersebar merata pada 5 hari kerja?",
+  "input": {
+    "categories": [
+      "Senin",
+      "Selasa",
+      "Rabu",
+      "Kamis",
+      "Jumat"
+    ],
+    "observed": [
+      48,
+      35,
+      42,
+      38,
+      57
+    ],
+    "alpha": 0.05
+  }
+}

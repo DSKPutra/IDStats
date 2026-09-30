@@ -11,6 +11,8 @@ export function formatNumber(value: unknown, digits = 4): string {
   if (typeof value !== 'number') return String(value)
   if (!Number.isFinite(value)) return '—'
   if (Number.isInteger(value)) return value.toLocaleString('id-ID')
+  // Nilai sangat kecil (mis. p-value) jangan dibulatkan menjadi 0.
+  if (Math.abs(value) < 1e-4) return value.toExponential(3).replace('.', ',')
   return value.toLocaleString('id-ID', { maximumFractionDigits: digits })
 }
 

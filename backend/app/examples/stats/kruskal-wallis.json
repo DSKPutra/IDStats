@@ -1,0 +1,39 @@
+{
+  "title": "Waktu respons tiga server",
+  "description": "Waktu respons (ms) tiga server. Apakah ada perbedaan?",
+  "input": {
+    "groups": [
+      {
+        "name": "Server 1",
+        "data": [
+          120,
+          135,
+          128,
+          140,
+          132
+        ]
+      },
+      {
+        "name": "Server 2",
+        "data": [
+          150,
+          160,
+          145,
+          155,
+          158
+        ]
+      },
+      {
+        "name": "Server 3",
+        "data": [
+          125,
+          130,
+          138,
+          127,
+          133
+        ]
+      }
+    ],
+    "alpha": 0.05
+  }
+}

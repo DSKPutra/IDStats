@@ -1,0 +1,29 @@
+{
+  "title": "Konsistensi dua mesin",
+  "description": "Apakah variabilitas diameter hasil mesin 1 berbeda dengan mesin 2?",
+  "input": {
+    "x": [
+      10.2,
+      10.5,
+      9.8,
+      10.1,
+      10.7,
+      9.6,
+      10.4,
+      10.0
+    ],
+    "y": [
+      10.1,
+      10.0,
+      10.2,
+      9.9,
+      10.1,
+      10.0,
+      10.2,
+      9.9,
+      10.0
+    ],
+    "alternative": "two-sided",
+    "alpha": 0.05
+  }
+}

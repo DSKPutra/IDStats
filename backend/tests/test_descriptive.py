@@ -48,4 +48,16 @@ def test_endpoint_ok(client):
     res = client.post("/api/descriptive/summary", json={"data": DATA})
     assert res.status_code == 200
     body = res.json()
-    assert set(body) == {"result", "steps", "charts", "warnings"}
+    assert {"result", "steps", "charts", "warnings", "summary", "tables", "conclusion"} <= set(body)
+
+
+def test_frequency_table_sturges():
+    out = __import__("app.solvers.descriptive", fromlist=["frequency_table"]).frequency_table(DATA)
+    assert out.result["classes"] == 6  # 1 + 3.322 log10(20) = 5.32 → 6
+    assert sum(out.result["counts"]) == len(DATA)
+    assert out.result["edges"][0] == min(DATA) and out.result["edges"][-1] == max(DATA)
+
+
+def test_scatter_length_mismatch(client):
+    res = client.post("/api/descriptive/scatter", json={"x": [1, 2, 3], "y": [1, 2]})
+    assert res.status_code == 422

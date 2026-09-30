@@ -1,0 +1,7 @@
+{
+  "title": "Tabel nilai kritis t",
+  "description": "Tampilkan tabel nilai kritis distribusi t.",
+  "input": {
+    "kind": "t"
+  }
+}

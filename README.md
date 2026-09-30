@@ -14,7 +14,7 @@ hasil, dan bisa diekspor.
 | Fase | Cakupan | Status |
 |---|---|---|
 | 0 | Setup monorepo, layout, pola solver, CI, deploy | ✅ |
-| 1 | Statistika (Modul A) | ⏳ |
+| 1 | Statistika (Modul A): data, deskriptif, distribusi, inferensial, ANOVA, regresi, non-parametrik, normalitas | ✅ |
 | 2–5 | Riset Operasi (Bab 3–22 + Appendix) | ⏳ |
 | 6–7 | Optimasi ML (Modul C) | ⏳ |
 | 8 | Riwayat, ekspor PDF, mode latihan | ⏳ |

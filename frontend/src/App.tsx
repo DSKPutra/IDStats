@@ -1,11 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { AppShell } from '@/components/layout/AppShell'
+import { DatasetProvider } from '@/context/DatasetContext'
 import { Dashboard } from '@/pages/Dashboard'
 import { MethodRoute } from '@/pages/MethodRoute'
 import { NotFound } from '@/pages/NotFound'
 
 export default function App() {
   return (
+    <DatasetProvider>
     <BrowserRouter>
       <Routes>
         <Route element={<AppShell />}>
@@ -15,5 +17,6 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </DatasetProvider>
   )
 }

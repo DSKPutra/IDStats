@@ -1,0 +1,28 @@
+{
+  "title": "Pelatihan karyawan",
+  "description": "Produktivitas 8 karyawan diukur sebelum dan sesudah pelatihan. Apakah pelatihan meningkatkan produktivitas? (x = sesudah, y = sebelum)",
+  "input": {
+    "x": [
+      53,
+      58,
+      49,
+      62,
+      55,
+      60,
+      57,
+      51
+    ],
+    "y": [
+      50,
+      54,
+      48,
+      58,
+      52,
+      55,
+      56,
+      49
+    ],
+    "alternative": "greater",
+    "alpha": 0.05
+  }
+}

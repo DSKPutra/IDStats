@@ -17,11 +17,23 @@ export interface SolverChart {
   spec: { data: unknown[]; layout?: Record<string, unknown> }
 }
 
+export interface SummaryItem {
+  label: string
+  value: unknown
+}
+
+export interface NamedTable extends SolverTable {
+  title: string
+}
+
 export interface SolverResponse<R = Record<string, unknown>> {
   result: R
   steps: SolverStep[]
   charts: SolverChart[]
   warnings: string[]
+  summary: SummaryItem[]
+  tables: NamedTable[]
+  conclusion?: string | null
 }
 
 export interface Example<I = Record<string, unknown>> {
@@ -36,10 +48,11 @@ const API_BASE = (import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '')
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   let res: Response
+  const isForm = init?.body instanceof FormData
   try {
     res = await fetch(`${API_BASE}/api${path}`, {
       ...init,
-      headers: { 'Content-Type': 'application/json', ...init?.headers },
+      headers: isForm ? init?.headers : { 'Content-Type': 'application/json', ...init?.headers },
     })
   } catch {
     throw new ApiError('Tidak dapat terhubung ke server. Periksa koneksi internet Anda.')
@@ -63,4 +76,14 @@ export function solve<R = Record<string, unknown>>(path: string, body: unknown) 
 
 export function getExample<I = Record<string, unknown>>(module: string, method: string) {
   return request<Example<I>>(`/examples/${module}/${method}`)
+}
+
+export function getJson<T>(path: string) {
+  return request<T>(path)
+}
+
+export function uploadFile<R = Record<string, unknown>>(path: string, file: File) {
+  const body = new FormData()
+  body.append('file', file)
+  return request<SolverResponse<R>>(path, { method: 'POST', body })
 }

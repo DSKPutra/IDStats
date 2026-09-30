@@ -1,0 +1,28 @@
+{
+  "title": "Jenis kelamin vs pilihan produk",
+  "description": "Apakah pilihan produk bergantung pada jenis kelamin konsumen?",
+  "input": {
+    "table": [
+      [
+        20,
+        15,
+        25
+      ],
+      [
+        30,
+        25,
+        10
+      ]
+    ],
+    "row_labels": [
+      "Pria",
+      "Wanita"
+    ],
+    "col_labels": [
+      "Produk A",
+      "Produk B",
+      "Produk C"
+    ],
+    "alpha": 0.05
+  }
+}

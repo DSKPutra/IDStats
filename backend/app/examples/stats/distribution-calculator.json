@@ -1,0 +1,13 @@
+{
+  "title": "Waktu perakitan",
+  "description": "Waktu perakitan sebuah produk berdistribusi normal dengan μ = 30 menit dan σ = 4 menit. Berapa peluang perakitan selesai lebih dari 36 menit?",
+  "input": {
+    "dist": "normal",
+    "mode": "sf",
+    "params": {
+      "mu": 30,
+      "sigma": 4
+    },
+    "x": 36
+  }
+}

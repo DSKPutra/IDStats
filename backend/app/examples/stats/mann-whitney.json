@@ -1,0 +1,32 @@
+{
+  "title": "Kepuasan dua cabang",
+  "description": "Skor kepuasan (1–10) pelanggan dua cabang toko. Apakah cabang A lebih tinggi?",
+  "input": {
+    "x": [
+      8,
+      9,
+      7,
+      8,
+      10,
+      6,
+      9,
+      8,
+      7,
+      9
+    ],
+    "y": [
+      6,
+      7,
+      5,
+      8,
+      6,
+      7,
+      5,
+      6,
+      7,
+      4
+    ],
+    "alternative": "greater",
+    "alpha": 0.05
+  }
+}
