@@ -11,3 +11,8 @@ CORS_ORIGINS = [
     for o in os.environ.get("IDSTATS_CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
     if o.strip()
 ]
+
+# Frontend yang di-host terpisah (Lovable) memanggil API ini lintas origin.
+CORS_ORIGIN_REGEX = os.environ.get(
+    "IDSTATS_CORS_ORIGIN_REGEX", r"https://([a-z0-9-]+\.)*(lovable\.app|lovableproject\.com|lovable\.dev)"
+)

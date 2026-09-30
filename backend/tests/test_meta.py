@@ -16,3 +16,10 @@ def test_example_found_and_missing(client):
     assert len(ok.json()["input"]["data"]) == 20
     assert client.get("/api/examples/stats/tidak-ada").status_code == 404
     assert client.get("/api/examples/..%2F..%2Fetc/passwd").status_code == 404
+
+
+def test_cors_allows_lovable_but_not_arbitrary_origins(client):
+    ok = client.get("/api/health", headers={"Origin": "https://idstats.lovable.app"})
+    assert ok.headers.get("access-control-allow-origin") == "https://idstats.lovable.app"
+    bad = client.get("/api/health", headers={"Origin": "https://evil.example.com"})
+    assert "access-control-allow-origin" not in bad.headers
