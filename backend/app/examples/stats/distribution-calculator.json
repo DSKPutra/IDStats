@@ -9,5 +9,6 @@
       "sigma": 4
     },
     "x": 36
-  }
+  },
+  "endpoint": "/distributions/compute"
 }

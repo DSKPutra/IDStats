@@ -7,5 +7,6 @@
     "p0": 0.05,
     "alternative": "greater",
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/inferential/proportion-test"
 }

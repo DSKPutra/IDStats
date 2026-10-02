@@ -1,0 +1,8 @@
+{
+  "title": "Wyndor Glass Co. (Bab 3.1)",
+  "description": "Pabrik kaca Wyndor memproduksi pintu kaca (x1, batch/minggu) dan jendela (x2). Keuntungan per batch Rp3 dan Rp5 (ribu). Kapasitas pabrik 1, 2, 3 = 4, 12, 18 jam. Tentukan bauran produksi optimal.",
+  "endpoint": "/lp/graphical",
+  "input": {
+    "model": "max Z = 3x1 + 5x2\nx1 <= 4\n2x2 <= 12\n3x1 + 2x2 <= 18"
+  }
+}

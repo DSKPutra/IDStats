@@ -1,0 +1,8 @@
+{
+  "title": "Wyndor Glass Co. (Bab 5.4)",
+  "description": "Selesaikan Wyndor dengan simpleks direvisi dan tunjukkan wawasan fundamental.",
+  "endpoint": "/lp/revised-simplex",
+  "input": {
+    "model": "max Z = 3x1 + 5x2\nx1 <= 4\n2x2 <= 12\n3x1 + 2x2 <= 18"
+  }
+}

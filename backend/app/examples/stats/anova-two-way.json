@@ -61,5 +61,6 @@
       }
     ],
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/anova/two-way"
 }

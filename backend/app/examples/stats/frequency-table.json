@@ -34,5 +34,6 @@
       3.0,
       4.5
     ]
-  }
+  },
+  "endpoint": "/descriptive/frequency-table"
 }

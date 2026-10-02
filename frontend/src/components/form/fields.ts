@@ -23,6 +23,7 @@ export type FieldType =
   | 'groups' // [{name, data}]
   | 'variables' // {name: number[]}
   | 'cells' // baris "A | B | nilai…" → [{a, b, data}]
+  | 'textarea' // teks bebas multi-baris (mis. model LP) → string
 
 export interface Option {
   value: string
@@ -152,6 +153,8 @@ export function parseField(field: FieldDef, raw: RawValue): Parsed {
       }
       return { value: cells }
     }
+    case 'textarea':
+      return { value: raw.replace(/\r/g, '') }
     default:
       return { value: text }
   }

@@ -1,18 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import (
-    anova,
-    data,
-    descriptive,
-    distributions,
-    examples,
-    inferential,
-    meta,
-    nonparametric,
-    normality,
-    regression,
-)
+from app.api import routes
 from app.core.config import CORS_ORIGIN_REGEX, CORS_ORIGINS
 from app.core.errors import register_error_handlers
 
@@ -34,16 +23,5 @@ app.add_middleware(
 )
 register_error_handlers(app)
 
-for module in (
-    meta,
-    examples,
-    data,
-    descriptive,
-    distributions,
-    inferential,
-    anova,
-    regression,
-    nonparametric,
-    normality,
-):
-    app.include_router(module.router, prefix="/api")
+for router in routes.ROUTERS:
+    app.include_router(router, prefix="/api")

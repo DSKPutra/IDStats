@@ -27,5 +27,6 @@
     "equal_var": true,
     "alternative": "two-sided",
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/inferential/t-test/independent"
 }

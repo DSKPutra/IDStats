@@ -16,5 +16,6 @@
       12.2,
       12.4
     ]
-  }
+  },
+  "endpoint": "/inferential/confidence-interval"
 }

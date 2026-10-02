@@ -1,0 +1,8 @@
+{
+  "title": "Wyndor dengan batas atas (Bab 7.3)",
+  "description": "Kendala x1 ≤ 4 dan 2x2 ≤ 12 (x2 ≤ 6) ditangani sebagai batas atas variabel.",
+  "endpoint": "/lp/upper-bound",
+  "input": {
+    "model": "max Z = 3x1 + 5x2\nx1 <= 4\nx2 <= 6\n3x1 + 2x2 <= 18"
+  }
+}

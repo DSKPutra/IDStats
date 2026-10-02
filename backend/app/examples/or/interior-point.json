@@ -1,0 +1,13 @@
+{
+  "title": "Contoh affine scaling (Bab 7.4)",
+  "description": "Maks Z = x1 + 2x2 dengan x1 + x2 ≤ 8, titik awal (2, 2).",
+  "endpoint": "/lp/interior-point",
+  "input": {
+    "model": "max Z = x1 + 2x2\nx1 + x2 <= 8",
+    "start": [
+      2,
+      2
+    ],
+    "alpha": 0.5
+  }
+}

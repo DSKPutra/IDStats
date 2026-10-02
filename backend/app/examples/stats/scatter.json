@@ -32,5 +32,6 @@
       60,
       73
     ]
-  }
+  },
+  "endpoint": "/descriptive/scatter"
 }

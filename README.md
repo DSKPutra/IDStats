@@ -15,7 +15,8 @@ hasil, dan bisa diekspor.
 |---|---|---|
 | 0 | Setup monorepo, layout, pola solver, CI, deploy | ✅ |
 | 1 | Statistika (Modul A): data, deskriptif, distribusi, inferensial, ANOVA, regresi, non-parametrik, normalitas | ✅ |
-| 2–5 | Riset Operasi (Bab 3–22 + Appendix) | ⏳ |
+| 2 | LP: Bab 1–7 (grafik, simpleks, Big-M, Dua Fase, revised, dualitas, sensitivitas, dual simpleks, parametrik, batas atas, titik interior, goal programming) | ✅ |
+| 3–5 | Riset Operasi Bab 8–22 + Appendix | ⏳ |
 | 6–7 | Optimasi ML (Modul C) | ⏳ |
 | 8 | Riwayat, ekspor PDF, mode latihan | ⏳ |
 

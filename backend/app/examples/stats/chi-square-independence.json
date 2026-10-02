@@ -24,5 +24,6 @@
       "Produk C"
     ],
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/inferential/chi-square/independence"
 }

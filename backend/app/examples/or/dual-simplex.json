@@ -1,0 +1,8 @@
+{
+  "title": "Dual dari Wyndor (Bab 7.1)",
+  "description": "Minimasi dengan kendala ≥: tabel awal super-optimal tetapi tidak layak, cocok untuk dual simpleks.",
+  "endpoint": "/lp/dual-simplex",
+  "input": {
+    "model": "min W = 4y1 + 12y2 + 18y3\ny1 + 3y3 >= 3\n2y2 + 2y3 >= 5"
+  }
+}

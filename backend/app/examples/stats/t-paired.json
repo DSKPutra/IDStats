@@ -24,5 +24,6 @@
     ],
     "alternative": "greater",
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/inferential/t-test/paired"
 }

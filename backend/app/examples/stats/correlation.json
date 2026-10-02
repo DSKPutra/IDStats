@@ -34,5 +34,6 @@
         73
       ]
     }
-  }
+  },
+  "endpoint": "/regression/correlation"
 }

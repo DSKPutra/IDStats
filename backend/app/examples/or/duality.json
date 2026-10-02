@@ -1,0 +1,13 @@
+{
+  "title": "Wyndor Glass Co. (Bab 6)",
+  "description": "Tentukan model dual, harga bayangan, rentang optimalitas, dan rentang kelayakan. What-if: kapasitas pabrik 2 naik dari 12 menjadi 13 jam.",
+  "endpoint": "/lp/sensitivity",
+  "input": {
+    "model": "max Z = 3x1 + 5x2\nx1 <= 4\n2x2 <= 12\n3x1 + 2x2 <= 18",
+    "what_if_rhs": [
+      4,
+      13,
+      18
+    ]
+  }
+}

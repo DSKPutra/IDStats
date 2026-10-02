@@ -35,5 +35,6 @@
       }
     ],
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/anova/one-way"
 }

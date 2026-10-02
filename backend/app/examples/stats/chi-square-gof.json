@@ -17,5 +17,6 @@
       57
     ],
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/inferential/chi-square/goodness-of-fit"
 }

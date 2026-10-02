@@ -1,0 +1,10 @@
+{
+  "title": "Dewright Company (Bab 7.5)",
+  "description": "Tiga produk baru dengan tujuan: laba jangka panjang ≥ 125, tenaga kerja = 40, modal ≤ 55. Penalti: 5 per unit laba kurang, 2/4 per unit tenaga kerja lebih/kurang, 3 per unit modal lebih.",
+  "endpoint": "/lp/goal-programming",
+  "input": {
+    "goals": "P1, w=5: 12x1 + 9x2 + 15x3 >= 125\nP1, w-=4, w+=2: 5x1 + 3x2 + 4x3 = 40\nP1, w=3: 5x1 + 7x2 + 8x3 <= 55",
+    "constraints": "",
+    "mode": "weighted"
+  }
+}

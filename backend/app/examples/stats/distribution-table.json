@@ -3,5 +3,6 @@
   "description": "Tampilkan tabel nilai kritis distribusi t.",
   "input": {
     "kind": "t"
-  }
+  },
+  "endpoint": "/distributions/table"
 }

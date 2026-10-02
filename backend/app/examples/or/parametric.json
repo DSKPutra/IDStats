@@ -1,0 +1,14 @@
+{
+  "title": "Wyndor parametrik (Bab 7.2)",
+  "description": "Keuntungan pintu naik 2θ dan keuntungan jendela turun θ: c1 = 3 + 2θ, c2 = 5 − θ, untuk 0 ≤ θ ≤ 10.",
+  "endpoint": "/lp/parametric",
+  "input": {
+    "model": "max Z = 3x1 + 5x2\nx1 <= 4\n2x2 <= 12\n3x1 + 2x2 <= 18",
+    "kind": "objective",
+    "direction": [
+      2,
+      -1
+    ],
+    "theta_max": 10
+  }
+}

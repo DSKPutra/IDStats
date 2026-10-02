@@ -17,5 +17,6 @@
     "mu0": 12,
     "alternative": "two-sided",
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/inferential/t-test/one-sample"
 }

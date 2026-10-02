@@ -8,5 +8,6 @@
     "sigma": 80,
     "alternative": "less",
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/inferential/z-test"
 }

@@ -12,6 +12,18 @@ export function FieldInput({ field, value, onChange }: { field: FieldDef; value:
   const text = typeof value === 'string' ? value : ''
   let control
   switch (field.type) {
+    case 'textarea':
+      control = (
+        <Textarea
+          id={id}
+          className="min-h-40 leading-relaxed"
+          spellCheck={false}
+          value={text}
+          placeholder={field.placeholder}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      )
+      break
     case 'numbers':
     case 'matrix':
     case 'cells': {
@@ -76,7 +88,7 @@ export function FieldInput({ field, value, onChange }: { field: FieldDef; value:
         />
       )
   }
-  const wide = ['numbers', 'matrix', 'cells', 'groups', 'variables'].includes(field.type)
+  const wide = ['numbers', 'matrix', 'cells', 'groups', 'variables', 'textarea'].includes(field.type)
   return (
     <div className={wide ? 'flex flex-col gap-1.5 sm:col-span-2' : 'flex flex-col gap-1.5'}>
       {field.type !== 'boolean' && (

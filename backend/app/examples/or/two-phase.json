@@ -1,0 +1,9 @@
+{
+  "title": "Terapi radiasi Mary (Bab 4.6)",
+  "description": "Masalah yang sama diselesaikan dengan metode Dua Fase.",
+  "endpoint": "/lp/simplex",
+  "input": {
+    "model": "min Z = 0.4x1 + 0.5x2\n0.3x1 + 0.1x2 <= 2.7\n0.5x1 + 0.5x2 = 6\n0.6x1 + 0.4x2 >= 6",
+    "method": "twophase"
+  }
+}

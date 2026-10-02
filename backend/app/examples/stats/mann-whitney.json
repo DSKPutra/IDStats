@@ -28,5 +28,6 @@
     ],
     "alternative": "greater",
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/nonparametric/mann-whitney"
 }

@@ -63,32 +63,38 @@
         {
           "id": "or-intro",
           "title": "Pengantar & Pemodelan OR (Bab 1–2)",
-          "phase": 2
+          "phase": 2,
+          "available": true
         },
         {
           "id": "lp-graphical",
           "title": "Metode Grafik LP (Graphical Method, Bab 3)",
-          "phase": 2
+          "phase": 2,
+          "available": true
         },
         {
           "id": "simplex",
           "title": "Metode Simpleks (Simplex Method, Bab 4)",
-          "phase": 2
+          "phase": 2,
+          "available": true
         },
         {
           "id": "revised-simplex",
           "title": "Simpleks Direvisi (Revised Simplex, Bab 5)",
-          "phase": 2
+          "phase": 2,
+          "available": true
         },
         {
           "id": "duality",
           "title": "Dualitas & Analisis Sensitivitas (Bab 6)",
-          "phase": 2
+          "phase": 2,
+          "available": true
         },
         {
           "id": "lp-other",
           "title": "Algoritma LP Lain (Dual Simplex, Goal Programming, Bab 7)",
-          "phase": 2
+          "phase": 2,
+          "available": true
         },
         {
           "id": "transportation",

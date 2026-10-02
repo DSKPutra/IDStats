@@ -1,0 +1,9 @@
+{
+  "title": "Wyndor Glass Co. (Bab 4.3)",
+  "description": "Selesaikan masalah Wyndor dengan metode simpleks bentuk tabel.",
+  "endpoint": "/lp/simplex",
+  "input": {
+    "model": "max Z = 3x1 + 5x2\nx1 <= 4\n2x2 <= 12\n3x1 + 2x2 <= 18",
+    "method": "auto"
+  }
+}

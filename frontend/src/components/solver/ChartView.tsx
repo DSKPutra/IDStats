@@ -56,14 +56,14 @@ function Chart({ chart }: { chart: SolverChart }) {
           <Download /> PNG
         </Button>
       </div>
-      <div ref={ref} className="h-80 w-full" role="img" aria-label={chart.title} />
+      <div ref={ref} className="w-full" style={{ height: Number(chart.spec.layout?.height) || 320 }} role="img" aria-label={chart.title} />
     </div>
   )
 }
 
 export function ChartView({ charts }: { charts: SolverChart[] }) {
   return (
-    <div className="grid gap-4 xl:grid-cols-2">
+    <div className={charts.length > 1 ? 'grid gap-4 xl:grid-cols-2' : 'grid gap-4'}>
       {charts.map((c) => (
         <Chart key={c.id} chart={c} />
       ))}

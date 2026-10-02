@@ -21,6 +21,12 @@ const pages: Record<string, ComponentType> = {
   'stats/regression': variantPage(() => import('./stats/configs/regression').then((m) => m.regressionConfig)),
   'stats/nonparametric': variantPage(() => import('./stats/configs/nonparametric').then((m) => m.nonparametricConfig)),
   'stats/normality': variantPage(() => import('./stats/configs/normality').then((m) => m.normalityConfig)),
+  'or/or-intro': lazy(() => import('./or/OrIntro').then((m) => ({ default: m.OrIntroPage }))),
+  'or/lp-graphical': variantPage(() => import('./or/configs/lp').then((m) => m.lpGraphicalConfig)),
+  'or/simplex': variantPage(() => import('./or/configs/lp').then((m) => m.simplexConfig)),
+  'or/revised-simplex': variantPage(() => import('./or/configs/lp').then((m) => m.revisedSimplexConfig)),
+  'or/duality': variantPage(() => import('./or/configs/lp').then((m) => m.dualityConfig)),
+  'or/lp-other': variantPage(() => import('./or/configs/lp').then((m) => m.lpOtherConfig)),
 }
 
 export function MethodRoute() {

@@ -25,5 +25,6 @@
     ],
     "alternative": "two-sided",
     "alpha": 0.05
-  }
+  },
+  "endpoint": "/inferential/f-test"
 }
