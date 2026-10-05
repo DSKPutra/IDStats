@@ -1,17 +1,23 @@
 import { Input, Textarea } from '@/components/ui/textarea'
 import { parseNumbers } from '@/lib/utils'
 import { ColumnPicker } from './ColumnPicker'
-import { ALTERNATIVE_OPTIONS, type FieldDef, type GroupRaw, type RawValue } from './fields'
+import { ALTERNATIVE_OPTIONS, type FieldDef, type GroupRaw, type RawValue, type RawValues } from './fields'
+import { GraphEditor } from './GraphEditor'
 import { GroupsInput } from './GroupsInput'
 
 const selectClass =
   'h-9 w-full rounded-md border bg-card px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50'
 
-export function FieldInput({ field, value, onChange }: { field: FieldDef; value: RawValue; onChange: (v: RawValue) => void }) {
+export function FieldInput({ field, value, onChange, raw = {} }: { field: FieldDef; value: RawValue; onChange: (v: RawValue) => void; raw?: RawValues }) {
   const id = `f-${field.key.replace(/\W/g, '-')}`
   const text = typeof value === 'string' ? value : ''
   let control
   switch (field.type) {
+    case 'graph': {
+      const directed = typeof field.graphDirected === 'function' ? field.graphDirected(raw) : Boolean(field.graphDirected)
+      control = <GraphEditor id={id} value={text} onChange={onChange} valueCount={field.graphValues ?? 1} directed={directed} placeholder={field.placeholder} />
+      break
+    }
     case 'textarea':
       control = (
         <Textarea
@@ -88,7 +94,7 @@ export function FieldInput({ field, value, onChange }: { field: FieldDef; value:
         />
       )
   }
-  const wide = ['numbers', 'matrix', 'cells', 'groups', 'variables', 'textarea'].includes(field.type)
+  const wide = ['numbers', 'matrix', 'cells', 'groups', 'variables', 'textarea', 'graph'].includes(field.type)
   return (
     <div className={wide ? 'flex flex-col gap-1.5 sm:col-span-2' : 'flex flex-col gap-1.5'}>
       {field.type !== 'boolean' && (

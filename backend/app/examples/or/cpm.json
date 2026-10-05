@@ -1,0 +1,8 @@
+{
+  "title": "Reliable Construction Co. (Bab 10.1–10.3)",
+  "description": "Proyek pembangunan pabrik dengan 14 aktivitas (durasi dalam minggu). Tentukan jadwal, slack, dan jalur kritis.",
+  "endpoint": "/project/cpm",
+  "input": {
+    "activities": "A | - | 2 | Galian\nB | A | 4 | Fondasi\nC | B | 10 | Dinding kasar\nD | C | 6 | Atap\nE | C | 4 | Pipa luar\nF | E | 5 | Pipa dalam\nG | D | 7 | Dinding luar\nH | E, G | 9 | Cat luar\nI | C | 7 | Instalasi listrik\nJ | F, I | 8 | Wallboard\nK | J | 4 | Lantai\nL | J | 5 | Cat dalam\nM | H | 2 | Fixture luar\nN | K, L | 6 | Fixture dalam"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Reliable Construction Co. (Bab 10.4)",
+  "description": "Tiga estimasi waktu (o m p) per aktivitas. Berapa peluang proyek selesai dalam 47 minggu?",
+  "endpoint": "/project/pert",
+  "input": {
+    "activities": "A | - | 1 2 3\nB | A | 2 3.5 8\nC | B | 6 9 18\nD | C | 4 5.5 10\nE | C | 1 4.5 5\nF | E | 4 4 10\nG | D | 5 6.5 11\nH | E, G | 5 8 17\nI | C | 3 7.5 9\nJ | F, I | 3 9 9\nK | J | 4 4 4\nL | J | 1 5.5 7\nM | H | 1 2 3\nN | K, L | 5 5.5 9",
+    "deadline": 47
+  }
+}

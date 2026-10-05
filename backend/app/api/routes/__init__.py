@@ -9,9 +9,12 @@ from app.api.routes import (
     inferential,
     lp,
     meta,
+    network,
     nonparametric,
     normality,
+    project,
     regression,
+    transport,
 )
 
 ROUTERS = [
@@ -28,5 +31,8 @@ ROUTERS = [
         nonparametric,
         normality,
         lp,
+        transport,
+        network,
+        project,
     )
 ]

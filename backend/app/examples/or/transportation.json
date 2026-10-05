@@ -1,0 +1,51 @@
+{
+  "title": "P & T Company (Bab 8.1)",
+  "description": "Kacang polong kalengan dikirim dari 3 pabrik pengalengan ke 4 gudang. Biaya per truk (dolar), penawaran dan permintaan dalam truk. Tentukan rencana pengiriman berbiaya minimum.",
+  "endpoint": "/transport/transportation",
+  "input": {
+    "costs": [
+      [
+        464,
+        513,
+        654,
+        867
+      ],
+      [
+        352,
+        416,
+        690,
+        791
+      ],
+      [
+        995,
+        682,
+        388,
+        685
+      ]
+    ],
+    "supply": [
+      75,
+      125,
+      100
+    ],
+    "demand": [
+      80,
+      65,
+      70,
+      85
+    ],
+    "sources": [
+      "Bellingham",
+      "Eugene",
+      "Albert Lea"
+    ],
+    "destinations": [
+      "Sacramento",
+      "Salt Lake City",
+      "Rapid City",
+      "Albuquerque"
+    ],
+    "method": "vam",
+    "optimize": true
+  }
+}

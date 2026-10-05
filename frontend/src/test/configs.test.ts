@@ -2,6 +2,9 @@ import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import * as lp from '@/pages/or/configs/lp'
+import { networkConfig } from '@/pages/or/configs/network'
+import { projectConfig } from '@/pages/or/configs/project'
+import { transportConfig } from '@/pages/or/configs/transport'
 import { anovaConfig } from '@/pages/stats/configs/anova'
 import { descriptiveConfig } from '@/pages/stats/configs/descriptive'
 import { distributionsConfig } from '@/pages/stats/configs/distributions'
@@ -13,7 +16,7 @@ import type { VariantPageConfig } from '@/pages/VariantPage'
 
 const configs: VariantPageConfig[] = [
   descriptiveConfig, distributionsConfig, inferentialConfig, anovaConfig, regressionConfig, nonparametricConfig, normalityConfig,
-  ...Object.values(lp),
+  ...Object.values(lp), transportConfig, networkConfig, projectConfig,
 ]
 const examplesRoot = resolve(import.meta.dirname, '../../../backend/app/examples')
 

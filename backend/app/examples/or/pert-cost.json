@@ -1,0 +1,9 @@
+{
+  "title": "Reliable Construction Co. (Bab 10.6)",
+  "description": "Laporan PERT/Cost pada minggu ke-22. Kolom: durasi, anggaran, % selesai, biaya aktual (ribu dolar).",
+  "endpoint": "/project/pert-cost",
+  "input": {
+    "activities": "A | - | 2 180 100 200\nB | A | 4 320 100 360\nC | B | 10 620 100 670\nD | C | 6 260 100 250\nE | C | 4 410 100 430\nF | E | 5 180 50 70\nG | D | 7 900 0 0\nH | E, G | 9 200 0 0\nI | C | 7 210 50 150\nJ | F, I | 8 430 0 0\nK | J | 4 160 0 0\nL | J | 5 250 0 0\nM | H | 2 100 0 0\nN | K, L | 6 330 0 0",
+    "current_time": 22
+  }
+}

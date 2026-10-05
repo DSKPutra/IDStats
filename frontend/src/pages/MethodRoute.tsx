@@ -27,6 +27,9 @@ const pages: Record<string, ComponentType> = {
   'or/revised-simplex': variantPage(() => import('./or/configs/lp').then((m) => m.revisedSimplexConfig)),
   'or/duality': variantPage(() => import('./or/configs/lp').then((m) => m.dualityConfig)),
   'or/lp-other': variantPage(() => import('./or/configs/lp').then((m) => m.lpOtherConfig)),
+  'or/transportation': variantPage(() => import('./or/configs/transport').then((m) => m.transportConfig)),
+  'or/network': variantPage(() => import('./or/configs/network').then((m) => m.networkConfig)),
+  'or/pert-cpm': variantPage(() => import('./or/configs/project').then((m) => m.projectConfig)),
 }
 
 export function MethodRoute() {

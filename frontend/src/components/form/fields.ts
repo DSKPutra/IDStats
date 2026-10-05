@@ -24,6 +24,7 @@ export type FieldType =
   | 'variables' // {name: number[]}
   | 'cells' // baris "A | B | nilai…" → [{a, b, data}]
   | 'textarea' // teks bebas multi-baris (mis. model LP) → string
+  | 'graph' // daftar busur “A B nilai…” + editor graf visual → string
 
 export interface Option {
   value: string
@@ -47,6 +48,10 @@ export interface FieldDef {
   showIf?: (raw: RawValues) => boolean
   /** Label default kelompok untuk tipe groups/variables. */
   itemLabel?: string
+  /** Untuk tipe graph: jumlah nilai per busur (1 = bobot/kapasitas, 2 = biaya & kapasitas). */
+  graphValues?: number
+  /** Untuk tipe graph: apakah busur berarah (boleh bergantung pada field lain). */
+  graphDirected?: boolean | ((raw: RawValues) => boolean)
   minItems?: number
 }
 
@@ -154,6 +159,7 @@ export function parseField(field: FieldDef, raw: RawValue): Parsed {
       return { value: cells }
     }
     case 'textarea':
+    case 'graph':
       return { value: raw.replace(/\r/g, '') }
     default:
       return { value: text }

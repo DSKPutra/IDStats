@@ -1,0 +1,10 @@
+{
+  "title": "Seervada Park (Bab 9.5)",
+  "description": "Jumlah maksimum trem per hari dari O ke T dengan batas kapasitas setiap jalan (searah).",
+  "endpoint": "/network/max-flow",
+  "input": {
+    "edges": "O A 5\nO B 7\nO C 4\nA B 1\nA D 3\nB C 2\nB D 4\nB E 5\nC E 4\nD T 9\nE D 1\nE T 6",
+    "source": "O",
+    "sink": "T"
+  }
+}

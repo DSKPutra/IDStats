@@ -99,17 +99,20 @@
         {
           "id": "transportation",
           "title": "Transportasi & Penugasan (Bab 8)",
-          "phase": 3
+          "phase": 3,
+          "available": true
         },
         {
           "id": "network",
           "title": "Optimasi Jaringan (Network Optimization, Bab 9)",
-          "phase": 3
+          "phase": 3,
+          "available": true
         },
         {
           "id": "pert-cpm",
           "title": "Manajemen Proyek PERT/CPM (Bab 10)",
-          "phase": 3
+          "phase": 3,
+          "available": true
         },
         {
           "id": "dynamic-programming",

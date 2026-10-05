@@ -1,0 +1,11 @@
+{
+  "title": "Seervada Park (Bab 9.3)",
+  "description": "Cari rute terpendek dari pintu masuk O ke pemandangan T (jarak dalam mil).",
+  "endpoint": "/network/shortest-path",
+  "input": {
+    "edges": "O A 2\nO B 5\nO C 4\nA B 2\nA D 7\nB C 1\nB D 4\nB E 3\nC E 4\nD E 1\nD T 5\nE T 7",
+    "source": "O",
+    "target": "T",
+    "directed": false
+  }
+}

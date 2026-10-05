@@ -1,0 +1,9 @@
+{
+  "title": "Reliable Construction Co. (Bab 10.5)",
+  "description": "Bonus diberikan bila proyek selesai dalam 40 minggu. Kolom: waktu normal, waktu crash, biaya normal, biaya crash (ribu dolar).",
+  "endpoint": "/project/crashing",
+  "input": {
+    "activities": "A | - | 2 1 180 280\nB | A | 4 2 320 420\nC | B | 10 7 620 860\nD | C | 6 4 260 340\nE | C | 4 3 410 570\nF | E | 5 3 180 260\nG | D | 7 4 900 1020\nH | E, G | 9 6 200 380\nI | C | 7 5 210 270\nJ | F, I | 8 6 430 490\nK | J | 4 3 160 200\nL | J | 5 3 250 350\nM | H | 2 1 100 200\nN | K, L | 6 3 330 510",
+    "deadline": 40
+  }
+}

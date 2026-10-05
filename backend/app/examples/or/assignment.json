@@ -1,0 +1,39 @@
+{
+  "title": "Job Shop Company (Bab 8.3)",
+  "description": "Tiga mesin baru dipasang di empat lokasi yang tersedia; biaya penanganan material per jam. Mesin dummy ditambahkan otomatis.",
+  "endpoint": "/transport/assignment",
+  "input": {
+    "costs": [
+      [
+        13,
+        16,
+        12,
+        11
+      ],
+      [
+        15,
+        99,
+        13,
+        20
+      ],
+      [
+        5,
+        7,
+        10,
+        6
+      ]
+    ],
+    "maximize": false,
+    "rows": [
+      "Mesin 1",
+      "Mesin 2",
+      "Mesin 3"
+    ],
+    "cols": [
+      "Lokasi 1",
+      "Lokasi 2",
+      "Lokasi 3",
+      "Lokasi 4"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Distribution Unlimited Co. (Bab 9.6)",
+  "description": "Dua pabrik (A: 50, B: 40 unit) mengirim ke dua gudang (D: 30, E: 60). Format busur: asal tujuan biaya kapasitas (inf = tak terbatas).",
+  "endpoint": "/network/min-cost-flow",
+  "input": {
+    "arcs": "A B 2 10\nA C 4 inf\nA D 9 inf\nB C 3 inf\nC E 1 80\nD E 3 inf\nE D 2 inf",
+    "supplies": "A 50\nB 40\nD -30\nE -60"
+  }
+}

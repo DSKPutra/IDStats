@@ -114,7 +114,7 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
         )}
         <div className="grid gap-4 sm:grid-cols-2">
           {fields.map((f) => (
-            <FieldInput key={f.key} field={f} value={raw[f.key]} onChange={(v) => setRaw({ ...raw, [f.key]: v })} />
+            <FieldInput key={f.key} field={f} value={raw[f.key]} raw={raw} onChange={(v) => setRaw({ ...raw, [f.key]: v })} />
           ))}
         </div>
         {errors.length > 0 && (
