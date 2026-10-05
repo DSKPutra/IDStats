@@ -1,0 +1,25 @@
+{
+  "title": "Penjualan kuartalan musiman (Bab 20.3)",
+  "description": "Panjang musim 4 kuartal.",
+  "endpoint": "/forecast/seasonal",
+  "input": {
+    "data": [
+      100,
+      130,
+      90,
+      120,
+      104,
+      135,
+      94,
+      126,
+      110,
+      140,
+      98,
+      130
+    ],
+    "season": 4,
+    "method": "smoothing",
+    "alpha": 0.3,
+    "horizon": 4
+  }
+}

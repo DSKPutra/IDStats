@@ -1,0 +1,23 @@
+{
+  "title": "Penjualan bulanan",
+  "description": "Exponential smoothing α = 0,5.",
+  "endpoint": "/forecast/exp-smoothing",
+  "input": {
+    "data": [
+      382,
+      409,
+      429,
+      439,
+      440,
+      416,
+      434,
+      422,
+      428,
+      435,
+      431,
+      447
+    ],
+    "alpha": 0.5,
+    "horizon": 3
+  }
+}

@@ -34,6 +34,14 @@ const pages: Record<string, ComponentType> = {
   'or/integer-programming': variantPage(() => import('./or/configs/advanced').then((m) => m.ipConfig)),
   'or/nonlinear-programming': variantPage(() => import('./or/configs/advanced').then((m) => m.nlpConfig)),
   'or/game-theory': variantPage(() => import('./or/configs/advanced').then((m) => m.gameConfig)),
+  'or/decision-analysis': variantPage(() => import('./or/configs/stochastic').then((m) => m.decisionConfig)),
+  'or/markov-chains': variantPage(() => import('./or/configs/stochastic').then((m) => m.markovConfig)),
+  'or/queueing': variantPage(() => import('./or/configs/stochastic').then((m) => m.queueConfig)),
+  'or/inventory': variantPage(() => import('./or/configs/stochastic').then((m) => m.inventoryConfig)),
+  'or/forecasting': variantPage(() => import('./or/configs/stochastic').then((m) => m.forecastConfig)),
+  'or/mdp': variantPage(() => import('./or/configs/stochastic').then((m) => m.mdpConfig)),
+  'or/simulation': variantPage(() => import('./or/configs/stochastic').then((m) => m.simulationConfig)),
+  'or/appendix': variantPage(() => import('./or/configs/stochastic').then((m) => m.appendixConfig)),
 }
 
 export function MethodRoute() {

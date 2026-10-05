@@ -1,0 +1,15 @@
+{
+  "title": "Acceptance-rejection",
+  "description": "Distribusi beta(2,2) dengan f(x) = 6x(1 − x) pada [0, 1].",
+  "endpoint": "/simulation/variates",
+  "input": {
+    "method": "rejection",
+    "dist": "",
+    "params": [],
+    "n": 2000,
+    "seed": 1,
+    "pdf": "6x*(1-x)",
+    "lower": 0,
+    "upper": 1
+  }
+}

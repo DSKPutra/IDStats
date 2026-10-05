@@ -1,0 +1,16 @@
+{
+  "title": "Uji konveksitas (Appendix 2)",
+  "description": "Periksa apakah f(x₁, x₂) = x₁² + x₁x₂ + x₂² konveks.",
+  "endpoint": "/appendix/convexity",
+  "input": {
+    "func": "x1^2 + x1*x2 + x2^2",
+    "lower": [
+      -5,
+      -5
+    ],
+    "upper": [
+      5,
+      5
+    ]
+  }
+}

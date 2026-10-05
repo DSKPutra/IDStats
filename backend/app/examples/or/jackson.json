@@ -1,0 +1,33 @@
+{
+  "title": "Jaringan Jackson (Bab 17.9)",
+  "description": "Dua stasiun seri: pelanggan masuk stasiun 1 (λ = 1); setengahnya lanjut ke stasiun 2.",
+  "endpoint": "/queue/jackson",
+  "input": {
+    "external": [
+      1,
+      0
+    ],
+    "routing": [
+      [
+        0,
+        0.5
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "servers": [
+      1,
+      1
+    ],
+    "mu": [
+      2,
+      3
+    ],
+    "names": [
+      "Stasiun 1",
+      "Stasiun 2"
+    ]
+  }
+}

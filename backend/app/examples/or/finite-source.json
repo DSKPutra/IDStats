@@ -1,0 +1,11 @@
+{
+  "title": "Perbaikan mesin (populasi terbatas)",
+  "description": "5 mesin, masing-masing rusak rata-rata 0,1 kali per jam; 1 teknisi memperbaiki 1 mesin per jam.",
+  "endpoint": "/queue/finite-source",
+  "input": {
+    "lam": 0.1,
+    "mu": 1,
+    "s": 1,
+    "population": 5
+  }
+}

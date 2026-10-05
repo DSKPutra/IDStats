@@ -1,0 +1,29 @@
+{
+  "title": "Goferbroke Company (Bab 15.2)",
+  "description": "Lahan mungkin mengandung minyak (peluang 0,25). Bor (laba 700 bila ada minyak, rugi 100 bila kering) atau jual lahan (90). Payoff dalam ribu dolar.",
+  "endpoint": "/decision/criteria",
+  "input": {
+    "payoff": [
+      [
+        700,
+        -100
+      ],
+      [
+        90,
+        90
+      ]
+    ],
+    "prior": [
+      0.25,
+      0.75
+    ],
+    "actions": [
+      "Bor",
+      "Jual"
+    ],
+    "states": [
+      "Ada minyak",
+      "Kering"
+    ]
+  }
+}

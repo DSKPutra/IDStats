@@ -1,0 +1,15 @@
+{
+  "title": "County Hospital dengan prioritas (Bab 17.8)",
+  "description": "Pasien kritis (λ₁ = 0,2), serius (λ₂ = 0,6), stabil (λ₃ = 1,2); μ = 3, satu dokter.",
+  "endpoint": "/queue/priority",
+  "input": {
+    "lam": [
+      0.2,
+      0.6,
+      1.2
+    ],
+    "mu": 3,
+    "s": 1,
+    "preemptive": false
+  }
+}

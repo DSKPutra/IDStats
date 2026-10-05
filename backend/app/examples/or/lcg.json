@@ -1,0 +1,12 @@
+{
+  "title": "Metode kongruensial campuran (Bab 22.3)",
+  "description": "xₙ₊₁ = (5xₙ + 3) mod 16 dengan x₀ = 4.",
+  "endpoint": "/simulation/lcg",
+  "input": {
+    "a": 5,
+    "c": 3,
+    "m": 16,
+    "seed": 4,
+    "n": 20
+  }
+}

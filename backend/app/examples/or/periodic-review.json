@@ -1,0 +1,14 @@
+{
+  "title": "Peninjauan periodik (s, S)",
+  "description": "Permintaan mingguan ~ Normal(50, 10), ditinjau tiap minggu, lead time 1 minggu.",
+  "endpoint": "/inventory/periodic",
+  "input": {
+    "demand_mean": 50,
+    "demand_sd": 10,
+    "review": 1,
+    "lead": 1,
+    "setup": 40,
+    "holding": 0.5,
+    "service": 0.95
+  }
+}

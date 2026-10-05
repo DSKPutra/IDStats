@@ -1,0 +1,12 @@
+{
+  "title": "Pengeras suara dengan backorder (Bab 19.3)",
+  "description": "Biaya kekurangan 1,10 per unit per bulan.",
+  "endpoint": "/inventory/eoq",
+  "input": {
+    "demand": 8000,
+    "setup": 12000,
+    "holding": 0.3,
+    "unit_cost": 10,
+    "shortage": 1.1
+  }
+}

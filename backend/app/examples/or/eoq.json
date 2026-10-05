@@ -1,0 +1,11 @@
+{
+  "title": "Pengeras suara televisi (Bab 19.3)",
+  "description": "Permintaan 8000/bulan, biaya setup 12000, biaya simpan 0,30 per unit per bulan, harga 10/unit.",
+  "endpoint": "/inventory/eoq",
+  "input": {
+    "demand": 8000,
+    "setup": 12000,
+    "holding": 0.3,
+    "unit_cost": 10
+  }
+}

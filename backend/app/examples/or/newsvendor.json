@@ -1,0 +1,16 @@
+{
+  "title": "Freddie si penjual koran (Bab 19.7)",
+  "description": "Beli 6, jual 10, sisa dijual 2. Permintaan ~ Normal(100, 20).",
+  "endpoint": "/inventory/newsvendor",
+  "input": {
+    "price": 10,
+    "cost": 6,
+    "salvage": 2,
+    "shortage_penalty": 0,
+    "dist": "normal",
+    "params": [
+      100,
+      20
+    ]
+  }
+}

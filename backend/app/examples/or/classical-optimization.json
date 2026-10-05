@@ -1,0 +1,11 @@
+{
+  "title": "Optimasi klasik dengan pengali Lagrange (Appendix 3)",
+  "description": "Maksimumkan x₁x₂ dengan kendala x₁ + x₂ = 10.",
+  "endpoint": "/appendix/classical",
+  "input": {
+    "func": "x1*x2",
+    "constraints": "x1 + x2 = 10",
+    "search_lo": -20,
+    "search_hi": 20
+  }
+}

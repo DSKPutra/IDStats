@@ -1,0 +1,12 @@
+{
+  "title": "Laba produk baru",
+  "description": "Permintaan ~ Normal(100, 15), harga ~ Uniform(8, 12), biaya tetap 600. Estimasi laba harapan dengan antithetic variates.",
+  "endpoint": "/simulation/monte-carlo",
+  "input": {
+    "variables": "D ~ normal(100, 15)\nP ~ uniform(8, 12)",
+    "output": "D*P - 600",
+    "n": 10000,
+    "seed": 1,
+    "antithetic": true
+  }
+}

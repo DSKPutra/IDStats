@@ -1,0 +1,8 @@
+{
+  "title": "Pohon keputusan Goferbroke (Bab 15.4)",
+  "description": "Format: [D] = simpul keputusan, [C] = simpul peluang, “= nilai” = hasil akhir. Indentasi menunjukkan cabang.",
+  "endpoint": "/decision/tree",
+  "input": {
+    "tree": "[D] Lakukan survei seismik?\n  Survei (biaya=30) -> [C] Hasil survei\n    Menguntungkan (p=0.3) -> [D] Keputusan\n      Bor -> [C] Ada minyak?\n        Ada minyak (p=0.5) = 700\n        Kering (p=0.5) = -100\n      Jual = 90\n    Tidak menguntungkan (p=0.7) -> [D] Keputusan\n      Bor -> [C] Ada minyak?\n        Ada minyak (p=0.142857) = 700\n        Kering (p=0.857143) = -100\n      Jual = 90\n  Tanpa survei -> [D] Keputusan\n    Bor -> [C] Ada minyak?\n      Ada minyak (p=0.25) = 700\n      Kering (p=0.75) = -100\n    Jual = 90"
+  }
+}

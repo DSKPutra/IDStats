@@ -27,7 +27,7 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
 # Rumus LaTeX & pesan panjang tidak bisa dipecah formatter; panjang baris ditangani `ruff format`.
-ignore = ["E501"]
+ignore = ["E501", "E731"]
 
 [tool.ruff.lint.flake8-bugbear]
 extend-immutable-calls = ["fastapi.File", "fastapi.Depends"]

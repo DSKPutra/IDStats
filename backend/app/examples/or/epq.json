@@ -1,0 +1,11 @@
+{
+  "title": "Produksi bertahap (EPQ)",
+  "description": "Permintaan 8000/bulan, laju produksi 20000/bulan.",
+  "endpoint": "/inventory/epq",
+  "input": {
+    "demand": 8000,
+    "production_rate": 20000,
+    "setup": 12000,
+    "holding": 0.3
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Model (R, Q) stokastik (Bab 19.5)",
+  "description": "Permintaan 1000/tahun, biaya pesan 50, biaya simpan 2; permintaan selama lead time ~ Normal(40, 10); tingkat layanan 95%.",
+  "endpoint": "/inventory/rq",
+  "input": {
+    "demand_rate": 1000,
+    "setup": 50,
+    "holding": 2,
+    "lead_mean": 40,
+    "lead_sd": 10,
+    "service": 0.95
+  }
+}

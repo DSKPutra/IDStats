@@ -1,0 +1,12 @@
+{
+  "title": "Model M/D/s dan M/Eₖ/s",
+  "description": "Waktu layanan konstan (M/D) atau Erlang-k.",
+  "endpoint": "/queue/mgs",
+  "input": {
+    "lam": 2,
+    "mu": 3,
+    "s": 1,
+    "model": "MD",
+    "k": 2
+  }
+}

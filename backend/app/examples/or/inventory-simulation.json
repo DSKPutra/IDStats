@@ -1,0 +1,28 @@
+{
+  "title": "Simulasi persediaan (s, S) (Bab 22.4)",
+  "description": "Permintaan per minggu 10/20/30/40 dengan peluang 0,1/0,3/0,4/0,2.",
+  "endpoint": "/simulation/inventory",
+  "input": {
+    "small_s": 20,
+    "big_s": 60,
+    "demand_values": [
+      10,
+      20,
+      30,
+      40
+    ],
+    "demand_probs": [
+      0.1,
+      0.3,
+      0.4,
+      0.2
+    ],
+    "periods": 200,
+    "replications": 20,
+    "order_cost": 32,
+    "unit_cost": 3,
+    "holding": 1,
+    "shortage": 5,
+    "seed": 1
+  }
+}

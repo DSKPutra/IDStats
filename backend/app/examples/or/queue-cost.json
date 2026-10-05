@@ -1,0 +1,11 @@
+{
+  "title": "Jumlah dokter optimal (Bab 18)",
+  "description": "Biaya dokter 20 per jam, biaya menunggu pasien 40 per jam.",
+  "endpoint": "/queue/cost",
+  "input": {
+    "lam": 2,
+    "mu": 3,
+    "server_cost": 20,
+    "wait_cost": 40
+  }
+}

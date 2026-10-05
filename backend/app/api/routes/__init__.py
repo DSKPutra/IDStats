@@ -15,25 +15,30 @@ from app.api.routes import (
     normality,
     project,
     regression,
+    stochastic,
     transport,
 )
 
-ROUTERS = [
-    m.router
-    for m in (
-        meta,
-        examples,
-        data,
-        descriptive,
-        distributions,
-        inferential,
-        anova,
-        regression,
-        nonparametric,
-        normality,
-        lp,
-        transport,
-        network,
-        project,
-    )
-] + advanced.routers
+ROUTERS = (
+    [
+        m.router
+        for m in (
+            meta,
+            examples,
+            data,
+            descriptive,
+            distributions,
+            inferential,
+            anova,
+            regression,
+            nonparametric,
+            normality,
+            lp,
+            transport,
+            network,
+            project,
+        )
+    ]
+    + advanced.routers
+    + stochastic.routers
+)

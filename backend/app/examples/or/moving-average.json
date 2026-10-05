@@ -1,0 +1,23 @@
+{
+  "title": "Penjualan bulanan",
+  "description": "Rata-rata bergerak 3 bulan.",
+  "endpoint": "/forecast/moving-average",
+  "input": {
+    "data": [
+      382,
+      409,
+      429,
+      439,
+      440,
+      416,
+      434,
+      422,
+      428,
+      435,
+      431,
+      447
+    ],
+    "n": 3,
+    "horizon": 3
+  }
+}

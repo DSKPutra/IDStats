@@ -1,0 +1,14 @@
+{
+  "title": "Inverse transform",
+  "description": "Bangkitkan waktu layanan eksponensial λ = 2.",
+  "endpoint": "/simulation/variates",
+  "input": {
+    "method": "inverse",
+    "dist": "exponential",
+    "params": [
+      2
+    ],
+    "n": 2000,
+    "seed": 1
+  }
+}

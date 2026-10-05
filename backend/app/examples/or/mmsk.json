@@ -1,0 +1,11 @@
+{
+  "title": "Antrian kapasitas terbatas",
+  "description": "Ruang tunggu hanya muat 2 pelanggan (K = 3 termasuk yang dilayani).",
+  "endpoint": "/queue/mmsk",
+  "input": {
+    "lam": 2,
+    "mu": 3,
+    "s": 1,
+    "k": 3
+  }
+}

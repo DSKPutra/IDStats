@@ -1,0 +1,29 @@
+{
+  "title": "Dua mesin (Bab 16.8)",
+  "description": "State = jumlah mesin rusak (0, 1, 2). Laju rusak 1 per mesin per hari, laju perbaikan 2 per hari (satu teknisi).",
+  "endpoint": "/markov/ctmc",
+  "input": {
+    "rates": [
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "names": [
+      "0",
+      "1",
+      "2"
+    ]
+  }
+}

@@ -141,42 +141,50 @@
         {
           "id": "decision-analysis",
           "title": "Analisis Keputusan (Decision Analysis, Bab 15)",
-          "phase": 5
+          "phase": 5,
+          "available": true
         },
         {
           "id": "markov-chains",
           "title": "Rantai Markov (Markov Chains, Bab 16)",
-          "phase": 5
+          "phase": 5,
+          "available": true
         },
         {
           "id": "queueing",
           "title": "Teori Antrian (Queueing Theory, Bab 17–18)",
-          "phase": 5
+          "phase": 5,
+          "available": true
         },
         {
           "id": "inventory",
           "title": "Teori Persediaan (Inventory Theory, Bab 19)",
-          "phase": 5
+          "phase": 5,
+          "available": true
         },
         {
           "id": "forecasting",
           "title": "Peramalan (Forecasting, Bab 20)",
-          "phase": 5
+          "phase": 5,
+          "available": true
         },
         {
           "id": "mdp",
           "title": "Proses Keputusan Markov (MDP, Bab 21)",
-          "phase": 5
+          "phase": 5,
+          "available": true
         },
         {
           "id": "simulation",
           "title": "Simulasi (Simulation, Bab 22)",
-          "phase": 5
+          "phase": 5,
+          "available": true
         },
         {
           "id": "appendix",
           "title": "Konveksitas, Optimasi Klasik & Matriks (Appendix)",
-          "phase": 5
+          "phase": 5,
+          "available": true
         }
       ]
     },

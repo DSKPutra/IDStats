@@ -1,0 +1,13 @@
+{
+  "title": "Simulasi antrian M/M/1",
+  "description": "λ = 2, μ = 3; bandingkan hasil simulasi dengan teori.",
+  "endpoint": "/simulation/queue",
+  "input": {
+    "lam": 2,
+    "mu": 3,
+    "s": 1,
+    "customers": 2000,
+    "replications": 20,
+    "seed": 1
+  }
+}

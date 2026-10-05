@@ -1,0 +1,11 @@
+{
+  "title": "Perawatan mesin terdiskon (Bab 21.5)",
+  "description": "Faktor diskon α = 0,9.",
+  "endpoint": "/mdp/value-iteration",
+  "input": {
+    "mdp": "0 | 1 | 0 | 0 7/8 1/16 1/16\n1 | 1 | 1000 | 0 3/4 1/8 1/8\n1 | 3 | 6000 | 1 0 0 0\n2 | 1 | 3000 | 0 0 1/2 1/2\n2 | 2 | 4000 | 0 1 0 0\n2 | 3 | 6000 | 1 0 0 0\n3 | 3 | 6000 | 1 0 0 0",
+    "discount": 0.9,
+    "iterations": 500,
+    "tol": 1e-06
+  }
+}

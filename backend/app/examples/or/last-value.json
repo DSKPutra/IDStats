@@ -1,0 +1,22 @@
+{
+  "title": "Penjualan bulanan",
+  "description": "Ramalan dengan metode last value.",
+  "endpoint": "/forecast/last-value",
+  "input": {
+    "data": [
+      382,
+      409,
+      429,
+      439,
+      440,
+      416,
+      434,
+      422,
+      428,
+      435,
+      431,
+      447
+    ],
+    "horizon": 1
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Persediaan kamera (Bab 16.1–16.8)",
+  "description": "State = jumlah kamera di akhir minggu (0–3). Hitung P⁽ⁿ⁾, steady-state, dan waktu first passage.",
+  "endpoint": "/markov/analyze",
+  "input": {
+    "matrix": [
+      [
+        0.08,
+        0.184,
+        0.368,
+        0.368
+      ],
+      [
+        0.632,
+        0.368,
+        0,
+        0
+      ],
+      [
+        0.264,
+        0.368,
+        0.368,
+        0
+      ],
+      [
+        0.08,
+        0.184,
+        0.368,
+        0.368
+      ]
+    ],
+    "names": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "steps": 8,
+    "initial": [
+      0,
+      0,
+      0,
+      1
+    ]
+  }
+}

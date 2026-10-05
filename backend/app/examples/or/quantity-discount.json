@@ -1,0 +1,24 @@
+{
+  "title": "Diskon kuantitas",
+  "description": "Permintaan 1000/tahun, biaya pesan 100, biaya simpan 20% dari harga per tahun.",
+  "endpoint": "/inventory/discount",
+  "input": {
+    "demand": 1000,
+    "setup": 100,
+    "holding_rate": 0.2,
+    "breaks": [
+      [
+        0,
+        10
+      ],
+      [
+        100,
+        9.5
+      ],
+      [
+        500,
+        9
+      ]
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "title": "Gambler’s ruin (Bab 16.7)",
+  "description": "Pemain dengan modal 0–4 keping; peluang menang tiap taruhan 0,3. State 0 dan 4 menyerap.",
+  "endpoint": "/markov/analyze",
+  "input": {
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0.7,
+        0,
+        0.3,
+        0,
+        0
+      ],
+      [
+        0,
+        0.7,
+        0,
+        0.3,
+        0
+      ],
+      [
+        0,
+        0,
+        0.7,
+        0,
+        0.3
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "names": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "steps": 5
+  }
+}

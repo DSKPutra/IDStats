@@ -1,0 +1,10 @@
+{
+  "title": "County Hospital (Bab 17.6, 18)",
+  "description": "Pasien darurat datang λ = 2 per jam, dokter melayani μ = 3 per jam. Bandingkan 1 dan 2 dokter.",
+  "endpoint": "/queue/mms",
+  "input": {
+    "lam": 2,
+    "mu": 3,
+    "s": 1
+  }
+}

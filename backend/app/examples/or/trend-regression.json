@@ -1,0 +1,22 @@
+{
+  "title": "Regresi tren linier (Bab 20.6)",
+  "description": "Garis tren kuadrat terkecil terhadap indeks waktu.",
+  "endpoint": "/forecast/regression",
+  "input": {
+    "data": [
+      382,
+      409,
+      429,
+      439,
+      440,
+      416,
+      434,
+      422,
+      428,
+      435,
+      431,
+      447
+    ],
+    "horizon": 3
+  }
+}

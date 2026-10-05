@@ -1,0 +1,15 @@
+{
+  "title": "Produksi pesawat (Bab 19.4)",
+  "description": "Permintaan 4 bulan: 3, 2, 3, 2 pesawat; biaya setup 2 juta; biaya simpan 0,2 juta per pesawat per bulan.",
+  "endpoint": "/inventory/wagner-whitin",
+  "input": {
+    "demands": [
+      3,
+      2,
+      3,
+      2
+    ],
+    "setup": 2,
+    "holding": 0.2
+  }
+}
