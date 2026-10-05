@@ -11,8 +11,14 @@ function themedLayout(layout: Record<string, unknown> = {}) {
   const style = getComputedStyle(document.documentElement)
   const fg = style.getPropertyValue('--foreground').trim()
   const grid = style.getPropertyValue('--border').trim()
+  const card = style.getPropertyValue('--card').trim()
+  // Label anotasi berlatar (mis. bobot busur) mengikuti warna kartu agar terbaca di mode gelap.
+  const annotations = Array.isArray(layout.annotations)
+    ? (layout.annotations as Record<string, unknown>[]).map((a) => (a.bgcolor ? { ...a, bgcolor: card, font: { ...(a.font as object), color: (a.font as { color?: string } | undefined)?.color ?? fg } } : a))
+    : layout.annotations
   return {
     ...layout,
+    annotations,
     autosize: true,
     margin: { t: 48, r: 16, b: 48, l: 56 },
     paper_bgcolor: 'rgba(0,0,0,0)',

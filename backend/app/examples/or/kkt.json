@@ -1,0 +1,11 @@
+{
+  "title": "Kondisi KKT (Bab 13.6)",
+  "description": "Maksimumkan f = ln(x₁ + 1) + x₂ dengan 2x₁ + x₂ ≤ 3, x ≥ 0.",
+  "endpoint": "/nlp/kkt",
+  "input": {
+    "func": "ln(x1 + 1) + x2",
+    "constraints": "2x1 + x2 <= 3",
+    "maximize": true,
+    "nonneg": true
+  }
+}

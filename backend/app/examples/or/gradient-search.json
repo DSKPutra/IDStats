@@ -1,0 +1,14 @@
+{
+  "title": "Gradient search (Bab 13.5)",
+  "description": "Maksimumkan f = 2x₁x₂ + 2x₂ − x₁² − 2x₂² dari titik awal (0, 0).",
+  "endpoint": "/nlp/gradient",
+  "input": {
+    "func": "2x1*x2 + 2x2 - x1^2 - 2x2^2",
+    "x0": [
+      0,
+      0
+    ],
+    "maximize": true,
+    "tol": 1e-06
+  }
+}

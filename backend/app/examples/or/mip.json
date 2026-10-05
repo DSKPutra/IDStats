@@ -1,0 +1,8 @@
+{
+  "title": "Contoh MIP (Bab 12.7)",
+  "description": "Mixed integer programming: x1, x2, x3 bulat, x4 kontinu.",
+  "endpoint": "/ip/branch-and-bound",
+  "input": {
+    "model": "max Z = 4x1 - 2x2 + 7x3 - x4\nx1 + 5x3 <= 10\nx1 + x2 - x3 <= 1\n6x1 - 5x2 <= 0\n-x1 + 2x3 - 2x4 <= 3\nint x1, x2, x3"
+  }
+}

@@ -117,22 +117,26 @@
         {
           "id": "dynamic-programming",
           "title": "Pemrograman Dinamis (Dynamic Programming, Bab 11)",
-          "phase": 4
+          "phase": 4,
+          "available": true
         },
         {
           "id": "integer-programming",
           "title": "Pemrograman Bilangan Bulat (Integer Programming, Bab 12)",
-          "phase": 4
+          "phase": 4,
+          "available": true
         },
         {
           "id": "nonlinear-programming",
           "title": "Pemrograman Nonlinear (Nonlinear Programming, Bab 13)",
-          "phase": 4
+          "phase": 4,
+          "available": true
         },
         {
           "id": "game-theory",
           "title": "Teori Permainan (Game Theory, Bab 14)",
-          "phase": 4
+          "phase": 4,
+          "available": true
         },
         {
           "id": "decision-analysis",

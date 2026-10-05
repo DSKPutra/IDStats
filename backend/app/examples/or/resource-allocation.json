@@ -1,0 +1,41 @@
+{
+  "title": "World Health Council (Bab 11.3)",
+  "description": "Lima tim medis dialokasikan ke tiga negara. Tabel: tambahan person-years hidup (ribu) untuk 0–5 tim di setiap negara.",
+  "endpoint": "/dp/resource-allocation",
+  "input": {
+    "returns": [
+      [
+        0,
+        45,
+        70,
+        90,
+        105,
+        120
+      ],
+      [
+        0,
+        20,
+        45,
+        75,
+        110,
+        150
+      ],
+      [
+        0,
+        50,
+        70,
+        80,
+        100,
+        130
+      ]
+    ],
+    "total": 5,
+    "activities": [
+      "Negara 1",
+      "Negara 2",
+      "Negara 3"
+    ],
+    "combine": "sum",
+    "sense": "max"
+  }
+}

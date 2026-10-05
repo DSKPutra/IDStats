@@ -1,0 +1,16 @@
+{
+  "title": "Masalah nonkonveks (Bab 13.10)",
+  "description": "f(x) = 12x⁵ − 975x⁴ + 28000x³ − 345000x² + 1800000x pada 0 ≤ x ≤ 31 memiliki beberapa maksimum lokal.",
+  "endpoint": "/nlp/multistart",
+  "input": {
+    "func": "12x^5 - 975x^4 + 28000x^3 - 345000x^2 + 1800000x",
+    "lower": [
+      0
+    ],
+    "upper": [
+      31
+    ],
+    "starts": 20,
+    "maximize": true
+  }
+}

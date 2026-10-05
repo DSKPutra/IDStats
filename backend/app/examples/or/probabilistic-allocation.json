@@ -1,0 +1,32 @@
+{
+  "title": "Distribusi ilmuwan ke tim riset (Bab 11.4)",
+  "description": "Dua ilmuwan tambahan dibagi ke tiga tim riset. Tabel: peluang gagal tiap tim bila diberi 0, 1, 2 ilmuwan. Minimumkan peluang semua tim gagal (hasil kali).",
+  "endpoint": "/dp/resource-allocation",
+  "input": {
+    "returns": [
+      [
+        0.4,
+        0.2,
+        0.15
+      ],
+      [
+        0.6,
+        0.4,
+        0.2
+      ],
+      [
+        0.8,
+        0.5,
+        0.3
+      ]
+    ],
+    "total": 2,
+    "activities": [
+      "Tim 1",
+      "Tim 2",
+      "Tim 3"
+    ],
+    "combine": "product",
+    "sense": "min"
+  }
+}

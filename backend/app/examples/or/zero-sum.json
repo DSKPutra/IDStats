@@ -1,0 +1,34 @@
+{
+  "title": "Kampanye politik, variasi 3 (Bab 14.4)",
+  "description": "Dua politisi memilih strategi kampanye; payoff = tambahan suara (ribuan) untuk politisi 1. Tidak ada titik pelana.",
+  "endpoint": "/games/zero-sum",
+  "input": {
+    "payoff": [
+      [
+        0,
+        -2,
+        2
+      ],
+      [
+        5,
+        4,
+        -3
+      ],
+      [
+        2,
+        3,
+        -4
+      ]
+    ],
+    "row_names": [
+      "Strategi 1",
+      "Strategi 2",
+      "Strategi 3"
+    ],
+    "col_names": [
+      "Strategi 1",
+      "Strategi 2",
+      "Strategi 3"
+    ]
+  }
+}

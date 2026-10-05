@@ -1,0 +1,24 @@
+{
+  "title": "Kampanye politik, variasi 2 (Bab 14.2)",
+  "description": "Permainan dengan titik pelana: strategi murni stabil.",
+  "endpoint": "/games/zero-sum",
+  "input": {
+    "payoff": [
+      [
+        -3,
+        -2,
+        6
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        5,
+        -2,
+        -4
+      ]
+    ]
+  }
+}

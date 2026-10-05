@@ -1,0 +1,11 @@
+{
+  "title": "Menang di Las Vegas (Bab 11.4)",
+  "description": "Mulai dengan 3 keping, 3 kali taruhan, peluang menang tiap taruhan 2/3. Kebijakan apa yang memaksimumkan peluang memiliki minimal 5 keping?",
+  "endpoint": "/dp/betting",
+  "input": {
+    "chips": 3,
+    "target": 5,
+    "plays": 3,
+    "p_win": 0.6666666666666666
+  }
+}

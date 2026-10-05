@@ -1,0 +1,9 @@
+{
+  "title": "Quadratic programming (Bab 13.7)",
+  "description": "Maksimumkan 15x₁ + 30x₂ + 4x₁x₂ − 2x₁² − 4x₂² dengan x₁ + 2x₂ ≤ 30.",
+  "endpoint": "/nlp/quadratic",
+  "input": {
+    "objective": "15x1 + 30x2 + 4x1*x2 - 2x1^2 - 4x2^2",
+    "constraints": "x1 + 2x2 <= 30"
+  }
+}

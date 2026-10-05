@@ -1,6 +1,7 @@
 """Daftar semua router API. Tambahkan modul baru di sini."""
 
 from app.api.routes import (
+    advanced,
     anova,
     data,
     descriptive,
@@ -35,4 +36,4 @@ ROUTERS = [
         network,
         project,
     )
-]
+] + advanced.routers

@@ -1,0 +1,10 @@
+{
+  "title": "Separable programming (Bab 13.8)",
+  "description": "Fungsi laba konkaf terpisah per produk, didekati dengan 4 segmen linier.",
+  "endpoint": "/nlp/separable",
+  "input": {
+    "terms": "x1: 3x1 - x1^2 ; 0..3\nx2: 5x2 - x2^2 ; 0..5",
+    "constraints": "x1 + x2 <= 4",
+    "segments": 4
+  }
+}

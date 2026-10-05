@@ -170,7 +170,7 @@ def _split_names(text: str) -> list[str]:
     return [t for t in re.split(r"[\s,]+", text.strip()) if t]
 
 
-def parse_model(text: str, allow_integer: bool = False) -> LPModel:
+def parse_model(text: str, allow_integer: bool = False, require_constraints: bool = True) -> LPModel:
     raw_lines = [ln.split("#")[0].strip() for ln in text.replace("\r", "").split("\n")]
     lines = [ln for ln in raw_lines if ln]
     if not lines:
@@ -236,7 +236,7 @@ def parse_model(text: str, allow_integer: bool = False) -> LPModel:
             raise SolverError(f"Ruas kanan kendala “{ln}” harus berupa angka (pindahkan variabel ke ruas kiri).")
         coeffs = parse_linear(lhs, f"Kendala “{ln}”")
         constraints.append(Constraint(coeffs, op, _parse_number(rhs_s), name=f"K{len(constraints) + 1}"))
-    if not constraints:
+    if not constraints and require_constraints:
         raise SolverError("Model belum memiliki kendala.")
 
     order: list[str] = []

@@ -1,0 +1,9 @@
+{
+  "title": "Formulasi biner (Bab 12.3)",
+  "description": "Salah satu dari dua kendala kapasitas berlaku (either-or) dan produksi x1 dikenai biaya tetap 5.",
+  "endpoint": "/ip/binary-formulation",
+  "input": {
+    "model": "max Z = 3x1 + 2x2\nx1 + x2 <= 8\nint x1, x2",
+    "rules": "either M=100: 3x1 + 2x2 <= 18 | x1 + 4x2 <= 16\nfixed x1: biaya=5, maks=10"
+  }
+}

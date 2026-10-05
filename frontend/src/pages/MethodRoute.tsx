@@ -30,6 +30,10 @@ const pages: Record<string, ComponentType> = {
   'or/transportation': variantPage(() => import('./or/configs/transport').then((m) => m.transportConfig)),
   'or/network': variantPage(() => import('./or/configs/network').then((m) => m.networkConfig)),
   'or/pert-cpm': variantPage(() => import('./or/configs/project').then((m) => m.projectConfig)),
+  'or/dynamic-programming': variantPage(() => import('./or/configs/advanced').then((m) => m.dpConfig)),
+  'or/integer-programming': variantPage(() => import('./or/configs/advanced').then((m) => m.ipConfig)),
+  'or/nonlinear-programming': variantPage(() => import('./or/configs/advanced').then((m) => m.nlpConfig)),
+  'or/game-theory': variantPage(() => import('./or/configs/advanced').then((m) => m.gameConfig)),
 }
 
 export function MethodRoute() {

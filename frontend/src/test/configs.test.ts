@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
+import * as advanced from '@/pages/or/configs/advanced'
 import * as lp from '@/pages/or/configs/lp'
 import { networkConfig } from '@/pages/or/configs/network'
 import { projectConfig } from '@/pages/or/configs/project'
@@ -16,7 +17,7 @@ import type { VariantPageConfig } from '@/pages/VariantPage'
 
 const configs: VariantPageConfig[] = [
   descriptiveConfig, distributionsConfig, inferentialConfig, anovaConfig, regressionConfig, nonparametricConfig, normalityConfig,
-  ...Object.values(lp), transportConfig, networkConfig, projectConfig,
+  ...Object.values(lp), transportConfig, networkConfig, projectConfig, ...Object.values(advanced),
 ]
 const examplesRoot = resolve(import.meta.dirname, '../../../backend/app/examples')
 

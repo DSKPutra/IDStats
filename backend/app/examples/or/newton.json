@@ -1,0 +1,12 @@
+{
+  "title": "Metode Newton (Bab 13.4)",
+  "description": "Fungsi yang sama dengan titik awal x₀ = 1 dan ε = 0,00001.",
+  "endpoint": "/nlp/one-variable",
+  "input": {
+    "func": "12x - 3x^4 - 2x^6",
+    "method": "newton",
+    "maximize": true,
+    "x0": 1,
+    "tol": 1e-05
+  }
+}

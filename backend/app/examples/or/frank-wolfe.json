@@ -1,0 +1,14 @@
+{
+  "title": "Algoritma Frank-Wolfe (Bab 13.9)",
+  "description": "Maksimumkan 5x₁ − x₁² + 8x₂ − 2x₂² dengan 3x₁ + 2x₂ ≤ 6, mulai dari (0, 0).",
+  "endpoint": "/nlp/frank-wolfe",
+  "input": {
+    "func": "5x1 - x1^2 + 8x2 - 2x2^2",
+    "constraints": "3x1 + 2x2 <= 6",
+    "x0": [
+      0,
+      0
+    ],
+    "maximize": true
+  }
+}

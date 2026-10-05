@@ -1,0 +1,8 @@
+{
+  "title": "California Manufacturing Co. (Bab 12.1, 12.6)",
+  "description": "Keputusan biner membangun pabrik/gudang di Los Angeles dan San Francisco dengan modal 10 juta.",
+  "endpoint": "/ip/branch-and-bound",
+  "input": {
+    "model": "max Z = 9x1 + 5x2 + 6x3 + 4x4\n6x1 + 3x2 + 5x3 + 2x4 <= 10\nx3 + x4 <= 1\n-x1 + x3 <= 0\n-x2 + x4 <= 0\nbin x1, x2, x3, x4"
+  }
+}

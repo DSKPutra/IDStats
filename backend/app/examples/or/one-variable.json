@@ -1,0 +1,13 @@
+{
+  "title": "Optimasi satu variabel (Bab 13.4)",
+  "description": "Maksimumkan f(x) = 12x − 3x⁴ − 2x⁶ dengan metode biseksi pada [0, 2] dan ε = 0,01.",
+  "endpoint": "/nlp/one-variable",
+  "input": {
+    "func": "12x - 3x^4 - 2x^6",
+    "method": "bisection",
+    "maximize": true,
+    "lower": 0,
+    "upper": 2,
+    "tol": 0.01
+  }
+}

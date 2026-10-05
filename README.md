@@ -17,7 +17,8 @@ hasil, dan bisa diekspor.
 | 1 | Statistika (Modul A): data, deskriptif, distribusi, inferensial, ANOVA, regresi, non-parametrik, normalitas | ✅ |
 | 2 | LP: Bab 1–7 (grafik, simpleks, Big-M, Dua Fase, revised, dualitas, sensitivitas, dual simpleks, parametrik, batas atas, titik interior, goal programming) | ✅ |
 | 3 | Bab 8–10: transportasi (NWC, biaya terkecil, VAM, MODI), Hungaria, jaringan (Dijkstra, Prim/Kruskal, max flow, min cost flow, simpleks jaringan, editor graf visual), PERT/CPM, crashing, PERT/Cost | ✅ |
-| 4–5 | Riset Operasi Bab 11–22 + Appendix | ⏳ |
+| 4 | Bab 11–14: DP (stagecoach, alokasi, knapsack, probabilistik), IP (branch-and-bound + pohon, formulasi biner), NLP (biseksi, Newton, gradient, KKT, QP Wolfe, separable, Frank-Wolfe, SUMT, multistart), teori permainan | ✅ |
+| 5 | Riset Operasi Bab 15–22 + Appendix | ⏳ |
 | 6–7 | Optimasi ML (Modul C) | ⏳ |
 | 8 | Riwayat, ekspor PDF, mode latihan | ⏳ |
 
