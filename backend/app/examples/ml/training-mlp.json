@@ -1,0 +1,39 @@
+{
+  "title": "Digits (MNIST 8×8) dengan MLP",
+  "description": "MLP 32 neuron tersembunyi pada subset digit tulisan tangan 8×8 piksel.",
+  "endpoint": "/ml/train",
+  "input": {
+    "dataset": "digits",
+    "model": "mlp",
+    "hidden": 32,
+    "optimizers": [
+      {
+        "id": "sgd",
+        "params": {
+          "lr": 0.05
+        }
+      },
+      {
+        "id": "adamw",
+        "params": {
+          "lr": 0.003
+        }
+      },
+      {
+        "id": "adamp",
+        "params": {
+          "lr": 0.003
+        }
+      },
+      {
+        "id": "adamax",
+        "params": {
+          "lr": 0.005
+        }
+      }
+    ],
+    "epochs": 20,
+    "batch_size": 64,
+    "seed": 0
+  }
+}

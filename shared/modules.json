@@ -196,12 +196,14 @@
         {
           "id": "gradient-playground",
           "title": "Playground Optimizer Gradien (Loss Surface)",
-          "phase": 6
+          "phase": 6,
+          "available": true
         },
         {
           "id": "gradient-training",
           "title": "Perbandingan Optimizer pada Model Nyata",
-          "phase": 6
+          "phase": 6,
+          "available": true
         },
         {
           "id": "metaheuristics",

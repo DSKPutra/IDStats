@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import * as advanced from '@/pages/or/configs/advanced'
 import * as lp from '@/pages/or/configs/lp'
+import * as mlGradient from '@/pages/ml/configs/gradient'
 import * as stochastic from '@/pages/or/configs/stochastic'
 import { networkConfig } from '@/pages/or/configs/network'
 import { projectConfig } from '@/pages/or/configs/project'
@@ -18,7 +19,7 @@ import type { VariantPageConfig } from '@/pages/VariantPage'
 
 const configs: VariantPageConfig[] = [
   descriptiveConfig, distributionsConfig, inferentialConfig, anovaConfig, regressionConfig, nonparametricConfig, normalityConfig,
-  ...Object.values(lp), transportConfig, networkConfig, projectConfig, ...Object.values(advanced), ...Object.values(stochastic),
+  ...Object.values(lp), transportConfig, networkConfig, projectConfig, ...Object.values(advanced), ...Object.values(stochastic), ...Object.values(mlGradient),
 ]
 const examplesRoot = resolve(import.meta.dirname, '../../../backend/app/examples')
 

@@ -10,6 +10,7 @@ from app.api.routes import (
     inferential,
     lp,
     meta,
+    ml,
     network,
     nonparametric,
     normality,
@@ -37,6 +38,7 @@ ROUTERS = (
             transport,
             network,
             project,
+            ml,
         )
     ]
     + advanced.routers

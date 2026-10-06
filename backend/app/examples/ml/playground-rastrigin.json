@@ -1,0 +1,36 @@
+{
+  "title": "Rastrigin: banyak minimum lokal",
+  "description": "Optimizer gradien mudah terjebak di minimum lokal fungsi multimodal.",
+  "endpoint": "/ml/playground",
+  "input": {
+    "function": "rastrigin",
+    "optimizers": [
+      {
+        "id": "adamw",
+        "params": {
+          "lr": 0.1,
+          "weight_decay": 0
+        }
+      },
+      {
+        "id": "adai",
+        "params": {
+          "lr": 0.05
+        }
+      },
+      {
+        "id": "nadam",
+        "params": {
+          "lr": 0.1
+        }
+      },
+      {
+        "id": "lookahead",
+        "params": {
+          "lr": 0.1
+        }
+      }
+    ],
+    "iterations": 300
+  }
+}

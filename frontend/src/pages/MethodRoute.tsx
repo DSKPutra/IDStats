@@ -13,6 +13,8 @@ const variantPage = (load: () => Promise<VariantPageConfig>): ComponentType =>
 
 /** Halaman yang sudah diimplementasikan, dengan kunci `${kategori}/${metode}`. */
 const pages: Record<string, ComponentType> = {
+  'ml/gradient-playground': variantPage(() => import('./ml/configs/gradient').then((m) => m.playgroundConfig)),
+  'ml/gradient-training': variantPage(() => import('./ml/configs/gradient').then((m) => m.trainingConfig)),
   'stats/data-management': lazy(() => import('./stats/DataManagement').then((m) => ({ default: m.DataManagementPage }))),
   'stats/descriptive': variantPage(() => import('./stats/configs/descriptive').then((m) => m.descriptiveConfig)),
   'stats/distributions': variantPage(() => import('./stats/configs/distributions').then((m) => m.distributionsConfig)),

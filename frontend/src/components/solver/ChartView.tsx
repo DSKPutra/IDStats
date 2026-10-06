@@ -39,7 +39,8 @@ function Chart({ chart }: { chart: SolverChart }) {
     let cancelled = false
     const draw = () =>
       loadPlotly().then((Plotly) => {
-        if (!cancelled) Plotly.react(el, chart.spec.data, themedLayout(chart.spec.layout), { responsive: true, displaylogo: false })
+        if (!cancelled)
+          Plotly.react(el, { data: chart.spec.data, layout: themedLayout(chart.spec.layout), frames: chart.spec.frames, config: { responsive: true, displaylogo: false } })
       })
     draw()
     const observer = new MutationObserver(draw)

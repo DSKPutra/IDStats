@@ -42,3 +42,13 @@ describe('buildBody', () => {
     expect(buildBody(fields, raw).body).toEqual(body)
   })
 })
+
+describe('optimizer lines', () => {
+  it('parse dan tulis ulang', async () => {
+    const { parseOptimizerLines, optimizerLines } = await import('@/components/form/fields')
+    const r = parseOptimizerLines('adamw lr=0.01 weight_decay=0\nsgd')
+    expect(r).toEqual({ ok: true, value: [{ id: 'adamw', params: { lr: 0.01, weight_decay: 0 } }, { id: 'sgd', params: {} }] })
+    if (r.ok) expect(optimizerLines(r.value)).toBe('adamw lr=0.01 weight_decay=0\nsgd')
+    expect(parseOptimizerLines('adamw lr=abc').ok).toBe(false)
+  })
+})

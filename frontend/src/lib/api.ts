@@ -14,7 +14,7 @@ export interface SolverStep {
 export interface SolverChart {
   id: string
   title: string
-  spec: { data: unknown[]; layout?: Record<string, unknown> }
+  spec: { data: unknown[]; layout?: Record<string, unknown>; frames?: unknown[] }
 }
 
 export interface SummaryItem {

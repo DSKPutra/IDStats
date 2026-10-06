@@ -6,6 +6,7 @@ import { buildBody, initialRaw, isVisible, rawFromBody, type FieldDef, type RawV
 import { MethodPage } from '@/components/solver/MethodPage'
 import { ResultView } from '@/components/solver/ResultView'
 import { Button } from '@/components/ui/button'
+import { useDataset, type Dataset } from '@/context/DatasetContext'
 import { ApiError, getExample, solve, type Example, type SolverResponse } from '@/lib/api'
 import { cn } from '@/lib/utils'
 
@@ -17,6 +18,8 @@ export interface Variant {
   fields: FieldDef[]
   theory: ReactNode
   description?: string
+  /** Ubah body sebelum dikirim (mis. sisipkan dataset aktif). */
+  prepareBody?: (body: Record<string, unknown>, ctx: { dataset: Dataset | null }) => Record<string, unknown> | string
 }
 
 export interface VariantPageConfig {
@@ -35,6 +38,7 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
   const [errors, setErrors] = useState<string[]>([])
   const [example, setExample] = useState<Example | null>(null)
   const [loading, setLoading] = useState(false)
+  const { dataset } = useDataset()
 
   const raw = rawByVariant[variant.id] ?? initialRaw(variant.fields)
   const setRaw = (next: RawValues) => setRawByVariant((prev) => ({ ...prev, [variant.id]: next }))
@@ -47,7 +51,14 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
   }
 
   const run = async () => {
-    const { body, errors: errs } = buildBody(variant.fields, raw)
+    const built = buildBody(variant.fields, raw)
+    const errs = [...built.errors]
+    let body: Record<string, unknown> = built.body
+    if (!errs.length && variant.prepareBody) {
+      const prepared = variant.prepareBody(body, { dataset })
+      if (typeof prepared === 'string') errs.push(prepared)
+      else body = prepared
+    }
     setErrors(errs)
     if (errs.length) return
     setLoading(true)

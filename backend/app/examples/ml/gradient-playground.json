@@ -1,0 +1,42 @@
+{
+  "title": "Rosenbrock: lembah sempit melengkung",
+  "description": "Bandingkan SGD, momentum, AdamW, RAdam, dan LION dari titik awal (−1,5; 2). Minimum global di (1, 1).",
+  "endpoint": "/ml/playground",
+  "input": {
+    "function": "rosenbrock",
+    "optimizers": [
+      {
+        "id": "sgd",
+        "params": {
+          "lr": 0.001
+        }
+      },
+      {
+        "id": "momentum",
+        "params": {
+          "lr": 0.0005
+        }
+      },
+      {
+        "id": "adamw",
+        "params": {
+          "lr": 0.05,
+          "weight_decay": 0
+        }
+      },
+      {
+        "id": "radam",
+        "params": {
+          "lr": 0.05
+        }
+      },
+      {
+        "id": "lion",
+        "params": {
+          "lr": 0.01
+        }
+      }
+    ],
+    "iterations": 500
+  }
+}

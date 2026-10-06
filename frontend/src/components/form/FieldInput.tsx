@@ -3,6 +3,7 @@ import { parseNumbers } from '@/lib/utils'
 import { ColumnPicker } from './ColumnPicker'
 import { ALTERNATIVE_OPTIONS, type FieldDef, type GroupRaw, type RawValue, type RawValues } from './fields'
 import { GraphEditor } from './GraphEditor'
+import { OptimizerPicker } from './OptimizerPicker'
 import { GroupsInput } from './GroupsInput'
 
 const selectClass =
@@ -18,6 +19,9 @@ export function FieldInput({ field, value, onChange, raw = {} }: { field: FieldD
       control = <GraphEditor id={id} value={text} onChange={onChange} valueCount={field.graphValues ?? 1} directed={directed} placeholder={field.placeholder} />
       break
     }
+    case 'optimizers':
+      control = <OptimizerPicker id={id} value={text} onChange={onChange} max={field.minItems ?? 8} />
+      break
     case 'textarea':
       control = (
         <Textarea
@@ -94,7 +98,7 @@ export function FieldInput({ field, value, onChange, raw = {} }: { field: FieldD
         />
       )
   }
-  const wide = ['numbers', 'matrix', 'cells', 'groups', 'variables', 'textarea', 'graph'].includes(field.type)
+  const wide = ['numbers', 'matrix', 'cells', 'groups', 'variables', 'textarea', 'graph', 'optimizers'].includes(field.type)
   return (
     <div className={wide ? 'flex flex-col gap-1.5 sm:col-span-2' : 'flex flex-col gap-1.5'}>
       {field.type !== 'boolean' && (

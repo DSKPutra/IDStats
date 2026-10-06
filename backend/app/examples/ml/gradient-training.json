@@ -1,0 +1,50 @@
+{
+  "title": "Iris dengan regresi logistik",
+  "description": "Latih regresi logistik softmax pada dataset Iris dengan enam optimizer berbeda.",
+  "endpoint": "/ml/train",
+  "input": {
+    "dataset": "iris",
+    "model": "logreg",
+    "optimizers": [
+      {
+        "id": "sgd",
+        "params": {
+          "lr": 0.1
+        }
+      },
+      {
+        "id": "adamw",
+        "params": {
+          "lr": 0.01
+        }
+      },
+      {
+        "id": "amsgrad",
+        "params": {
+          "lr": 0.01
+        }
+      },
+      {
+        "id": "lamb",
+        "params": {
+          "lr": 0.01
+        }
+      },
+      {
+        "id": "novograd",
+        "params": {
+          "lr": 0.05
+        }
+      },
+      {
+        "id": "qhadam",
+        "params": {
+          "lr": 0.01
+        }
+      }
+    ],
+    "epochs": 60,
+    "batch_size": 16,
+    "seed": 0
+  }
+}

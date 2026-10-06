@@ -25,6 +25,7 @@ export type FieldType =
   | 'cells' // baris "A | B | nilai…" → [{a, b, data}]
   | 'textarea' // teks bebas multi-baris (mis. model LP) → string
   | 'graph' // daftar busur “A B nilai…” + editor graf visual → string
+  | 'optimizers' // baris “id lr=0.01 beta1=0.9” → [{id, params}]
 
 export interface Option {
   value: string
@@ -161,6 +162,11 @@ export function parseField(field: FieldDef, raw: RawValue): Parsed {
     case 'textarea':
     case 'graph':
       return { value: raw.replace(/\r/g, '') }
+    case 'optimizers': {
+      const list = parseOptimizerLines(text)
+      if (!list.ok) return { error: `${label}: ${list.error}` }
+      return list.value.length ? { value: list.value } : {}
+    }
     default:
       return { value: text }
   }
@@ -224,9 +230,38 @@ export function toRaw(field: FieldDef, v: unknown): RawValue {
       return (v as { name: string; data: number[] }[]).map((g) => ({ name: g.name, values: g.data.join(', ') }))
     case 'variables':
       return Object.entries(v as Record<string, number[]>).map(([name, data]) => ({ name, values: data.join(', ') }))
+    case 'optimizers':
+      return optimizerLines(v as OptimizerChoice[])
     case 'cells':
       return (v as { a: string; b: string; data: number[] }[]).map((c) => `${c.a} | ${c.b} | ${c.data.join(' ')}`).join('\n')
     default:
       return String(v)
   }
+}
+
+export interface OptimizerChoice {
+  id: string
+  params: Record<string, number>
+}
+
+/** “adamw lr=0.01 weight_decay=0” per baris ⇄ [{id, params}]. */
+export function parseOptimizerLines(text: string): { ok: true; value: OptimizerChoice[] } | { ok: false; error: string } {
+  const value: OptimizerChoice[] = []
+  for (const line of text.split('\n')) {
+    const parts = line.trim().split(/\s+/).filter(Boolean)
+    if (!parts.length) continue
+    const params: Record<string, number> = {}
+    for (const kv of parts.slice(1)) {
+      const [k, v] = kv.split('=')
+      const n = Number(v)
+      if (!k || v === undefined || !Number.isFinite(n)) return { ok: false, error: `parameter “${kv}” harus berbentuk nama=angka.` }
+      params[k] = n
+    }
+    value.push({ id: parts[0], params })
+  }
+  return { ok: true, value }
+}
+
+export function optimizerLines(list: OptimizerChoice[]): string {
+  return list.map((o) => [o.id, ...Object.entries(o.params).map(([k, v]) => `${k}=${v}`)].join(' ')).join('\n')
 }

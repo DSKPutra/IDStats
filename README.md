@@ -19,7 +19,8 @@ hasil, dan bisa diekspor.
 | 3 | Bab 8–10: transportasi (NWC, biaya terkecil, VAM, MODI), Hungaria, jaringan (Dijkstra, Prim/Kruskal, max flow, min cost flow, simpleks jaringan, editor graf visual), PERT/CPM, crashing, PERT/Cost | ✅ |
 | 4 | Bab 11–14: DP (stagecoach, alokasi, knapsack, probabilistik), IP (branch-and-bound + pohon, formulasi biner), NLP (biseksi, Newton, gradient, KKT, QP Wolfe, separable, Frank-Wolfe, SUMT, multistart), teori permainan | ✅ |
 | 5 | Bab 15–22 + Appendix: analisis keputusan, Markov, antrian, persediaan, peramalan (termasuk ARIMA), MDP, simulasi, konveksitas/Lagrange/matriks | ✅ |
-| 6–7 | Optimasi ML (Modul C) | ⏳ |
+| 6 | Optimasi ML C1: 14 optimizer gradien dari nol (SGD, Momentum, AdamW, AdamP, Adai, NAdam, LION, Lookahead, NovoGrad, LAMB, Adamax, AMSGrad, RAdam, QHAdam), playground 2D/3D beranimasi, pelatihan regresi logistik & MLP | ✅ |
+| 7 | Metaheuristik & aplikasi (Modul C2–C4) | ⏳ |
 | 8 | Riwayat, ekspor PDF, mode latihan | ⏳ |
 
 ## Menjalankan secara lokal
