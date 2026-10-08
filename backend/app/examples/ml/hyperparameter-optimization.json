@@ -1,0 +1,17 @@
+{
+  "title": "Tuning SVM pada Breast Cancer",
+  "description": "Cari C dan γ SVM RBF yang memaksimumkan akurasi validasi silang dengan 20 evaluasi per metode.",
+  "endpoint": "/ml/hyperparameter",
+  "input": {
+    "dataset": "breast_cancer",
+    "model": "svm",
+    "methods": [
+      "grid",
+      "random",
+      "bayes",
+      "pso"
+    ],
+    "budget": 20,
+    "seed": 0
+  }
+}

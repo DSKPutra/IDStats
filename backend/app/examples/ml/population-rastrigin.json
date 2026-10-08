@@ -1,0 +1,18 @@
+{
+  "title": "Rastrigin: algoritma terbaru dari paper",
+  "description": "NOA, EDO, IARO, AOA, dan LM-MA pada fungsi dengan banyak minimum lokal.",
+  "endpoint": "/ml/population",
+  "input": {
+    "function": "rastrigin",
+    "algorithms": [
+      "noa",
+      "edo",
+      "iaro",
+      "aoa",
+      "lmma"
+    ],
+    "pop": 20,
+    "iters": 80,
+    "seed": 1
+  }
+}

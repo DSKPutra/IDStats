@@ -208,37 +208,44 @@
         {
           "id": "metaheuristics",
           "title": "Metaheuristik Berbasis Populasi (Population-Based)",
-          "phase": 7
+          "phase": 7,
+          "available": true
         },
         {
           "id": "metaheuristic-benchmark",
           "title": "Benchmark & Uji Statistik Metaheuristik",
-          "phase": 7
+          "phase": 7,
+          "available": true
         },
         {
           "id": "hyperparameter-optimization",
           "title": "Optimasi Hyperparameter (HPO)",
-          "phase": 7
+          "phase": 7,
+          "available": true
         },
         {
           "id": "feature-selection",
           "title": "Seleksi Fitur (Feature Selection)",
-          "phase": 7
+          "phase": 7,
+          "available": true
         },
         {
           "id": "metaheuristic-or",
           "title": "Metaheuristik untuk Masalah OR (TSP, Knapsack)",
-          "phase": 7
+          "phase": 7,
+          "available": true
         },
         {
           "id": "reinforcement-learning",
           "title": "Reinforcement Learning Ringan (Q-learning)",
-          "phase": 7
+          "phase": 7,
+          "available": true
         },
         {
           "id": "ml-review",
           "title": "Tinjauan Taksonomi & Arah Riset",
-          "phase": 7
+          "phase": 7,
+          "available": true
         }
       ]
     },

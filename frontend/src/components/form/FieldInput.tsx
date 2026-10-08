@@ -19,6 +19,30 @@ export function FieldInput({ field, value, onChange, raw = {} }: { field: FieldD
       control = <GraphEditor id={id} value={text} onChange={onChange} valueCount={field.graphValues ?? 1} directed={directed} placeholder={field.placeholder} />
       break
     }
+    case 'multiselect': {
+      const selected = text.split(',').map((x) => x.trim()).filter(Boolean)
+      const max = field.minItems ?? Infinity
+      control = (
+        <div id={id} className="flex flex-wrap gap-x-4 gap-y-2" role="group" aria-label={field.label}>
+          {(field.options ?? []).map((o) => {
+            const on = selected.includes(o.value)
+            return (
+              <label key={o.value} className="flex items-center gap-1.5 text-sm">
+                <input
+                  type="checkbox"
+                  className="size-4 accent-primary"
+                  checked={on}
+                  disabled={!on && selected.length >= max}
+                  onChange={(e) => onChange((e.target.checked ? [...selected, o.value] : selected.filter((v) => v !== o.value)).join(', '))}
+                />
+                {o.label}
+              </label>
+            )
+          })}
+        </div>
+      )
+      break
+    }
     case 'optimizers':
       control = <OptimizerPicker id={id} value={text} onChange={onChange} max={field.minItems ?? 8} />
       break
@@ -98,7 +122,7 @@ export function FieldInput({ field, value, onChange, raw = {} }: { field: FieldD
         />
       )
   }
-  const wide = ['numbers', 'matrix', 'cells', 'groups', 'variables', 'textarea', 'graph', 'optimizers'].includes(field.type)
+  const wide = ['numbers', 'matrix', 'cells', 'groups', 'variables', 'textarea', 'graph', 'optimizers', 'multiselect'].includes(field.type)
   return (
     <div className={wide ? 'flex flex-col gap-1.5 sm:col-span-2' : 'flex flex-col gap-1.5'}>
       {field.type !== 'boolean' && (

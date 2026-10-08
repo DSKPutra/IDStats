@@ -1,0 +1,15 @@
+{
+  "title": "Seleksi fitur Breast Cancer",
+  "description": "Wrapper PSO & HHO biner vs filter mutual information/chi-square vs PCA (8 fitur/komponen).",
+  "endpoint": "/ml/feature-selection",
+  "input": {
+    "dataset": "breast_cancer",
+    "wrapper": [
+      "pso",
+      "hho"
+    ],
+    "k_filter": 8,
+    "alpha": 0.99,
+    "seed": 0
+  }
+}

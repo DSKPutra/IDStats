@@ -1,0 +1,21 @@
+{
+  "title": "Rastrigin 10 dimensi, 10 run",
+  "description": "Bandingkan HHO, AVOA, AOA, PSO, DE, dan GA dengan statistik dan uji Friedman–Wilcoxon.",
+  "endpoint": "/ml/benchmark",
+  "input": {
+    "function": "rastrigin",
+    "dim": 10,
+    "algorithms": [
+      "hho",
+      "avoa",
+      "aoa",
+      "pso",
+      "de",
+      "ga"
+    ],
+    "pop": 30,
+    "iters": 100,
+    "runs": 10,
+    "seed": 1
+  }
+}

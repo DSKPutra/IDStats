@@ -1,0 +1,33 @@
+{
+  "title": "Knapsack 0-1 dengan 10 barang",
+  "description": "GA dan SA dibandingkan dengan DP eksak (Bab 11).",
+  "endpoint": "/ml/knapsack",
+  "input": {
+    "weights": [
+      12,
+      7,
+      11,
+      8,
+      9,
+      6,
+      5,
+      14,
+      3,
+      10
+    ],
+    "values": [
+      24,
+      13,
+      23,
+      15,
+      16,
+      11,
+      8,
+      30,
+      5,
+      20
+    ],
+    "capacity": 40,
+    "seed": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Gridworld 3 × 4",
+  "description": "Agen mulai di S, mencari G (+10) sambil menghindari jebakan T (−10); peluang tergelincir 0,1.",
+  "endpoint": "/ml/gridworld",
+  "input": {
+    "grid": ". . . G\n. # . T\nS . . .",
+    "goal_reward": 10,
+    "trap_reward": -10,
+    "step_cost": 0.1,
+    "gamma": 0.9,
+    "alpha": 0.3,
+    "epsilon": 0.3,
+    "episodes": 3000,
+    "slip": 0.1,
+    "seed": 1
+  }
+}

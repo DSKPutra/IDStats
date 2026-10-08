@@ -14,6 +14,13 @@ const variantPage = (load: () => Promise<VariantPageConfig>): ComponentType =>
 /** Halaman yang sudah diimplementasikan, dengan kunci `${kategori}/${metode}`. */
 const pages: Record<string, ComponentType> = {
   'ml/gradient-playground': variantPage(() => import('./ml/configs/gradient').then((m) => m.playgroundConfig)),
+  'ml/metaheuristics': variantPage(() => import('./ml/configs/meta').then((m) => m.populationConfig)),
+  'ml/metaheuristic-benchmark': variantPage(() => import('./ml/configs/meta').then((m) => m.benchmarkConfig)),
+  'ml/hyperparameter-optimization': variantPage(() => import('./ml/configs/meta').then((m) => m.hpoConfig)),
+  'ml/feature-selection': variantPage(() => import('./ml/configs/meta').then((m) => m.featureConfig)),
+  'ml/metaheuristic-or': variantPage(() => import('./ml/configs/meta').then((m) => m.metaOrConfig)),
+  'ml/reinforcement-learning': variantPage(() => import('./ml/configs/meta').then((m) => m.rlConfig)),
+  'ml/ml-review': lazy(() => import('./ml/MlReview').then((m) => ({ default: m.MlReviewPage }))),
   'ml/gradient-training': variantPage(() => import('./ml/configs/gradient').then((m) => m.trainingConfig)),
   'stats/data-management': lazy(() => import('./stats/DataManagement').then((m) => ({ default: m.DataManagementPage }))),
   'stats/descriptive': variantPage(() => import('./stats/configs/descriptive').then((m) => m.descriptiveConfig)),

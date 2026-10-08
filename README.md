@@ -20,7 +20,8 @@ hasil, dan bisa diekspor.
 | 4 | Bab 11–14: DP (stagecoach, alokasi, knapsack, probabilistik), IP (branch-and-bound + pohon, formulasi biner), NLP (biseksi, Newton, gradient, KKT, QP Wolfe, separable, Frank-Wolfe, SUMT, multistart), teori permainan | ✅ |
 | 5 | Bab 15–22 + Appendix: analisis keputusan, Markov, antrian, persediaan, peramalan (termasuk ARIMA), MDP, simulasi, konveksitas/Lagrange/matriks | ✅ |
 | 6 | Optimasi ML C1: 14 optimizer gradien dari nol (SGD, Momentum, AdamW, AdamP, Adai, NAdam, LION, Lookahead, NovoGrad, LAMB, Adamax, AMSGrad, RAdam, QHAdam), playground 2D/3D beranimasi, pelatihan regresi logistik & MLP | ✅ |
-| 7 | Metaheuristik & aplikasi (Modul C2–C4) | ⏳ |
+| 7 | Metaheuristik (NOA, HHO, AVOA, EDO, IARO, CMA-ES, LM-MA, AOA + PSO, GA, DE, SA), animasi populasi, benchmark + Friedman/Wilcoxon, HPO (grid/random/Bayesian/metaheuristik), seleksi fitur, TSP/knapsack/penjadwalan, Q-learning, tinjauan paper | ✅ |
+| 8 | Riwayat, laporan PDF, mode latihan | ⏳ |
 | 8 | Riwayat, ekspor PDF, mode latihan | ⏳ |
 
 ## Menjalankan secara lokal

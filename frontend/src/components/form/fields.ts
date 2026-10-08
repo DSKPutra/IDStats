@@ -26,6 +26,7 @@ export type FieldType =
   | 'textarea' // teks bebas multi-baris (mis. model LP) → string
   | 'graph' // daftar busur “A B nilai…” + editor graf visual → string
   | 'optimizers' // baris “id lr=0.01 beta1=0.9” → [{id, params}]
+  | 'multiselect' // kotak centang dari options → string[]
 
 export interface Option {
   value: string
@@ -162,6 +163,8 @@ export function parseField(field: FieldDef, raw: RawValue): Parsed {
     case 'textarea':
     case 'graph':
       return { value: raw.replace(/\r/g, '') }
+    case 'multiselect':
+      return { value: text.split(',').map((x) => x.trim()).filter(Boolean) }
     case 'optimizers': {
       const list = parseOptimizerLines(text)
       if (!list.ok) return { error: `${label}: ${list.error}` }
@@ -223,6 +226,7 @@ export function toRaw(field: FieldDef, v: unknown): RawValue {
     case 'numbers':
       return (v as number[]).join(', ')
     case 'labels':
+    case 'multiselect':
       return (v as string[]).join(', ')
     case 'matrix':
       return (v as number[][]).map((r) => r.join(' ')).join('\n')

@@ -1,0 +1,17 @@
+{
+  "title": "Himmelblau: empat minimum global",
+  "description": "Lihat bagaimana populasi HHO, AVOA, PSO, dan CMA-ES bergerak dan berkumpul di sekitar minimum.",
+  "endpoint": "/ml/population",
+  "input": {
+    "function": "himmelblau",
+    "algorithms": [
+      "hho",
+      "avoa",
+      "pso",
+      "cmaes"
+    ],
+    "pop": 20,
+    "iters": 60,
+    "seed": 1
+  }
+}

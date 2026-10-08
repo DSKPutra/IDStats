@@ -1,0 +1,9 @@
+{
+  "title": "TSP 10 kota acak",
+  "description": "GA dan SA dibandingkan dengan solusi eksak Held-Karp.",
+  "endpoint": "/ml/tsp",
+  "input": {
+    "n_random": 10,
+    "seed": 1
+  }
+}
