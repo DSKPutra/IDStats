@@ -50,6 +50,9 @@ const pages: Record<string, ComponentType> = {
   'or/forecasting': variantPage(() => import('./or/configs/stochastic').then((m) => m.forecastConfig)),
   'or/mdp': variantPage(() => import('./or/configs/stochastic').then((m) => m.mdpConfig)),
   'or/simulation': variantPage(() => import('./or/configs/stochastic').then((m) => m.simulationConfig)),
+  'general/history': lazy(() => import('./general/History').then((m) => ({ default: () => <m.HistoryPage /> }))),
+  'general/pdf-report': lazy(() => import('./general/History').then((m) => ({ default: () => <m.HistoryPage reportMode /> }))),
+  'general/practice': lazy(() => import('./general/Practice').then((m) => ({ default: m.PracticePage }))),
   'or/appendix': variantPage(() => import('./or/configs/stochastic').then((m) => m.appendixConfig)),
 }
 

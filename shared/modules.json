@@ -257,17 +257,20 @@
         {
           "id": "history",
           "title": "Riwayat Perhitungan (History)",
-          "phase": 8
+          "phase": 8,
+          "available": true
         },
         {
           "id": "pdf-report",
           "title": "Ekspor Laporan PDF",
-          "phase": 8
+          "phase": 8,
+          "available": true
         },
         {
           "id": "practice",
           "title": "Mode Latihan (Practice Mode)",
-          "phase": 8
+          "phase": 8,
+          "available": true
         }
       ]
     }

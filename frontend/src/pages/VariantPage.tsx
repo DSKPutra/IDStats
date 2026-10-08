@@ -1,13 +1,15 @@
 import { Info, Loader2, RotateCcw, Sparkles } from 'lucide-react'
-import { useState, type ReactNode } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useLocation, useSearchParams } from 'react-router-dom'
 import { FieldInput } from '@/components/form/FieldInput'
 import { buildBody, initialRaw, isVisible, rawFromBody, type FieldDef, type RawValues } from '@/components/form/fields'
 import { MethodPage } from '@/components/solver/MethodPage'
 import { ResultView } from '@/components/solver/ResultView'
 import { Button } from '@/components/ui/button'
 import { useDataset, type Dataset } from '@/context/DatasetContext'
+import { useHistory } from '@/context/HistoryContext'
 import { ApiError, getExample, solve, type Example, type SolverResponse } from '@/lib/api'
+import { openReport } from '@/lib/report'
 import { cn } from '@/lib/utils'
 
 export interface Variant {
@@ -39,6 +41,9 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
   const [example, setExample] = useState<Example | null>(null)
   const [loading, setLoading] = useState(false)
   const { dataset } = useDataset()
+  const history = useHistory()
+  const location = useLocation()
+  const [lastBody, setLastBody] = useState<Record<string, unknown> | null>(null)
 
   const raw = rawByVariant[variant.id] ?? initialRaw(variant.fields)
   const setRaw = (next: RawValues) => setRawByVariant((prev) => ({ ...prev, [variant.id]: next }))
@@ -50,12 +55,12 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
     setExample(null)
   }
 
-  const run = async () => {
-    const built = buildBody(variant.fields, raw)
+  const run = async (rawValues: RawValues = raw, target: Variant = variant, record = true) => {
+    const built = buildBody(target.fields, rawValues)
     const errs = [...built.errors]
     let body: Record<string, unknown> = built.body
-    if (!errs.length && variant.prepareBody) {
-      const prepared = variant.prepareBody(body, { dataset })
+    if (!errs.length && target.prepareBody) {
+      const prepared = target.prepareBody(body, { dataset })
       if (typeof prepared === 'string') errs.push(prepared)
       else body = prepared
     }
@@ -63,13 +68,33 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
     if (errs.length) return
     setLoading(true)
     try {
-      setResponse(await solve(variant.endpoint, body))
+      const res = await solve(target.endpoint, body)
+      setResponse(res)
+      setLastBody(body)
+      // baris dataset tidak disimpan di riwayat (bisa besar); dataset aktif dipakai lagi saat dipulihkan
+      const { rows: _rows, columns: _cols, ...lean } = body
+      if (record) history.add({ path: location.pathname, pageTitle: config.title, variantId: target.id, variantLabel: target.label, endpoint: target.endpoint, raw: rawValues, body: lean, conclusion: res.conclusion ?? null })
     } catch (e) {
       setErrors([e instanceof ApiError ? e.message : 'Terjadi kesalahan tak terduga.'])
     } finally {
       setLoading(false)
     }
   }
+
+  // Pulihkan perhitungan dari halaman Riwayat (?riwayat=<id>)
+  const restored = useRef<string | null>(null)
+  const restoreId = params.get('riwayat')
+  useEffect(() => {
+    if (!restoreId || restored.current === restoreId) return
+    restored.current = restoreId
+    const entry = history.get(restoreId)
+    const target = entry && config.variants.find((v) => v.id === entry.variantId)
+    if (!entry || !target) return
+    // eslint-disable-next-line react/set-state-in-effect -- sinkron satu kali dari parameter URL
+    setRawByVariant((prev) => ({ ...prev, [target.id]: entry.raw }))
+    setParams({ metode: target.id }, { replace: true })
+    void run(entry.raw, target, false)
+  }, [restoreId]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadExample = async () => {
     setErrors([])
@@ -136,7 +161,7 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
           </ul>
         )}
         <div className="flex flex-wrap gap-2">
-          <Button onClick={run} disabled={loading}>
+          <Button onClick={() => run()} disabled={loading}>
             {loading && <Loader2 className="animate-spin" />} Hitung
           </Button>
           <Button variant="outline" onClick={loadExample}>
@@ -158,6 +183,7 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
       result={response && <ResultView response={response} name={variant.label} />}
       response={response}
       theory={variant.theory}
+      onReport={response ? () => openReport({ pageTitle: config.title, variantLabel: variant.label, input: lastBody ?? {}, response }) : undefined}
     />
   )
 }

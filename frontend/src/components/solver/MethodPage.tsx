@@ -1,5 +1,6 @@
-import { AlertTriangle, BookOpen, Calculator, ChartColumn, ListOrdered, Table2 } from 'lucide-react'
+import { AlertTriangle, BookOpen, Calculator, ChartColumn, FileText, ListOrdered, Table2 } from 'lucide-react'
 import { useState, type ReactNode } from 'react'
+import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import type { SolverResponse } from '@/lib/api'
 import { ChartView } from './ChartView'
@@ -12,10 +13,12 @@ interface MethodPageProps {
   result?: ReactNode
   response?: SolverResponse<unknown> | null
   theory: ReactNode
+  /** Buka laporan siap cetak / simpan PDF (muncul setelah ada hasil). */
+  onReport?: () => void
 }
 
 /** Kerangka standar setiap halaman metode: Input → Hasil → Langkah → Visualisasi → Teori. */
-export function MethodPage({ title, subtitle, input, result, response, theory }: MethodPageProps) {
+export function MethodPage({ title, subtitle, input, result, response, theory, onReport }: MethodPageProps) {
   const [tab, setTab] = useState('input')
   const hasResult = Boolean(response)
 
@@ -28,8 +31,17 @@ export function MethodPage({ title, subtitle, input, result, response, theory }:
 
   return (
     <div className="mx-auto max-w-5xl">
-      <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-      <p className="mt-1 text-muted-foreground">{subtitle}</p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
+          <p className="mt-1 text-muted-foreground">{subtitle}</p>
+        </div>
+        {onReport && (
+          <Button variant="outline" onClick={onReport}>
+            <FileText /> Laporan PDF
+          </Button>
+        )}
+      </div>
 
       <Tabs value={tab} onValueChange={setTab} className="mt-6">
         <TabsList>

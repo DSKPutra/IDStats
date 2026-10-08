@@ -30,6 +30,9 @@
 - Halaman khusus (mis. `pages/stats/DataManagement.tsx`) boleh ditulis manual.
 - Daftarkan halaman di `pages/MethodRoute.tsx` (lazy import); route = `/<kategori>/<metode>`, varian lewat `?metode=`.
 - Dataset aktif (`context/DatasetContext.tsx`) dipakai bersama; input angka punya tombol “Isi dari kolom dataset”.
+- Riwayat (`context/HistoryContext.tsx`) disimpan di localStorage (serverless tidak bisa menyimpan SQLite);
+  `VariantPage` otomatis mencatat tiap perhitungan & memulihkan via `?riwayat=<id>`. Laporan PDF = halaman cetak
+  `/laporan` (`lib/report.ts`). Mode latihan: `solvers/practice.py` → `/api/practice/*`.
 - Panggil API lewat `lib/api.ts` (`solve`, `getExample`). Semua teks UI dalam Bahasa Indonesia,
   istilah teknis asli dalam kurung.
 - Warna lewat token CSS di `src/index.css` (mendukung mode gelap). Tes dengan vitest di `src/test/` (tsconfig terpisah: `tsconfig.test.json`).

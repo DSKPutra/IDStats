@@ -21,8 +21,7 @@ hasil, dan bisa diekspor.
 | 5 | Bab 15–22 + Appendix: analisis keputusan, Markov, antrian, persediaan, peramalan (termasuk ARIMA), MDP, simulasi, konveksitas/Lagrange/matriks | ✅ |
 | 6 | Optimasi ML C1: 14 optimizer gradien dari nol (SGD, Momentum, AdamW, AdamP, Adai, NAdam, LION, Lookahead, NovoGrad, LAMB, Adamax, AMSGrad, RAdam, QHAdam), playground 2D/3D beranimasi, pelatihan regresi logistik & MLP | ✅ |
 | 7 | Metaheuristik (NOA, HHO, AVOA, EDO, IARO, CMA-ES, LM-MA, AOA + PSO, GA, DE, SA), animasi populasi, benchmark + Friedman/Wilcoxon, HPO (grid/random/Bayesian/metaheuristik), seleksi fitur, TSP/knapsack/penjadwalan, Q-learning, tinjauan paper | ✅ |
-| 8 | Riwayat, laporan PDF, mode latihan | ⏳ |
-| 8 | Riwayat, ekspor PDF, mode latihan | ⏳ |
+| 8 | Riwayat perhitungan (disimpan di browser), laporan PDF siap cetak (`/laporan`), mode latihan dengan soal acak + pembahasan | ✅ |
 
 ## Menjalankan secara lokal
 

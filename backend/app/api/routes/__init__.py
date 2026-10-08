@@ -14,6 +14,7 @@ from app.api.routes import (
     network,
     nonparametric,
     normality,
+    practice,
     project,
     regression,
     stochastic,
@@ -39,6 +40,7 @@ ROUTERS = (
             network,
             project,
             ml,
+            practice,
         )
     ]
     + advanced.routers
