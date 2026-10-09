@@ -6,3 +6,4 @@ scipy>=1.13
 scikit-learn>=1.5
 python-multipart>=0.0.9
 openpyxl>=3.1
+certifi>=2024.2

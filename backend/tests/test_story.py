@@ -84,7 +84,7 @@ def test_endpoint_with_mocked_api(monkeypatch):
 
     seen = {}
 
-    def fake_urlopen(req, timeout):
+    def fake_urlopen(req, timeout, context=None):
         seen["body"] = json.loads(req.data)
         return Res()
 

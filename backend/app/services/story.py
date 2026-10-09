@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import ssl
 import urllib.error
 import urllib.request
 from typing import Any
@@ -39,6 +40,16 @@ Aturan:
    diketahui, fungsi tujuan, kendala, hipotesis, atau apa yang ditanyakan, sesuai jenis soal.
 6. `assumptions`: daftar asumsi/penafsiran yang Anda buat karena soal ambigu (kosongkan bila tidak ada).
 7. Jika soal tidak cocok dengan varian mana pun di halaman ini, pilih varian terdekat dan jelaskan di assumptions."""
+
+
+def _ssl_context() -> ssl.SSLContext:
+    """Pakai bundel CA certifi bila ada (Python python.org di macOS tidak membawa sertifikat CA)."""
+    try:
+        import certifi
+
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
 
 
 def _load_example(module: str, variant_id: str) -> dict[str, Any] | None:
@@ -130,7 +141,7 @@ def interpret(story: str, page_title: str, module: str, variants: list[dict[str,
         method="POST",
     )
     try:
-        with urllib.request.urlopen(req, timeout=55) as res:
+        with urllib.request.urlopen(req, timeout=55, context=_ssl_context()) as res:
             data = json.loads(res.read())
     except urllib.error.HTTPError as e:
         raise SolverError(
