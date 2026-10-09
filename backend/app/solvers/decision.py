@@ -351,7 +351,7 @@ def _tree_chart(root: TNode, title: str) -> Chart:
             }
         )
     symbol = {"D": "square", "C": "circle", "T": "triangle-left"}
-    color = {"D": "#6366f1", "C": "#f59e0b", "T": "#10b981"}
+    color = {"D": "#12a227", "C": "#f59e0b", "T": "#10b981"}
     return Chart(
         id="decision-tree",
         title="Pohon keputusan",

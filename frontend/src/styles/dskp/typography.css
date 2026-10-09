@@ -1,0 +1,24 @@
+:root{
+--font-display:"Jost","Futura","Century Gothic",sans-serif;
+--font-text:"Manrope","Helvetica Neue",Arial,sans-serif;
+--font-mono:"JetBrains Mono",ui-monospace,monospace;
+
+--fs-display-1:72px;--fs-display-2:56px;--fs-display-3:40px;
+--fs-title-1:30px;--fs-title-2:24px;--fs-title-3:20px;
+--fs-body-lg:17px;--fs-body:15px;--fs-body-sm:13px;--fs-caption:11px;
+
+--lh-tight:1.06;/* @kind font */--lh-snug:1.22;/* @kind font */--lh-normal:1.5;/* @kind font */--lh-loose:1.7;/* @kind font */
+
+--fw-extralight:200;/* @kind font */--fw-light:300;/* @kind font */--fw-regular:400;/* @kind font */--fw-medium:500;/* @kind font */--fw-semibold:600;/* @kind font */--fw-bold:700;/* @kind font */
+
+/* Tracking is the brand's loudest typographic signal — the wordmark is set very wide. */
+--tracking-mark:.34em;/* @kind font */--tracking-tagline:.22em;/* @kind font */--tracking-eyebrow:.16em;/* @kind font */
+--tracking-display:.02em;/* @kind font */--tracking-normal:0;/* @kind font */--tracking-tight:-.01em;/* @kind font */
+
+/* Composed roles */
+--type-wordmark:var(--fw-light) var(--fs-display-2)/var(--lh-snug) var(--font-display);
+--type-display:var(--fw-extralight) var(--fs-display-1)/var(--lh-tight) var(--font-display);
+--type-title:var(--fw-light) var(--fs-title-1)/var(--lh-snug) var(--font-display);
+--type-eyebrow:var(--fw-medium) var(--fs-caption)/var(--lh-normal) var(--font-text);
+--type-body:var(--fw-regular) var(--fs-body)/var(--lh-loose) var(--font-text);
+}

@@ -165,7 +165,7 @@ def graph_chart(
             "y": [pos[n][1] for n in nodes],
             "text": [node_labels.get(n, n) if node_labels else n for n in nodes],
             "textposition": "middle center",
-            "marker": {"size": 34, "color": "#6366f1", "line": {"width": 2, "color": "#ffffff"}},
+            "marker": {"size": 34, "color": "#12a227", "line": {"width": 2, "color": "#ffffff"}},
             "textfont": {"color": "#ffffff", "size": 12},
             "name": "Node",
             "showlegend": False,

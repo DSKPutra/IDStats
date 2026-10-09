@@ -28,7 +28,7 @@ interface CheckResult {
   solution: SolverResponse<unknown>
 }
 
-const selectClass = 'h-9 rounded-md border bg-card px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50'
+const selectClass = 'h-9 rounded-md border bg-card px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
 const newSeed = () => Math.floor(Math.random() * 1_000_000)
 const fmt = (v: number) => (Math.abs(v) >= 1e4 || Number.isInteger(v) ? v.toLocaleString('id-ID') : v.toLocaleString('id-ID', { maximumFractionDigits: 4 }))
 

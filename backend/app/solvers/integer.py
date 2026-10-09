@@ -234,7 +234,7 @@ def _tree_chart(nodes: list[BBNode], incumbent) -> Chart:
         if "tidak layak" in n.status:
             return "#94a3b8"
         if "Dicabangkan" in n.status:
-            return "#6366f1"
+            return "#12a227"
         return "#f59e0b"
 
     return Chart(

@@ -1,0 +1,7 @@
+:root{
+/* The mark mixes one hard mitre with one large arc — the system mirrors that:
+   near-square containers, fully-round pills. Nothing in between. */
+--radius-0:0;--radius-1:2px;--radius-2:4px;--radius-3:8px;--radius-pill:999px;
+--radius-card:var(--radius-2);--radius-control:var(--radius-1);--radius-media:var(--radius-2);
+--border-hairline:1px;--border-strong:2px;
+}

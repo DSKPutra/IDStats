@@ -23,8 +23,11 @@ function themedLayout(layout: Record<string, unknown> = {}) {
     margin: { t: 48, r: 16, b: 48, l: 56 },
     paper_bgcolor: 'rgba(0,0,0,0)',
     plot_bgcolor: 'rgba(0,0,0,0)',
-    font: { color: fg, family: 'Inter, system-ui, sans-serif' },
-    colorway: ['#6366f1', '#f59e0b', '#10b981', '#ef4444', '#06b6d4', '#a855f7'],
+    font: { color: fg, family: 'Manrope, Helvetica Neue, Arial, sans-serif' },
+    // Palet brand: hijau streak dulu, lalu ink/abu dan warna status agar seri tetap terbedakan.
+    colorway: document.documentElement.classList.contains('dark')
+      ? ['#21D138', '#D8D8D3', '#E0B04A', '#F2857D', '#6BE87F', '#7C807D', '#5FB3A6']
+      : ['#12A227', '#343A38', '#B5820C', '#B3261E', '#0B6B1C', '#A5A8A5', '#2F7F73'],
     xaxis: { gridcolor: grid, zerolinecolor: grid, ...(layout.xaxis as object) },
     yaxis: { gridcolor: grid, zerolinecolor: grid, ...(layout.yaxis as object) },
   }

@@ -1,0 +1,12 @@
+:root{
+/* Light and sparing. Depth comes from the ink/paper contrast, not from drop shadows. */
+--shadow-0:none;
+--shadow-1:0 1px 2px rgba(8,10,9,.05);
+--shadow-2:0 2px 8px rgba(8,10,9,.07);
+--shadow-3:0 12px 32px -8px rgba(8,10,9,.16);
+--shadow-inset-hairline:inset 0 0 0 1px var(--line-hairline);
+--shadow-focus:0 0 0 2px var(--paper-000),0 0 0 4px var(--focus-ring);
+--shadow-focus-inverse:0 0 0 2px var(--ink-900),0 0 0 4px var(--focus-ring);
+--blur-veil:blur(14px);/* @kind other */
+--veil-light:rgba(247,247,245,.72);/* @kind color */--veil-dark:rgba(8,10,9,.62);/* @kind color */
+}

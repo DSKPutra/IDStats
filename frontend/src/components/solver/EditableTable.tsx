@@ -37,7 +37,7 @@ export function EditableTable({ dataset, onChange }: { dataset: Dataset; onChang
               aria-label={`${name} baris ${row.index + 1}`}
               defaultValue={v === null ? '' : String(v)}
               key={`${row.index}-${String(v)}`}
-              className="w-full min-w-20 bg-transparent px-2 py-1 tabular-nums focus:bg-card focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="w-full min-w-20 bg-transparent px-2 py-1 tabular-nums focus:bg-card focus:outline-none focus:ring-2 focus:ring-ring"
               onBlur={(e) => {
                 const next = parseCell(e.target.value)
                 if (next === v) return

@@ -280,7 +280,7 @@ def _chart(d: Distribution, rv: Any, shade: tuple[float, float] | None, point: f
         colors = [
             "#ef4444"
             if shade and shade[0] <= v <= shade[1]
-            else ("#f59e0b" if point is not None and v == point else "#6366f1")
+            else ("#f59e0b" if point is not None and v == point else "#12a227")
             for v in xs
         ]
         traces = [{"type": "bar", "x": xs.tolist(), "y": ys.tolist(), "marker": {"color": colors}, "name": "P(X = x)"}]

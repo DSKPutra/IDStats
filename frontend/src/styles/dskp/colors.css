@@ -1,0 +1,29 @@
+:root{
+/* — Ink (from the mark's near-black body) — */
+--ink-900:#080A09;--ink-800:#0E1211;--ink-700:#171B19;--ink-600:#222726;--ink-500:#343A38;
+/* — Paper (from the off-white backgrounds of every lockup) — */
+--paper-000:#FFFFFF;--paper-050:#F7F7F5;--paper-100:#F4F4F2;--paper-200:#E9E9E5;--paper-300:#D8D8D3;
+/* — Neutral text greys (tagline grey in the lockups) — */
+--grey-400:#A5A8A5;--grey-500:#7C807D;--grey-600:#585C59;
+/* — Signal green (the light streak through the P) — */
+--green-100:#DDF7E2;--green-300:#6BE87F;--green-400:#2FDF4A;--green-500:#21D138;--green-600:#12A227;--green-700:#0B6B1C;--green-900:#053810;
+/* — Semantic: surface — */
+--surface-page:var(--paper-100);--surface-card:var(--paper-000);--surface-sunken:var(--paper-200);
+--surface-inverse:var(--ink-900);--surface-inverse-raised:var(--ink-700);
+/* — Semantic: text — */
+--text-strong:var(--ink-900);--text-body:var(--ink-700);--text-muted:var(--grey-600);--text-faint:var(--grey-400);
+--text-on-inverse:var(--paper-050);--text-on-inverse-muted:#9AA09C;--text-accent:var(--green-600);
+--text-on-accent:var(--ink-900);
+/* — Semantic: line — */
+--line-hairline:var(--paper-300);--line-strong:var(--ink-900);--line-inverse:#2A302D;--line-accent:var(--green-500);
+/* — Semantic: action — */
+--action-solid:var(--ink-900);--action-solid-hover:var(--ink-700);--action-solid-text:var(--paper-050);
+--accent-solid:var(--green-500);--accent-solid-hover:var(--green-400);--accent-solid-press:var(--green-600);
+--focus-ring:var(--green-500);
+/* — Semantic: status — */
+--status-positive:var(--green-600);--status-warning:#B5820C;--status-critical:#B3261E;--status-info:var(--ink-600);
+/* — Signature gradient: the streak. Only ever on dark ink. — */
+--streak-gradient:linear-gradient(103deg,var(--green-900) 0%,var(--green-500) 42%,#EAFFEF 58%,var(--green-600) 78%,var(--ink-900) 100%);/* @kind color */
+--ink-gradient:linear-gradient(160deg,var(--ink-800) 0%,var(--ink-900) 60%,#04140A 100%);/* @kind color */
+--glow-green:0 0 24px rgba(33,209,56,.45);
+}

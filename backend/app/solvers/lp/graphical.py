@@ -219,7 +219,7 @@ def _chart(model: LPModel, corners, opt, z) -> Chart:
                 "fill": "toself",
                 "mode": "lines",
                 "line": {"width": 0},
-                "fillcolor": "rgba(99,102,241,0.18)",
+                "fillcolor": "rgba(33,209,56,0.16)",
                 "name": "Daerah layak",
             }
         )

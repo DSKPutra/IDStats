@@ -1,0 +1,8 @@
+:root{
+--dur-instant:90ms;/* @kind other */--dur-fast:160ms;/* @kind other */--dur-base:240ms;/* @kind other */--dur-slow:420ms;/* @kind other */--dur-reveal:700ms;/* @kind other */
+--ease-standard:cubic-bezier(.22,.61,.36,1);/* @kind other */
+--ease-out-soft:cubic-bezier(.16,1,.3,1);/* @kind other */
+--ease-in:cubic-bezier(.5,0,.9,.4);/* @kind other */
+/* No bounce, no overshoot anywhere in this brand. */
+--transition-control:background-color var(--dur-fast) var(--ease-standard),color var(--dur-fast) var(--ease-standard),border-color var(--dur-fast) var(--ease-standard),box-shadow var(--dur-fast) var(--ease-standard),opacity var(--dur-fast) var(--ease-standard);/* @kind other */
+}

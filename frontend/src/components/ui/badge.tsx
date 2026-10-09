@@ -5,7 +5,7 @@ export function Badge({ className, tone = 'muted', ...props }: ComponentProps<'s
   return (
     <span
       className={cn(
-        'inline-flex shrink-0 items-center rounded-full px-2 py-0.5 text-[11px] font-medium',
+        'inline-flex shrink-0 items-center rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em]',
         tone === 'success' ? 'bg-success/15 text-success' : 'bg-muted text-muted-foreground',
         className,
       )}

@@ -15,7 +15,7 @@ from app.solvers._base import plotly_figure, summary_items
 from app.solvers.ml.optimizers import SPECS, Optimizer
 
 COLORS = [
-    "#6366f1",
+    "#12a227",
     "#ef4444",
     "#10b981",
     "#f59e0b",

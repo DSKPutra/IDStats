@@ -35,6 +35,9 @@
   `/laporan` (`lib/report.ts`). Mode latihan: `solvers/practice.py` → `/api/practice/*`.
 - Panggil API lewat `lib/api.ts` (`solve`, `getExample`). Semua teks UI dalam Bahasa Indonesia,
   istilah teknis asli dalam kurung.
+- Desain mengikuti **Dea Saka Kurnia Putra Design System**: token asli di `src/styles/dskp/` dipetakan ke token
+  aplikasi di `src/index.css` (mode gelap = ground ink). Hijau hanya aksen (fokus, garis tab, streak), bukan latar;
+  judul Jost ringan, label/tombol kapital ber-tracking, radius 2/4 px. Footer & laporan memuat © Dea Saka Kurnia Putra.
 - Warna lewat token CSS di `src/index.css` (mendukung mode gelap). Tes dengan vitest di `src/test/` (tsconfig terpisah: `tsconfig.test.json`).
 - `.npmrc` memakai `legacy-peer-deps=true` (bug arborist npm pada peer set vitest).
 

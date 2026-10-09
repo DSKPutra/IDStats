@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Sidebar } from './Sidebar'
+import { SiteFooter } from './SiteFooter'
 import { useTheme } from './useTheme'
 
 export function AppShell() {
@@ -11,7 +12,7 @@ export function AppShell() {
 
   return (
     <div className="min-h-dvh">
-      <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b bg-background/85 px-4 backdrop-blur">
+      <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b bg-background/75 px-4 backdrop-blur-md">
         <Button
           variant="ghost"
           size="icon"
@@ -21,11 +22,11 @@ export function AppShell() {
         >
           {open ? <X /> : <Menu />}
         </Button>
-        <Link to="/" className="flex items-center gap-2 font-semibold">
-          <img src="/favicon.svg" alt="" className="size-6" />
-          IDStats
+        <Link to="/" className="flex items-center gap-2.5">
+          <img src="/brand/mark-p.jpg" alt="" className="size-8 rounded-xs mix-blend-multiply dark:bg-[var(--paper-100)] dark:mix-blend-normal" />
+          <span className="font-display text-lg font-light tracking-[0.22em] text-strong">IDSTATS</span>
         </Link>
-        <span className="hidden text-sm text-muted-foreground sm:inline">Modelling &amp; Optimization</span>
+        <span className="eyebrow hidden sm:inline">Modelling &amp; Optimization</span>
         <Button
           variant="ghost"
           size="icon"
@@ -46,9 +47,12 @@ export function AppShell() {
             <Sidebar onNavigate={() => setOpen(false)} />
           </div>
         )}
-        <main className="min-w-0 flex-1 px-4 py-6 sm:px-8">
-          <Outlet />
-        </main>
+        <div className="flex min-h-[calc(100dvh-3.5rem)] min-w-0 flex-1 flex-col">
+          <main className="flex-1 px-4 py-6 sm:px-8">
+            <Outlet />
+          </main>
+          <SiteFooter />
+        </div>
       </div>
     </div>
   )

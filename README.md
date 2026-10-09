@@ -50,3 +50,15 @@ api/       entry point Vercel Python Function
 
 - **Vercel**: frontend statis + backend FastAPI sebagai Python Function (`vercel.json`, `api/index.py`).
 - **Netlify**: frontend saja; `/api/*` di-proxy ke backend Vercel (`netlify.toml`).
+
+## Desain
+
+Antarmuka memakai **Dea Saka Kurnia Putra Design System**: ink hampir hitam di atas paper off-white, satu aksen
+hijau "streak" dari monogram P, judul Jost ringan dengan tracking lebar, teks Manrope, angka JetBrains Mono, dan
+radius 2/4 px. Token asli ada di `frontend/src/styles/dskp/`, dipetakan ke token aplikasi di `frontend/src/index.css`;
+aset logo di `frontend/public/brand/`.
+
+## Hak cipta
+
+© 2026 Dea Saka Kurnia Putra. Hak cipta dilindungi undang-undang.
+Logo, monogram P, dan identitas visual adalah milik Dea Saka Kurnia Putra.

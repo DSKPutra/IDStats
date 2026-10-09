@@ -15,17 +15,28 @@ export function Dashboard() {
 
   return (
     <div className="mx-auto max-w-6xl">
-      <section className="py-4">
-        <h1 className="text-3xl font-semibold tracking-tight">IDStats</h1>
-        <p className="mt-2 max-w-2xl text-muted-foreground">
+      <section
+        className="relative mb-8 overflow-hidden rounded-2xl border border-[var(--line-inverse)] px-6 py-10 text-[var(--text-on-inverse-muted)] sm:px-10"
+        style={{ background: 'var(--ink-gradient)' }}
+      >
+        <p className="eyebrow !text-[var(--text-on-inverse-muted)]">Modelling &amp; Optimization</p>
+        <span className="streak mt-4 w-24 shadow-[var(--glow-green)]" aria-hidden="true" />
+        <h1 className="mt-5 text-4xl !text-[var(--paper-050)] sm:text-6xl" style={{ fontWeight: 200 }}>
+          IDStats
+        </h1>
+        <p className="mt-4 max-w-2xl leading-relaxed">
           Kalkulator dan modul belajar untuk mata kuliah <em>Modelling &amp; Optimization</em>: statistika, seluruh bab
           <em> Introduction to Operations Research</em> (Hillier &amp; Lieberman), dan optimasi untuk machine learning.
           Setiap metode menampilkan langkah penyelesaian bertahap.
         </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          {availableMethods} dari {totalMethods} metode sudah tersedia; sisanya menyusul per fase.
+        <p className="mt-3 font-mono text-xs tracking-wide">
+          {availableMethods === totalMethods
+            ? `${totalMethods} metode tersedia`
+            : `${availableMethods} dari ${totalMethods} metode tersedia`}
         </p>
-        <label className="relative mt-5 block max-w-md">
+      </section>
+      <section>
+        <label className="relative mb-6 block max-w-md">
           <span className="sr-only">Cari metode</span>
           <Search className="pointer-events-none absolute left-3 top-2.5 size-4 text-muted-foreground" />
           <Input

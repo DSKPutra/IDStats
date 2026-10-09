@@ -7,7 +7,7 @@ import { OptimizerPicker } from './OptimizerPicker'
 import { GroupsInput } from './GroupsInput'
 
 const selectClass =
-  'h-9 w-full rounded-md border bg-card px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50'
+  'h-9 w-full rounded-md border bg-card px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
 
 export function FieldInput({ field, value, onChange, raw = {} }: { field: FieldDef; value: RawValue; onChange: (v: RawValue) => void; raw?: RawValues }) {
   const id = `f-${field.key.replace(/\W/g, '-')}`

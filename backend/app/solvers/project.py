@@ -171,7 +171,7 @@ def _schedule_table(acts, sch: Schedule, dur) -> NamedTable:
 def _gantt(acts, sch: Schedule, dur) -> Chart:
     order = sorted(acts, key=lambda a: (sch.es[a.code], a.code))
     traces = []
-    for crit, color, name in ((True, "#ef4444", "Kritis"), (False, "#6366f1", "Tidak kritis")):
+    for crit, color, name in ((True, "#ef4444", "Kritis"), (False, "#12a227", "Tidak kritis")):
         sel = [a for a in order if (a.code in sch.critical) == crit]
         if not sel:
             continue
@@ -275,7 +275,7 @@ def _aon(acts, sch: Schedule, dur) -> Chart:
                         "size": 40,
                         "symbol": "square",
                         "color": [
-                            "#64748b" if n in ("START", "FINISH") else "#ef4444" if n in crit else "#6366f1"
+                            "#64748b" if n in ("START", "FINISH") else "#ef4444" if n in crit else "#12a227"
                             for n in names
                         ],
                     },

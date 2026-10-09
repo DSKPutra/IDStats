@@ -27,7 +27,7 @@ export function ReportPage() {
     <div className="mx-auto max-w-4xl bg-white p-8 text-black print:p-0">
       <div className="mb-6 flex items-start justify-between gap-4 border-b pb-4">
         <div>
-          <p className="text-sm text-gray-500">IDStats — Modelling &amp; Optimization</p>
+          <p className="eyebrow">IDStats — Modelling &amp; Optimization</p>
           <h1 className="text-2xl font-semibold">{report.pageTitle}</h1>
           <p className="text-gray-600">{report.variantLabel}</p>
           <p className="text-xs text-gray-500">Dibuat {new Date(report.createdAt).toLocaleString('id-ID')}</p>
@@ -65,6 +65,13 @@ export function ReportPage() {
           <ChartView charts={report.response.charts.map((c) => ({ ...c, spec: { ...c.spec, frames: undefined } }))} />
         </section>
       )}
+      <footer className="mt-10 border-t pt-4 text-xs text-gray-500">
+        <span className="streak mb-4" aria-hidden="true" />
+        <div className="flex items-center justify-between gap-4">
+          <img src="/brand/logo-horizontal.jpg" alt="Dea Saka Kurnia Putra" className="h-12 w-auto mix-blend-multiply" />
+          <p>© {new Date(report.createdAt).getFullYear()} Dea Saka Kurnia Putra. Hak cipta dilindungi undang-undang.</p>
+        </div>
+      </footer>
     </div>
   )
 }
