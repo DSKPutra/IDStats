@@ -51,6 +51,15 @@ api/       entry point Vercel Python Function
 - **Vercel**: frontend statis + backend FastAPI sebagai Python Function (`vercel.json`, `api/index.py`).
 - **Netlify**: frontend saja; `/api/*` di-proxy ke backend Vercel (`netlify.toml`).
 
+## Input soal cerita
+
+Setiap halaman metode memiliki opsi **“Masukkan dalam bentuk soal cerita”**. Teks soal dikirim ke
+`POST /api/story/interpret`, yang memakai Claude (Anthropic API) untuk memilih varian metode dan mengisi input
+dengan struktur yang sama persis seperti contoh soal varian tersebut, beserta formulasi modelnya. Perhitungan
+tetap dikerjakan solver IDStats, sehingga langkah-langkahnya tetap tampil. Fitur ini membutuhkan variabel
+lingkungan `ANTHROPIC_API_KEY` di server (opsional `IDSTATS_LLM_MODEL`, bawaan `claude-sonnet-5-5`); tanpa key,
+pengguna mendapat pesan bahwa fitur belum aktif dan input manual tetap berfungsi.
+
 ## Desain
 
 Antarmuka memakai **Dea Saka Kurnia Putra Design System**: ink hampir hitam di atas paper off-white, satu aksen

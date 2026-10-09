@@ -5,6 +5,7 @@ import { FieldInput } from '@/components/form/FieldInput'
 import { buildBody, initialRaw, isVisible, rawFromBody, type FieldDef, type RawValues } from '@/components/form/fields'
 import { MethodPage } from '@/components/solver/MethodPage'
 import { ResultView } from '@/components/solver/ResultView'
+import { StoryInput, type StoryResult } from '@/components/solver/StoryInput'
 import { Button } from '@/components/ui/button'
 import { useDataset, type Dataset } from '@/context/DatasetContext'
 import { useHistory } from '@/context/HistoryContext'
@@ -44,6 +45,7 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
   const history = useHistory()
   const location = useLocation()
   const [lastBody, setLastBody] = useState<Record<string, unknown> | null>(null)
+  const [story, setStory] = useState<{ text: string; result: StoryResult } | null>(null)
 
   const raw = rawByVariant[variant.id] ?? initialRaw(variant.fields)
   const setRaw = (next: RawValues) => setRawByVariant((prev) => ({ ...prev, [variant.id]: next }))
@@ -107,9 +109,20 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
     }
   }
 
+  const applyStory = (result: StoryResult, text: string) => {
+    const target = config.variants.find((v) => v.id === result.variant_id) ?? variant
+    const next = rawFromBody(target.fields, result.input)
+    setRawByVariant((prev) => ({ ...prev, [target.id]: next }))
+    setParams({ metode: target.id }, { replace: true })
+    setExample(null)
+    setStory({ text, result })
+    void run(next, target)
+  }
+
   const reset = () => {
     setRaw(initialRaw(variant.fields))
     setExample(null)
+    setStory(null)
     setErrors([])
   }
 
@@ -119,6 +132,17 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
 
   const input = (
     <div className="flex flex-col gap-4">
+      <StoryInput
+        pageTitle={config.title}
+        module={config.exampleModule ?? 'stats'}
+        variants={config.variants.map((v) => ({
+          id: v.id,
+          label: v.label,
+          fields: v.fields.filter((f) => !f.virtual).map((f) => ({ key: f.key, label: f.label, type: f.type })),
+        }))}
+        onApply={applyStory}
+        result={story?.result ?? null}
+      />
       {config.variants.length > 1 && (
         <div role="radiogroup" aria-label="Pilih metode" className="flex flex-wrap gap-2">
           {config.variants.map((v) => (
@@ -183,7 +207,7 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
       result={response && <ResultView response={response} name={variant.label} />}
       response={response}
       theory={variant.theory}
-      onReport={response ? () => openReport({ pageTitle: config.title, variantLabel: variant.label, input: lastBody ?? {}, response }) : undefined}
+      onReport={response ? () => openReport({ pageTitle: config.title, variantLabel: variant.label, input: lastBody ?? {}, response, story: story ? { text: story.text, formulation: story.result.formulation, assumptions: story.result.assumptions } : undefined }) : undefined}
     />
   )
 }

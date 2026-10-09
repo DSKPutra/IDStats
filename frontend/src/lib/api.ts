@@ -87,3 +87,7 @@ export function uploadFile<R = Record<string, unknown>>(path: string, file: File
   body.append('file', file)
   return request<SolverResponse<R>>(path, { method: 'POST', body })
 }
+
+export function postJson<T>(path: string, body: unknown) {
+  return request<T>(path, { method: 'POST', body: JSON.stringify(body) })
+}

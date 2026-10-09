@@ -33,6 +33,8 @@
 - Riwayat (`context/HistoryContext.tsx`) disimpan di localStorage (serverless tidak bisa menyimpan SQLite);
   `VariantPage` otomatis mencatat tiap perhitungan & memulihkan via `?riwayat=<id>`. Laporan PDF = halaman cetak
   `/laporan` (`lib/report.ts`). Mode latihan: `solvers/practice.py` → `/api/practice/*`.
+- Soal cerita: `components/solver/StoryInput.tsx` → `POST /api/story/interpret` (`app/services/story.py`, Claude via
+  `ANTHROPIC_API_KEY`). LLM hanya menerjemahkan ke input berstruktur sama dengan contoh soal; hasil dihitung solver.
 - Panggil API lewat `lib/api.ts` (`solve`, `getExample`). Semua teks UI dalam Bahasa Indonesia,
   istilah teknis asli dalam kurung.
 - Desain mengikuti **Dea Saka Kurnia Putra Design System**: token asli di `src/styles/dskp/` dipetakan ke token

@@ -5,6 +5,8 @@ export interface ReportPayload {
   variantLabel: string
   input: Record<string, unknown>
   response: SolverResponse<unknown>
+  /** Soal cerita asli beserta formulasi hasil terjemahan (opsional). */
+  story?: { text: string; formulation: string; assumptions: string[] }
   createdAt: number
 }
 

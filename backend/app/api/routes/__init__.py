@@ -18,6 +18,7 @@ from app.api.routes import (
     project,
     regression,
     stochastic,
+    story,
     transport,
 )
 
@@ -41,6 +42,7 @@ ROUTERS = (
             project,
             ml,
             practice,
+            story,
         )
     ]
     + advanced.routers

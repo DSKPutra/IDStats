@@ -128,3 +128,29 @@ h3 {
     display: none !important;
   }
 }
+
+/* Laporan PDF: warna brand ikut tercetak, margin halaman, dan footer hak cipta di setiap halaman. */
+@page {
+  size: A4;
+  margin: 16mm 14mm 20mm;
+}
+@media print {
+  .report,
+  .report * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .report-page-footer {
+    position: fixed;
+    bottom: -12mm;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid var(--paper-300);
+    padding-top: 4px;
+    font-size: 8pt;
+    letter-spacing: 0.04em;
+    color: var(--grey-600);
+  }
+}
