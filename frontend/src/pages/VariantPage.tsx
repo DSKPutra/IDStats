@@ -116,7 +116,8 @@ export function VariantPage({ config }: { config: VariantPageConfig }) {
     setParams({ metode: target.id }, { replace: true })
     setExample(null)
     setStory({ text, result })
-    void run(next, target)
+    if (result.complete !== false) void run(next, target)
+    else setErrors([])
   }
 
   const reset = () => {

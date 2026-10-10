@@ -24,10 +24,11 @@ class StoryRequest(BaseModel):
     text: str = Field(max_length=story.MAX_STORY_CHARS + 500)
     page_title: str = ""
     module: str = "stats"
+    page_path: str = ""
     variants: list[StoryVariant] = Field(min_length=1, max_length=40)
 
 
 @router.post("/interpret")
 def interpret(req: StoryRequest) -> dict[str, Any]:
     """Terjemahkan soal cerita menjadi varian + input solver (tanpa menyelesaikan soal)."""
-    return story.interpret(req.text, req.page_title, req.module, [v.model_dump() for v in req.variants])
+    return story.interpret(req.text, req.page_title, req.module, [v.model_dump() for v in req.variants], req.page_path)

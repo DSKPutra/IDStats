@@ -1,0 +1,2033 @@
+{
+ "Statistik Deskriptif": {
+  "module": "stats",
+  "title": "Statistik Deskriptif (Descriptive Statistics)",
+  "variants": [
+   {
+    "id": "descriptive",
+    "label": "Ringkasan statistik",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Data sampel"
+     }
+    ]
+   },
+   {
+    "id": "frequency-table",
+    "label": "Tabel distribusi frekuensi",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Data sampel"
+     },
+     {
+      "key": "classes",
+      "type": "integer",
+      "label": "Jumlah kelas (opsional)"
+     }
+    ]
+   },
+   {
+    "id": "scatter",
+    "label": "Diagram pencar",
+    "fields": [
+     {
+      "key": "x_name",
+      "type": "text",
+      "label": "Nama variabel X"
+     },
+     {
+      "key": "y_name",
+      "type": "text",
+      "label": "Nama variabel Y"
+     },
+     {
+      "key": "x",
+      "type": "numbers",
+      "label": "Data X"
+     },
+     {
+      "key": "y",
+      "type": "numbers",
+      "label": "Data Y"
+     }
+    ]
+   }
+  ]
+ },
+ "Distribusi Probabilitas": {
+  "module": "stats",
+  "title": "Distribusi Probabilitas (Probability Distributions)",
+  "variants": [
+   {
+    "id": "distribution-calculator",
+    "label": "Kalkulator distribusi",
+    "fields": [
+     {
+      "key": "dist",
+      "type": "select",
+      "label": "Distribusi"
+     },
+     {
+      "key": "mode",
+      "type": "select",
+      "label": "Yang dihitung"
+     },
+     {
+      "key": "params.mu",
+      "type": "number",
+      "label": "μ (rata-rata)"
+     },
+     {
+      "key": "params.sigma",
+      "type": "number",
+      "label": "σ (simpangan baku)"
+     },
+     {
+      "key": "params.n",
+      "type": "integer",
+      "label": "n (jumlah percobaan)"
+     },
+     {
+      "key": "params.p",
+      "type": "number",
+      "label": "p (peluang sukses)"
+     },
+     {
+      "key": "params.lam",
+      "type": "number",
+      "label": "λ (laju / rata-rata)"
+     },
+     {
+      "key": "params.k",
+      "type": "number",
+      "label": "k (bentuk; bulat = Erlang)"
+     },
+     {
+      "key": "params.a",
+      "type": "number",
+      "label": "a (batas bawah)"
+     },
+     {
+      "key": "params.b",
+      "type": "number",
+      "label": "b (batas atas)"
+     },
+     {
+      "key": "params.df",
+      "type": "number",
+      "label": "Derajat bebas"
+     },
+     {
+      "key": "params.df1",
+      "type": "number",
+      "label": "df₁ (pembilang)"
+     },
+     {
+      "key": "params.df2",
+      "type": "number",
+      "label": "df₂ (penyebut)"
+     },
+     {
+      "key": "x",
+      "type": "number",
+      "label": "x"
+     },
+     {
+      "key": "a",
+      "type": "number",
+      "label": "a (batas bawah)"
+     },
+     {
+      "key": "b",
+      "type": "number",
+      "label": "b (batas atas)"
+     },
+     {
+      "key": "p",
+      "type": "number",
+      "label": "Peluang p"
+     }
+    ]
+   },
+   {
+    "id": "distribution-table",
+    "label": "Tabel statistik",
+    "fields": [
+     {
+      "key": "kind",
+      "type": "select",
+      "label": "Tabel"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "α (untuk tabel F)"
+     }
+    ]
+   }
+  ]
+ },
+ "Statistik Inferensial": {
+  "module": "stats",
+  "title": "Statistik Inferensial (Inferential Statistics)",
+  "variants": [
+   {
+    "id": "confidence-interval",
+    "label": "Interval kepercayaan",
+    "fields": [
+     {
+      "key": "kind",
+      "type": "select",
+      "label": "Parameter"
+     },
+     {
+      "key": "confidence",
+      "type": "number",
+      "label": "Tingkat kepercayaan"
+     },
+     {
+      "key": "sigma",
+      "type": "number",
+      "label": "σ populasi"
+     },
+     {
+      "key": "successes",
+      "type": "integer",
+      "label": "Jumlah sukses x"
+     },
+     {
+      "key": "n",
+      "type": "integer",
+      "label": "Ukuran sampel n"
+     },
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Data sampel"
+     },
+     {
+      "key": "n",
+      "type": "integer",
+      "label": "Ukuran sampel n"
+     },
+     {
+      "key": "mean",
+      "type": "number",
+      "label": "Rata-rata sampel x̄"
+     },
+     {
+      "key": "sd",
+      "type": "number",
+      "label": "Simpangan baku sampel s"
+     }
+    ]
+   },
+   {
+    "id": "z-test",
+    "label": "Uji-z",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Data sampel"
+     },
+     {
+      "key": "n",
+      "type": "integer",
+      "label": "Ukuran sampel n"
+     },
+     {
+      "key": "mean",
+      "type": "number",
+      "label": "Rata-rata sampel x̄"
+     },
+     {
+      "key": "mu0",
+      "type": "number",
+      "label": "μ₀ (nilai hipotesis)"
+     },
+     {
+      "key": "sigma",
+      "type": "number",
+      "label": "σ populasi"
+     },
+     {
+      "key": "alternative",
+      "type": "alternative",
+      "label": "Arah uji (hipotesis alternatif)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "t-one-sample",
+    "label": "Uji-t satu sampel",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Data sampel"
+     },
+     {
+      "key": "n",
+      "type": "integer",
+      "label": "Ukuran sampel n"
+     },
+     {
+      "key": "mean",
+      "type": "number",
+      "label": "Rata-rata sampel x̄"
+     },
+     {
+      "key": "sd",
+      "type": "number",
+      "label": "Simpangan baku sampel s"
+     },
+     {
+      "key": "mu0",
+      "type": "number",
+      "label": "μ₀ (nilai hipotesis)"
+     },
+     {
+      "key": "alternative",
+      "type": "alternative",
+      "label": "Arah uji (hipotesis alternatif)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "t-independent",
+    "label": "Uji-t dua sampel independen",
+    "fields": [
+     {
+      "key": "x",
+      "type": "numbers",
+      "label": "Sampel 1"
+     },
+     {
+      "key": "y",
+      "type": "numbers",
+      "label": "Sampel 2"
+     },
+     {
+      "key": "equal_var",
+      "type": "boolean",
+      "label": "Varians sama"
+     },
+     {
+      "key": "alternative",
+      "type": "alternative",
+      "label": "Arah uji (hipotesis alternatif)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "t-paired",
+    "label": "Uji-t berpasangan",
+    "fields": [
+     {
+      "key": "x",
+      "type": "numbers",
+      "label": "Pengukuran 1 (mis. sebelum)"
+     },
+     {
+      "key": "y",
+      "type": "numbers",
+      "label": "Pengukuran 2 (mis. sesudah)"
+     },
+     {
+      "key": "alternative",
+      "type": "alternative",
+      "label": "Arah uji (hipotesis alternatif)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "proportion-test",
+    "label": "Uji proporsi",
+    "fields": [
+     {
+      "key": "x1",
+      "type": "integer",
+      "label": "Jumlah sukses x₁"
+     },
+     {
+      "key": "n1",
+      "type": "integer",
+      "label": "Ukuran sampel n₁"
+     },
+     {
+      "key": "p0",
+      "type": "number",
+      "label": "p₀ (proporsi hipotesis)"
+     },
+     {
+      "key": "x2",
+      "type": "integer",
+      "label": "Jumlah sukses x₂"
+     },
+     {
+      "key": "n2",
+      "type": "integer",
+      "label": "Ukuran sampel n₂"
+     },
+     {
+      "key": "alternative",
+      "type": "alternative",
+      "label": "Arah uji (hipotesis alternatif)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "chi-square-gof",
+    "label": "Chi-square goodness of fit",
+    "fields": [
+     {
+      "key": "categories",
+      "type": "labels",
+      "label": "Nama kategori (opsional)"
+     },
+     {
+      "key": "observed",
+      "type": "numbers",
+      "label": "Frekuensi observasi O"
+     },
+     {
+      "key": "expected",
+      "type": "numbers",
+      "label": "Frekuensi harapan E atau peluang (opsional)"
+     },
+     {
+      "key": "estimated_params",
+      "type": "integer",
+      "label": "Jumlah parameter yang diestimasi dari data"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "chi-square-independence",
+    "label": "Chi-square independensi",
+    "fields": [
+     {
+      "key": "table",
+      "type": "matrix",
+      "label": "Tabel kontingensi"
+     },
+     {
+      "key": "row_labels",
+      "type": "labels",
+      "label": "Label baris (opsional)"
+     },
+     {
+      "key": "col_labels",
+      "type": "labels",
+      "label": "Label kolom (opsional)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "f-test",
+    "label": "Uji F (dua varians)",
+    "fields": [
+     {
+      "key": "x",
+      "type": "numbers",
+      "label": "Sampel 1"
+     },
+     {
+      "key": "y",
+      "type": "numbers",
+      "label": "Sampel 2"
+     },
+     {
+      "key": "alternative",
+      "type": "alternative",
+      "label": "Arah uji (hipotesis alternatif)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   }
+  ]
+ },
+ "ANOVA": {
+  "module": "stats",
+  "title": "ANOVA & Tukey HSD",
+  "variants": [
+   {
+    "id": "anova-one-way",
+    "label": "ANOVA satu arah",
+    "fields": [
+     {
+      "key": "groups",
+      "type": "groups",
+      "label": "Data per kelompok"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "anova-two-way",
+    "label": "ANOVA dua arah",
+    "fields": [
+     {
+      "key": "factor_a",
+      "type": "text",
+      "label": "Nama faktor A"
+     },
+     {
+      "key": "factor_b",
+      "type": "text",
+      "label": "Nama faktor B"
+     },
+     {
+      "key": "cells",
+      "type": "cells",
+      "label": "Data per sel"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "tukey-hsd",
+    "label": "Uji lanjut Tukey HSD",
+    "fields": [
+     {
+      "key": "groups",
+      "type": "groups",
+      "label": "Data per kelompok"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   }
+  ]
+ },
+ "Korelasi": {
+  "module": "stats",
+  "title": "Korelasi & Regresi (Correlation & Regression)",
+  "variants": [
+   {
+    "id": "correlation",
+    "label": "Korelasi",
+    "fields": [
+     {
+      "key": "method",
+      "type": "select",
+      "label": "Metode"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     },
+     {
+      "key": "variables",
+      "type": "variables",
+      "label": "Variabel"
+     }
+    ]
+   },
+   {
+    "id": "regression-simple",
+    "label": "Regresi linier sederhana",
+    "fields": [
+     {
+      "key": "x_name",
+      "type": "text",
+      "label": "Nama variabel X"
+     },
+     {
+      "key": "y_name",
+      "type": "text",
+      "label": "Nama variabel Y"
+     },
+     {
+      "key": "x",
+      "type": "numbers",
+      "label": "Data X (variabel bebas)"
+     },
+     {
+      "key": "y",
+      "type": "numbers",
+      "label": "Data Y (variabel terikat)"
+     },
+     {
+      "key": "predict",
+      "type": "numbers",
+      "label": "Prediksi untuk nilai X (opsional)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "regression-multiple",
+    "label": "Regresi linier berganda",
+    "fields": [
+     {
+      "key": "y_name",
+      "type": "text",
+      "label": "Nama variabel Y"
+     },
+     {
+      "key": "y",
+      "type": "numbers",
+      "label": "Data Y (variabel terikat)"
+     },
+     {
+      "key": "predictors",
+      "type": "variables",
+      "label": "Variabel bebas X"
+     },
+     {
+      "key": "predict",
+      "type": "matrix",
+      "label": "Prediksi (opsional)"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   },
+   {
+    "id": "regression-assumptions",
+    "label": "Uji asumsi klasik",
+    "fields": [
+     {
+      "key": "y_name",
+      "type": "text",
+      "label": "Nama variabel Y"
+     },
+     {
+      "key": "y",
+      "type": "numbers",
+      "label": "Data Y"
+     },
+     {
+      "key": "predictors",
+      "type": "variables",
+      "label": "Variabel bebas X"
+     },
+     {
+      "key": "alpha",
+      "type": "alpha",
+      "label": "Taraf signifikansi α"
+     }
+    ]
+   }
+  ]
+ },
+ "Metode Grafik": {
+  "module": "or",
+  "title": "Metode Grafik LP (Graphical Method, Bab 3)",
+  "variants": [
+   {
+    "id": "lp-graphical",
+    "label": "Metode grafik",
+    "fields": [
+     {
+      "key": "model",
+      "type": "textarea",
+      "label": "Model linear programming"
+     }
+    ]
+   }
+  ]
+ },
+ "Metode Simpleks": {
+  "module": "or",
+  "title": "Metode Simpleks (Simplex Method, Bab 4)",
+  "variants": [
+   {
+    "id": "simplex",
+    "label": "Simpleks (≤)",
+    "fields": [
+     {
+      "key": "model",
+      "type": "textarea",
+      "label": "Model linear programming"
+     },
+     {
+      "key": "method",
+      "type": "select",
+      "label": "Metode"
+     }
+    ]
+   },
+   {
+    "id": "big-m",
+    "label": "Big-M",
+    "fields": [
+     {
+      "key": "model",
+      "type": "textarea",
+      "label": "Model linear programming"
+     },
+     {
+      "key": "method",
+      "type": "select",
+      "label": "Metode"
+     }
+    ]
+   },
+   {
+    "id": "two-phase",
+    "label": "Dua Fase",
+    "fields": [
+     {
+      "key": "model",
+      "type": "textarea",
+      "label": "Model linear programming"
+     },
+     {
+      "key": "method",
+      "type": "select",
+      "label": "Metode"
+     }
+    ]
+   }
+  ]
+ },
+ "Transportasi": {
+  "module": "or",
+  "title": "Transportasi & Penugasan (Bab 8)",
+  "variants": [
+   {
+    "id": "transportation",
+    "label": "Masalah transportasi",
+    "fields": [
+     {
+      "key": "costs",
+      "type": "matrix",
+      "label": "Matriks biaya per unit (baris = sumber, kolom = tujuan)"
+     },
+     {
+      "key": "supply",
+      "type": "numbers",
+      "label": "Penawaran tiap sumber"
+     },
+     {
+      "key": "demand",
+      "type": "numbers",
+      "label": "Permintaan tiap tujuan"
+     },
+     {
+      "key": "sources",
+      "type": "labels",
+      "label": "Nama sumber (opsional)"
+     },
+     {
+      "key": "destinations",
+      "type": "labels",
+      "label": "Nama tujuan (opsional)"
+     },
+     {
+      "key": "method",
+      "type": "select",
+      "label": "Metode solusi awal"
+     },
+     {
+      "key": "optimize",
+      "type": "boolean",
+      "label": "Optimasi"
+     }
+    ]
+   },
+   {
+    "id": "assignment",
+    "label": "Penugasan (Hungaria)",
+    "fields": [
+     {
+      "key": "costs",
+      "type": "matrix",
+      "label": "Matriks biaya (baris = pekerja/mesin, kolom = tugas/lokasi)"
+     },
+     {
+      "key": "rows",
+      "type": "labels",
+      "label": "Nama baris (opsional)"
+     },
+     {
+      "key": "cols",
+      "type": "labels",
+      "label": "Nama kolom (opsional)"
+     },
+     {
+      "key": "maximize",
+      "type": "boolean",
+      "label": "Maksimasi"
+     }
+    ]
+   }
+  ]
+ },
+ "Optimasi Jaringan": {
+  "module": "or",
+  "title": "Optimasi Jaringan (Network Optimization, Bab 9)",
+  "variants": [
+   {
+    "id": "shortest-path",
+    "label": "Lintasan terpendek",
+    "fields": [
+     {
+      "key": "edges",
+      "type": "graph",
+      "label": "Busur: node node jarak"
+     },
+     {
+      "key": "source",
+      "type": "text",
+      "label": "Node asal"
+     },
+     {
+      "key": "target",
+      "type": "text",
+      "label": "Node tujuan"
+     },
+     {
+      "key": "directed",
+      "type": "boolean",
+      "label": "Berarah"
+     }
+    ]
+   },
+   {
+    "id": "minimum-spanning-tree",
+    "label": "Pohon rentang minimum",
+    "fields": [
+     {
+      "key": "edges",
+      "type": "graph",
+      "label": "Busur: node node panjang"
+     },
+     {
+      "key": "algorithm",
+      "type": "select",
+      "label": "Algoritma"
+     }
+    ]
+   },
+   {
+    "id": "max-flow",
+    "label": "Aliran maksimum",
+    "fields": [
+     {
+      "key": "edges",
+      "type": "graph",
+      "label": "Busur berarah: asal tujuan kapasitas"
+     },
+     {
+      "key": "source",
+      "type": "text",
+      "label": "Sumber (source)"
+     },
+     {
+      "key": "sink",
+      "type": "text",
+      "label": "Tujuan (sink)"
+     }
+    ]
+   },
+   {
+    "id": "min-cost-flow",
+    "label": "Aliran biaya minimum",
+    "fields": [
+     {
+      "key": "arcs",
+      "type": "graph",
+      "label": "Busur: asal tujuan biaya kapasitas"
+     },
+     {
+      "key": "supplies",
+      "type": "textarea",
+      "label": "Penawaran (+) / permintaan (−) node"
+     }
+    ]
+   },
+   {
+    "id": "network-simplex",
+    "label": "Simpleks jaringan",
+    "fields": [
+     {
+      "key": "arcs",
+      "type": "graph",
+      "label": "Busur: asal tujuan biaya kapasitas"
+     },
+     {
+      "key": "supplies",
+      "type": "textarea",
+      "label": "Penawaran (+) / permintaan (−) node"
+     }
+    ]
+   }
+  ]
+ },
+ "Manajemen Proyek": {
+  "module": "or",
+  "title": "Manajemen Proyek PERT/CPM (Bab 10)",
+  "variants": [
+   {
+    "id": "cpm",
+    "label": "CPM (jalur kritis)",
+    "fields": [
+     {
+      "key": "activities",
+      "type": "textarea",
+      "label": "Aktivitas"
+     }
+    ]
+   },
+   {
+    "id": "pert",
+    "label": "PERT 3 estimasi",
+    "fields": [
+     {
+      "key": "activities",
+      "type": "textarea",
+      "label": "Aktivitas"
+     },
+     {
+      "key": "deadline",
+      "type": "number",
+      "label": "Tenggat (opsional)"
+     }
+    ]
+   },
+   {
+    "id": "crashing",
+    "label": "Crashing (time-cost trade-off)",
+    "fields": [
+     {
+      "key": "activities",
+      "type": "textarea",
+      "label": "Aktivitas"
+     },
+     {
+      "key": "deadline",
+      "type": "number",
+      "label": "Target waktu penyelesaian"
+     }
+    ]
+   },
+   {
+    "id": "pert-cost",
+    "label": "PERT/Cost",
+    "fields": [
+     {
+      "key": "activities",
+      "type": "textarea",
+      "label": "Aktivitas"
+     },
+     {
+      "key": "current_time",
+      "type": "number",
+      "label": "Waktu pelaporan saat ini"
+     }
+    ]
+   }
+  ]
+ },
+ "Pemrograman Dinamis": {
+  "module": "or",
+  "title": "Pemrograman Dinamis (Dynamic Programming, Bab 11)",
+  "variants": [
+   {
+    "id": "stagecoach",
+    "label": "Stagecoach / rute bertahap",
+    "fields": [
+     {
+      "key": "edges",
+      "type": "graph",
+      "label": "Busur berarah: asal tujuan biaya"
+     },
+     {
+      "key": "source",
+      "type": "text",
+      "label": "Node awal"
+     },
+     {
+      "key": "target",
+      "type": "text",
+      "label": "Node akhir"
+     },
+     {
+      "key": "sense",
+      "type": "select",
+      "label": "Tujuan"
+     }
+    ]
+   },
+   {
+    "id": "resource-allocation",
+    "label": "Alokasi sumber daya",
+    "fields": [
+     {
+      "key": "total",
+      "type": "integer",
+      "label": "Total unit sumber daya"
+     },
+     {
+      "key": "returns",
+      "type": "matrix",
+      "label": "Tabel hasil (baris = aktivitas, kolom = 0, 1, …, total unit)"
+     },
+     {
+      "key": "activities",
+      "type": "labels",
+      "label": "Nama aktivitas (opsional)"
+     },
+     {
+      "key": "combine",
+      "type": "select",
+      "label": "Penggabungan hasil"
+     },
+     {
+      "key": "sense",
+      "type": "select",
+      "label": "Tujuan"
+     }
+    ]
+   },
+   {
+    "id": "probabilistic-allocation",
+    "label": "Alokasi probabilistik",
+    "fields": [
+     {
+      "key": "total",
+      "type": "integer",
+      "label": "Total unit"
+     },
+     {
+      "key": "returns",
+      "type": "matrix",
+      "label": "Peluang gagal (baris = tim, kolom = 0..total unit)"
+     },
+     {
+      "key": "activities",
+      "type": "labels",
+      "label": "Nama (opsional)"
+     },
+     {
+      "key": "combine",
+      "type": "select",
+      "label": "Penggabungan"
+     },
+     {
+      "key": "sense",
+      "type": "select",
+      "label": "Tujuan"
+     }
+    ]
+   },
+   {
+    "id": "knapsack",
+    "label": "Knapsack",
+    "fields": [
+     {
+      "key": "weights",
+      "type": "numbers",
+      "label": "Bobot barang (bilangan bulat)"
+     },
+     {
+      "key": "values",
+      "type": "numbers",
+      "label": "Nilai barang"
+     },
+     {
+      "key": "capacity",
+      "type": "integer",
+      "label": "Kapasitas"
+     },
+     {
+      "key": "max_copies",
+      "type": "numbers",
+      "label": "Maksimum unit tiap barang (opsional, default 1)"
+     },
+     {
+      "key": "names",
+      "type": "labels",
+      "label": "Nama barang (opsional)"
+     }
+    ]
+   },
+   {
+    "id": "betting",
+    "label": "DP probabilistik: taruhan",
+    "fields": [
+     {
+      "key": "chips",
+      "type": "integer",
+      "label": "Keping awal"
+     },
+     {
+      "key": "target",
+      "type": "integer",
+      "label": "Target keping"
+     },
+     {
+      "key": "plays",
+      "type": "integer",
+      "label": "Jumlah taruhan"
+     },
+     {
+      "key": "p_win",
+      "type": "number",
+      "label": "Peluang menang tiap taruhan"
+     }
+    ]
+   }
+  ]
+ },
+ "Pemrograman Bilangan": {
+  "module": "or",
+  "title": "Pemrograman Bilangan Bulat (Integer Programming, Bab 12)",
+  "variants": [
+   {
+    "id": "branch-and-bound",
+    "label": "Branch-and-bound (BIP)",
+    "fields": [
+     {
+      "key": "model",
+      "type": "textarea",
+      "label": "Model"
+     }
+    ]
+   },
+   {
+    "id": "mip",
+    "label": "Mixed integer (MIP)",
+    "fields": [
+     {
+      "key": "model",
+      "type": "textarea",
+      "label": "Model"
+     }
+    ]
+   },
+   {
+    "id": "binary-formulation",
+    "label": "Formulasi biner",
+    "fields": [
+     {
+      "key": "model",
+      "type": "textarea",
+      "label": "Model dasar"
+     },
+     {
+      "key": "rules",
+      "type": "textarea",
+      "label": "Aturan biner (satu per baris)"
+     }
+    ]
+   }
+  ]
+ },
+ "Analisis Keputusan": {
+  "module": "or",
+  "title": "Analisis Keputusan (Decision Analysis, Bab 15)",
+  "variants": [
+   {
+    "id": "decision-criteria",
+    "label": "Kriteria keputusan",
+    "fields": [
+     {
+      "key": "payoff",
+      "type": "matrix",
+      "label": "Tabel payoff (baris = alternatif, kolom = keadaan alam)"
+     },
+     {
+      "key": "prior",
+      "type": "numbers",
+      "label": "Peluang prior tiap keadaan alam"
+     },
+     {
+      "key": "actions",
+      "type": "labels",
+      "label": "Nama alternatif (opsional)"
+     },
+     {
+      "key": "states",
+      "type": "labels",
+      "label": "Nama keadaan alam (opsional)"
+     }
+    ]
+   },
+   {
+    "id": "decision-experiment",
+    "label": "Dengan eksperimen (EVPI, EVSI)",
+    "fields": [
+     {
+      "key": "payoff",
+      "type": "matrix",
+      "label": "Tabel payoff (baris = alternatif, kolom = keadaan alam)"
+     },
+     {
+      "key": "prior",
+      "type": "numbers",
+      "label": "Peluang prior tiap keadaan alam"
+     },
+     {
+      "key": "actions",
+      "type": "labels",
+      "label": "Nama alternatif (opsional)"
+     },
+     {
+      "key": "states",
+      "type": "labels",
+      "label": "Nama keadaan alam (opsional)"
+     },
+     {
+      "key": "likelihood",
+      "type": "matrix",
+      "label": "Likelihood P(temuan | keadaan) — baris = keadaan, kolom = temuan"
+     },
+     {
+      "key": "findings",
+      "type": "labels",
+      "label": "Nama temuan (opsional)"
+     },
+     {
+      "key": "cost",
+      "type": "number",
+      "label": "Biaya eksperimen"
+     }
+    ]
+   },
+   {
+    "id": "decision-tree",
+    "label": "Pohon keputusan",
+    "fields": [
+     {
+      "key": "tree",
+      "type": "textarea",
+      "label": "Pohon keputusan"
+     }
+    ]
+   },
+   {
+    "id": "utility",
+    "label": "Teori utilitas",
+    "fields": [
+     {
+      "key": "payoff",
+      "type": "matrix",
+      "label": "Tabel payoff (baris = alternatif, kolom = keadaan alam)"
+     },
+     {
+      "key": "prior",
+      "type": "numbers",
+      "label": "Peluang prior tiap keadaan alam"
+     },
+     {
+      "key": "actions",
+      "type": "labels",
+      "label": "Nama alternatif (opsional)"
+     },
+     {
+      "key": "states",
+      "type": "labels",
+      "label": "Nama keadaan alam (opsional)"
+     },
+     {
+      "key": "kind",
+      "type": "select",
+      "label": "Fungsi utilitas"
+     },
+     {
+      "key": "risk_r",
+      "type": "number",
+      "label": "Toleransi risiko R"
+     },
+     {
+      "key": "table",
+      "type": "textarea",
+      "label": "Tabel utilitas: nilai_uang utilitas"
+     }
+    ]
+   }
+  ]
+ },
+ "Rantai Markov": {
+  "module": "or",
+  "title": "Rantai Markov (Markov Chains, Bab 16)",
+  "variants": [
+   {
+    "id": "markov-chain",
+    "label": "Analisis rantai Markov",
+    "fields": [
+     {
+      "key": "matrix",
+      "type": "matrix",
+      "label": "Matriks transisi P (setiap baris berjumlah 1)"
+     },
+     {
+      "key": "names",
+      "type": "labels",
+      "label": "Nama state (opsional)"
+     },
+     {
+      "key": "steps",
+      "type": "integer",
+      "label": "n langkah"
+     },
+     {
+      "key": "initial",
+      "type": "numbers",
+      "label": "Distribusi awal (opsional)"
+     }
+    ]
+   },
+   {
+    "id": "absorbing",
+    "label": "State penyerap",
+    "fields": [
+     {
+      "key": "matrix",
+      "type": "matrix",
+      "label": "Matriks transisi P"
+     },
+     {
+      "key": "names",
+      "type": "labels",
+      "label": "Nama state (opsional)"
+     },
+     {
+      "key": "steps",
+      "type": "integer",
+      "label": "n langkah"
+     }
+    ]
+   },
+   {
+    "id": "ctmc",
+    "label": "Waktu kontinu (CTMC)",
+    "fields": [
+     {
+      "key": "rates",
+      "type": "matrix",
+      "label": "Matriks laju qᵢⱼ (diagonal diabaikan)"
+     },
+     {
+      "key": "names",
+      "type": "labels",
+      "label": "Nama state (opsional)"
+     }
+    ]
+   }
+  ]
+ },
+ "Teori Antrian": {
+  "module": "or",
+  "title": "Teori Antrian (Queueing Theory, Bab 17–18)",
+  "variants": [
+   {
+    "id": "mms",
+    "label": "M/M/s",
+    "fields": [
+     {
+      "key": "lam",
+      "type": "number",
+      "label": "λ (laju kedatangan)"
+     },
+     {
+      "key": "mu",
+      "type": "number",
+      "label": "μ (laju pelayanan per server)"
+     },
+     {
+      "key": "s",
+      "type": "integer",
+      "label": "Jumlah server s"
+     }
+    ]
+   },
+   {
+    "id": "mmsk",
+    "label": "M/M/s/K",
+    "fields": [
+     {
+      "key": "lam",
+      "type": "number",
+      "label": "λ (laju kedatangan)"
+     },
+     {
+      "key": "mu",
+      "type": "number",
+      "label": "μ (laju pelayanan per server)"
+     },
+     {
+      "key": "s",
+      "type": "integer",
+      "label": "Jumlah server s"
+     },
+     {
+      "key": "k",
+      "type": "integer",
+      "label": "Kapasitas sistem K"
+     }
+    ]
+   },
+   {
+    "id": "finite-source",
+    "label": "Populasi terbatas",
+    "fields": [
+     {
+      "key": "lam",
+      "type": "number",
+      "label": "λ per anggota populasi"
+     },
+     {
+      "key": "mu",
+      "type": "number",
+      "label": "μ per server"
+     },
+     {
+      "key": "s",
+      "type": "integer",
+      "label": "Jumlah server s"
+     },
+     {
+      "key": "population",
+      "type": "integer",
+      "label": "Ukuran populasi N"
+     }
+    ]
+   },
+   {
+    "id": "mg1",
+    "label": "M/G/1",
+    "fields": [
+     {
+      "key": "lam",
+      "type": "number",
+      "label": "λ (laju kedatangan)"
+     },
+     {
+      "key": "mu",
+      "type": "number",
+      "label": "μ (laju pelayanan per server)"
+     },
+     {
+      "key": "sigma",
+      "type": "number",
+      "label": "σ waktu layanan"
+     }
+    ]
+   },
+   {
+    "id": "mds",
+    "label": "M/D/s & M/Eₖ/s",
+    "fields": [
+     {
+      "key": "lam",
+      "type": "number",
+      "label": "λ (laju kedatangan)"
+     },
+     {
+      "key": "mu",
+      "type": "number",
+      "label": "μ (laju pelayanan per server)"
+     },
+     {
+      "key": "s",
+      "type": "integer",
+      "label": "Jumlah server s"
+     },
+     {
+      "key": "model",
+      "type": "select",
+      "label": "Distribusi layanan"
+     },
+     {
+      "key": "k",
+      "type": "integer",
+      "label": "k (Erlang)"
+     }
+    ]
+   },
+   {
+    "id": "priority",
+    "label": "Disiplin prioritas",
+    "fields": [
+     {
+      "key": "lam",
+      "type": "numbers",
+      "label": "λ tiap kelas (kelas 1 = prioritas tertinggi)"
+     },
+     {
+      "key": "mu",
+      "type": "number",
+      "label": "μ"
+     },
+     {
+      "key": "s",
+      "type": "integer",
+      "label": "Jumlah server"
+     },
+     {
+      "key": "preemptive",
+      "type": "boolean",
+      "label": "Preemptive"
+     }
+    ]
+   },
+   {
+    "id": "jackson",
+    "label": "Jaringan Jackson",
+    "fields": [
+     {
+      "key": "external",
+      "type": "numbers",
+      "label": "Kedatangan eksternal tiap stasiun"
+     },
+     {
+      "key": "routing",
+      "type": "matrix",
+      "label": "Matriks perutean pᵢⱼ"
+     },
+     {
+      "key": "servers",
+      "type": "numbers",
+      "label": "Jumlah server tiap stasiun"
+     },
+     {
+      "key": "mu",
+      "type": "numbers",
+      "label": "μ tiap stasiun"
+     },
+     {
+      "key": "names",
+      "type": "labels",
+      "label": "Nama stasiun (opsional)"
+     }
+    ]
+   },
+   {
+    "id": "queue-cost",
+    "label": "Optimasi biaya",
+    "fields": [
+     {
+      "key": "lam",
+      "type": "number",
+      "label": "λ (laju kedatangan)"
+     },
+     {
+      "key": "mu",
+      "type": "number",
+      "label": "μ (laju pelayanan per server)"
+     },
+     {
+      "key": "server_cost",
+      "type": "number",
+      "label": "Biaya per server per satuan waktu"
+     },
+     {
+      "key": "wait_cost",
+      "type": "number",
+      "label": "Biaya menunggu per pelanggan per satuan waktu"
+     }
+    ]
+   }
+  ]
+ },
+ "Teori Persediaan": {
+  "module": "or",
+  "title": "Teori Persediaan (Inventory Theory, Bab 19)",
+  "variants": [
+   {
+    "id": "eoq",
+    "label": "EOQ",
+    "fields": [
+     {
+      "key": "demand",
+      "type": "number",
+      "label": "Laju permintaan d"
+     },
+     {
+      "key": "setup",
+      "type": "number",
+      "label": "Biaya setup/pesan K"
+     },
+     {
+      "key": "holding",
+      "type": "number",
+      "label": "Biaya simpan h per unit per satuan waktu"
+     },
+     {
+      "key": "unit_cost",
+      "type": "number",
+      "label": "Harga per unit c"
+     },
+     {
+      "key": "lead_time",
+      "type": "number",
+      "label": "Lead time (opsional)"
+     }
+    ]
+   },
+   {
+    "id": "eoq-backorder",
+    "label": "EOQ + backorder",
+    "fields": [
+     {
+      "key": "demand",
+      "type": "number",
+      "label": "Laju permintaan d"
+     },
+     {
+      "key": "setup",
+      "type": "number",
+      "label": "Biaya setup K"
+     },
+     {
+      "key": "holding",
+      "type": "number",
+      "label": "Biaya simpan h"
+     },
+     {
+      "key": "unit_cost",
+      "type": "number",
+      "label": "Harga per unit c"
+     },
+     {
+      "key": "shortage",
+      "type": "number",
+      "label": "Biaya kekurangan p per unit per satuan waktu"
+     }
+    ]
+   },
+   {
+    "id": "quantity-discount",
+    "label": "Diskon kuantitas",
+    "fields": [
+     {
+      "key": "demand",
+      "type": "number",
+      "label": "Permintaan d"
+     },
+     {
+      "key": "setup",
+      "type": "number",
+      "label": "Biaya pesan K"
+     },
+     {
+      "key": "holding_rate",
+      "type": "number",
+      "label": "Biaya simpan sebagai fraksi harga (i)"
+     },
+     {
+      "key": "breaks",
+      "type": "matrix",
+      "label": "Tingkat harga: kuantitas_minimum harga"
+     }
+    ]
+   },
+   {
+    "id": "epq",
+    "label": "EPQ",
+    "fields": [
+     {
+      "key": "demand",
+      "type": "number",
+      "label": "Laju permintaan d"
+     },
+     {
+      "key": "production_rate",
+      "type": "number",
+      "label": "Laju produksi r"
+     },
+     {
+      "key": "setup",
+      "type": "number",
+      "label": "Biaya setup K"
+     },
+     {
+      "key": "holding",
+      "type": "number",
+      "label": "Biaya simpan h"
+     }
+    ]
+   },
+   {
+    "id": "wagner-whitin",
+    "label": "Wagner-Whitin",
+    "fields": [
+     {
+      "key": "demands",
+      "type": "numbers",
+      "label": "Permintaan tiap periode"
+     },
+     {
+      "key": "setup",
+      "type": "number",
+      "label": "Biaya setup K"
+     },
+     {
+      "key": "holding",
+      "type": "number",
+      "label": "Biaya simpan per unit per periode"
+     },
+     {
+      "key": "unit_cost",
+      "type": "number",
+      "label": "Biaya per unit (opsional)"
+     }
+    ]
+   },
+   {
+    "id": "rq",
+    "label": "(R, Q) stokastik",
+    "fields": [
+     {
+      "key": "demand_rate",
+      "type": "number",
+      "label": "Laju permintaan rata-rata d"
+     },
+     {
+      "key": "setup",
+      "type": "number",
+      "label": "Biaya pesan K"
+     },
+     {
+      "key": "holding",
+      "type": "number",
+      "label": "Biaya simpan h"
+     },
+     {
+      "key": "lead_mean",
+      "type": "number",
+      "label": "Rata-rata permintaan selama lead time"
+     },
+     {
+      "key": "lead_sd",
+      "type": "number",
+      "label": "Simpangan baku permintaan selama lead time"
+     },
+     {
+      "key": "service",
+      "type": "number",
+      "label": "Tingkat layanan"
+     }
+    ]
+   },
+   {
+    "id": "newsvendor",
+    "label": "Newsvendor",
+    "fields": [
+     {
+      "key": "price",
+      "type": "number",
+      "label": "Harga jual"
+     },
+     {
+      "key": "cost",
+      "type": "number",
+      "label": "Biaya beli per unit"
+     },
+     {
+      "key": "salvage",
+      "type": "number",
+      "label": "Nilai sisa per unit"
+     },
+     {
+      "key": "shortage_penalty",
+      "type": "number",
+      "label": "Penalti kekurangan per unit"
+     },
+     {
+      "key": "dist",
+      "type": "select",
+      "label": "Distribusi permintaan"
+     },
+     {
+      "key": "params",
+      "type": "numbers",
+      "label": "Parameter distribusi"
+     }
+    ]
+   },
+   {
+    "id": "periodic-review",
+    "label": "(s, S) periodik",
+    "fields": [
+     {
+      "key": "demand_mean",
+      "type": "number",
+      "label": "Rata-rata permintaan per satuan waktu"
+     },
+     {
+      "key": "demand_sd",
+      "type": "number",
+      "label": "Simpangan baku permintaan per satuan waktu"
+     },
+     {
+      "key": "review",
+      "type": "number",
+      "label": "Periode peninjauan R"
+     },
+     {
+      "key": "lead",
+      "type": "number",
+      "label": "Lead time L"
+     },
+     {
+      "key": "setup",
+      "type": "number",
+      "label": "Biaya pesan K"
+     },
+     {
+      "key": "holding",
+      "type": "number",
+      "label": "Biaya simpan h"
+     },
+     {
+      "key": "service",
+      "type": "number",
+      "label": "Tingkat layanan"
+     }
+    ]
+   }
+  ]
+ },
+ "Peramalan": {
+  "module": "or",
+  "title": "Peramalan (Forecasting, Bab 20)",
+  "variants": [
+   {
+    "id": "last-value",
+    "label": "Last value",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Deret waktu (urut dari periode 1)"
+     },
+     {
+      "key": "horizon",
+      "type": "integer",
+      "label": "Jumlah periode yang diramal"
+     }
+    ]
+   },
+   {
+    "id": "moving-average",
+    "label": "Rata-rata bergerak",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Deret waktu (urut dari periode 1)"
+     },
+     {
+      "key": "n",
+      "type": "integer",
+      "label": "n periode"
+     },
+     {
+      "key": "horizon",
+      "type": "integer",
+      "label": "Jumlah periode yang diramal"
+     }
+    ]
+   },
+   {
+    "id": "exp-smoothing",
+    "label": "Exponential smoothing",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Deret waktu (urut dari periode 1)"
+     },
+     {
+      "key": "alpha",
+      "type": "number",
+      "label": "α"
+     },
+     {
+      "key": "initial",
+      "type": "number",
+      "label": "Ramalan awal (opsional)"
+     },
+     {
+      "key": "horizon",
+      "type": "integer",
+      "label": "Jumlah periode yang diramal"
+     }
+    ]
+   },
+   {
+    "id": "holt",
+    "label": "Holt (tren)",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Deret waktu (urut dari periode 1)"
+     },
+     {
+      "key": "alpha",
+      "type": "number",
+      "label": "α"
+     },
+     {
+      "key": "beta",
+      "type": "number",
+      "label": "β"
+     },
+     {
+      "key": "horizon",
+      "type": "integer",
+      "label": "Jumlah periode yang diramal"
+     }
+    ]
+   },
+   {
+    "id": "seasonal",
+    "label": "Penyesuaian musiman",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Deret waktu (urut dari periode 1)"
+     },
+     {
+      "key": "season",
+      "type": "integer",
+      "label": "Panjang musim"
+     },
+     {
+      "key": "method",
+      "type": "select",
+      "label": "Metode dasar"
+     },
+     {
+      "key": "alpha",
+      "type": "number",
+      "label": "α"
+     },
+     {
+      "key": "horizon",
+      "type": "integer",
+      "label": "Jumlah periode yang diramal"
+     }
+    ]
+   },
+   {
+    "id": "trend-regression",
+    "label": "Regresi linier",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Deret waktu (urut dari periode 1)"
+     },
+     {
+      "key": "x",
+      "type": "numbers",
+      "label": "Variabel penjelas x (opsional; kosong = tren waktu)"
+     },
+     {
+      "key": "future_x",
+      "type": "numbers",
+      "label": "Nilai x untuk diramal (opsional)"
+     },
+     {
+      "key": "horizon",
+      "type": "integer",
+      "label": "Jumlah periode yang diramal"
+     }
+    ]
+   },
+   {
+    "id": "arima",
+    "label": "Box-Jenkins ARIMA",
+    "fields": [
+     {
+      "key": "data",
+      "type": "numbers",
+      "label": "Deret waktu (urut dari periode 1)"
+     },
+     {
+      "key": "p",
+      "type": "integer",
+      "label": "p (AR)"
+     },
+     {
+      "key": "d",
+      "type": "integer",
+      "label": "d (diferensiasi)"
+     },
+     {
+      "key": "q",
+      "type": "integer",
+      "label": "q (MA)"
+     },
+     {
+      "key": "horizon",
+      "type": "integer",
+      "label": "Jumlah periode yang diramal"
+     }
+    ]
+   }
+  ]
+ }
+}

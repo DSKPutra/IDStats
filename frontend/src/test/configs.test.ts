@@ -38,3 +38,17 @@ describe('konfigurasi halaman metode', () => {
     expect(JSON.parse(readFileSync(file, 'utf-8')).endpoint).toBe(v.endpoint)
   })
 })
+
+describe('fixture soal cerita backend (tests/story_pages.json)', () => {
+  const fixture = JSON.parse(readFileSync(resolve(import.meta.dirname, '../../../backend/tests/story_pages.json'), 'utf-8')) as Record<
+    string,
+    { title: string; variants: { id: string; fields: { key: string; type: string }[] }[] }
+  >
+
+  it.each(Object.values(fixture).map((p) => [p.title, p]))('%s sinkron dengan konfigurasi halaman', (title, page) => {
+    const config = configs.find((c) => c.title === title)
+    expect(config).toBeDefined()
+    const actual = config!.variants.map((v) => ({ id: v.id, fields: v.fields.filter((f) => !f.virtual).map((f) => ({ key: f.key, type: f.type })) }))
+    expect(page.variants.map((v) => ({ id: v.id, fields: v.fields.map((f) => ({ key: f.key, type: f.type })) }))).toEqual(actual)
+  })
+})

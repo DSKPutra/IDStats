@@ -1,5 +1,6 @@
-import { BookOpenText, Loader2, Wand2 } from 'lucide-react'
+import { ArrowRight, BookOpenText, Loader2, Wand2 } from 'lucide-react'
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { ApiError, postJson } from '@/lib/api'
@@ -9,6 +10,12 @@ export interface StoryResult {
   input: Record<string, unknown>
   formulation: string
   assumptions: string[]
+  /** Field yang belum ditemukan di soal (harus diisi manual). */
+  missing?: string[]
+  complete?: boolean
+  engine?: 'aturan' | 'ai'
+  /** Halaman yang lebih cocok bila soal salah tempat. */
+  suggestion?: { title: string; path: string } | null
 }
 
 export interface StoryVariant {
@@ -32,12 +39,13 @@ export function StoryInput({ pageTitle, module, variants, onApply, result }: Pro
   const [text, setText] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const location = useLocation()
 
   const submit = async () => {
     setLoading(true)
     setError(null)
     try {
-      const res = await postJson<StoryResult>('/story/interpret', { text, page_title: pageTitle, module, variants })
+      const res = await postJson<StoryResult>('/story/interpret', { text, page_title: pageTitle, module, variants, page_path: location.pathname })
       onApply(res, text)
     } catch (e) {
       setError(e instanceof ApiError ? e.message : 'Gagal menerjemahkan soal cerita.')
@@ -73,8 +81,9 @@ export function StoryInput({ pageTitle, module, variants, onApply, result }: Pro
             />
           </label>
           <p className="text-xs text-muted-foreground">
-            Soal diterjemahkan oleh AI (Claude) menjadi isian formulir dan metode yang sesuai, lalu dihitung oleh solver
-            IDStats. Periksa kembali hasil terjemahan sebelum dipakai. Teks soal dikirim ke layanan Anthropic untuk diproses.
+            Soal dibaca langsung oleh IDStats — angka, satuan, dan kata kunci seperti “tersedia”, “paling sedikit”,
+            “keuntungan”, “taraf nyata” — lalu diubah menjadi persamaan/isian formulir dan metode yang sesuai. Tidak perlu
+            akun atau API key. Data yang tidak ditemukan akan ditandai agar Anda lengkapi; periksa kembali hasilnya.
           </p>
           {error && <p role="alert" className="rounded-md bg-danger/10 px-3 py-2 text-sm text-danger">{error}</p>}
           <div>
@@ -89,6 +98,16 @@ export function StoryInput({ pageTitle, module, variants, onApply, result }: Pro
           <span className="streak mb-3 w-16" aria-hidden />
           <p className="eyebrow mb-1">Formulasi dari soal cerita</p>
           <p className="whitespace-pre-wrap leading-relaxed">{result.formulation}</p>
+          {result.missing && result.missing.length > 0 && (
+            <p className="mt-3 rounded-md bg-warning/10 px-3 py-2 text-[var(--ink-900)] dark:text-foreground">
+              Lengkapi di formulir lalu klik Hitung: {result.missing.join(', ')}.
+            </p>
+          )}
+          {result.suggestion && (
+            <Link to={result.suggestion.path} className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-strong underline decoration-ring underline-offset-4">
+              Soal ini tampaknya masalah {result.suggestion.title} — buka halamannya <ArrowRight className="size-4" />
+            </Link>
+          )}
           {result.assumptions.length > 0 && (
             <>
               <p className="eyebrow mb-1 mt-3">Asumsi / penafsiran</p>

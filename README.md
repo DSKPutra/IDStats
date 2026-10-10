@@ -53,12 +53,16 @@ api/       entry point Vercel Python Function
 
 ## Input soal cerita
 
-Setiap halaman metode memiliki opsi **“Masukkan dalam bentuk soal cerita”**. Teks soal dikirim ke
-`POST /api/story/interpret`, yang memakai Claude (Anthropic API) untuk memilih varian metode dan mengisi input
-dengan struktur yang sama persis seperti contoh soal varian tersebut, beserta formulasi modelnya. Perhitungan
-tetap dikerjakan solver IDStats, sehingga langkah-langkahnya tetap tampil. Fitur ini membutuhkan variabel
-lingkungan `ANTHROPIC_API_KEY` di server (opsional `IDSTATS_LLM_MODEL`, bawaan `claude-sonnet-5-5`); tanpa key,
-pengguna mendapat pesan bahwa fitur belum aktif dan input manual tetap berfungsi.
+Setiap halaman metode memiliki opsi **“Masukkan dalam bentuk soal cerita”** yang langsung bisa dipakai — tanpa akun,
+tanpa API key, tanpa biaya. Penerjemah berbasis aturan bahasa Indonesia (`backend/app/services/story_rules/`)
+membaca angka (`Rp70.000`, `0,05`, `5%`, `2 juta`), satuan, dan kata kunci (“tersedia”, “paling sedikit”,
+“keuntungan”, “taraf nyata”, “setiap … memerlukan”, “berturut-turut”, …), lalu memilih varian metode dan mengisi
+formulir. Untuk program linear, soal diubah menjadi **persamaan** (variabel keputusan, fungsi tujuan, kendala) yang
+bisa diedit sebelum dihitung. Dikenali: LP/IP (prosa, tabel, atau model eksplisit), transportasi & penugasan, antrian,
+persediaan, CPM/PERT, jaringan, Markov, analisis keputusan, knapsack, peramalan, distribusi peluang, uji hipotesis,
+ANOVA, regresi/korelasi, dan statistik deskriptif. Data yang tidak ditemukan dilaporkan agar dilengkapi manual, dan
+soal yang salah halaman diberi tautan ke halaman yang tepat. Bila `ANTHROPIC_API_KEY` kebetulan diatur, Claude
+dicoba lebih dulu dan otomatis kembali ke mesin aturan jika gagal (opsional).
 
 ## Desain
 

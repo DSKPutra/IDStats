@@ -5,7 +5,7 @@ from fastapi.testclient import TestClient
 
 from app.core.errors import SolverError
 from app.main import app
-from app.services import story
+from app.services import story_llm as story
 
 VARIANTS = [
     {"id": "simplex", "label": "Simpleks", "fields": [{"key": "model", "label": "Model LP", "type": "textarea"}]},
@@ -53,13 +53,6 @@ def test_parse_response():
         )
 
 
-def test_endpoint_without_key(monkeypatch):
-    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-    res = TestClient(app).post("/api/story/interpret", json={"text": STORY, "module": "or", "variants": VARIANTS})
-    assert res.status_code == 422
-    assert "ANTHROPIC_API_KEY" in res.json()["detail"]
-
-
 def test_endpoint_with_mocked_api(monkeypatch):
     monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
     reply = {
@@ -91,5 +84,12 @@ def test_endpoint_with_mocked_api(monkeypatch):
     monkeypatch.setattr(story.urllib.request, "urlopen", fake_urlopen)
     res = TestClient(app).post("/api/story/interpret", json={"text": STORY, "module": "or", "variants": VARIANTS})
     assert res.status_code == 200
-    assert res.json() == {"variant_id": "big-m", "input": {"a": 1}, "formulation": "f", "assumptions": ["satuan jam"]}
+    body = res.json()
+    assert body["engine"] == "ai"
+    assert {k: body[k] for k in ("variant_id", "input", "formulation", "assumptions")} == {
+        "variant_id": "big-m",
+        "input": {"a": 1},
+        "formulation": "f",
+        "assumptions": ["satuan jam"],
+    }
     assert seen["body"]["model"] == story.DEFAULT_MODEL
